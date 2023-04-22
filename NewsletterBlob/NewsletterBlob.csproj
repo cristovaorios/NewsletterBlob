@@ -47,12 +47,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Controller.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\AutorDAO.cs" />
     <Compile Include="Model\CategoriaDAO.cs" />
     <Compile Include="Model\ComentarioDAO.cs" />
@@ -60,6 +54,11 @@
     <Compile Include="Model\NoticiaDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="View\JanelaCadastrarNoticias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,17 +83,17 @@
     <Compile Include="View\JanelaEditarNoticias.Designer.cs">
       <DependentUpon>JanelaEditarNoticias.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\JanelaLoginLeitor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\JanelaLoginLeitor.Designer.cs">
-      <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\JanelaLoginAutor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\JanelaLoginAutor.Designer.cs">
       <DependentUpon>JanelaLoginAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaLoginLeitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaLoginLeitor.Designer.cs">
+      <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
     </Compile>
     <Compile Include="View\JanelaNoticiaExpandida.cs">
       <SubType>Form</SubType>
@@ -110,13 +109,15 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="View\JanelaCadastrarUsuario.resx">
+      <DependentUpon>JanelaCadastrarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaLoginLeitor.resx">
+      <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,6 +131,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\undraw_newspaper_re_syf5 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png news.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frame %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
