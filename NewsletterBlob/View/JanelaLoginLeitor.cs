@@ -16,5 +16,19 @@ namespace NewsletterBlob.View
         {
             InitializeComponent();
         }
+
+        private void JanelaLoginLeitor_Load(object sender, EventArgs e){}
+
+        private void lblLimpar_Click(object sender, EventArgs e)
+        {
+            txtBoxUsuario.Clear();
+            txtBoxSenha.Clear();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            new JanelaCadastrarUsuario().Show();
+            this.Hide();
+        }
     }
 }

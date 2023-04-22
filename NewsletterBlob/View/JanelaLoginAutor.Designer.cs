@@ -1,4 +1,5 @@
-﻿namespace NewsletterBlob.View
+﻿
+namespace NewsletterBlob.View
 {
     partial class JanelaLoginAutor
     {
