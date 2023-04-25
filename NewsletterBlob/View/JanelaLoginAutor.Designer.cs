@@ -42,6 +42,7 @@
             this.pctBoxUserIcon = new System.Windows.Forms.PictureBox();
             this.txtBoxUsuario = new System.Windows.Forms.TextBox();
             this.txtBoxSenha = new System.Windows.Forms.TextBox();
+            this.checkBoxMostrarSenha = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxPessoasLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLogoLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLockIcon)).BeginInit();
@@ -193,6 +194,21 @@
             this.txtBoxSenha.Name = "txtBoxSenha";
             this.txtBoxSenha.Size = new System.Drawing.Size(268, 20);
             this.txtBoxSenha.TabIndex = 14;
+            this.txtBoxSenha.UseSystemPasswordChar = true;
+            // 
+            // checkBoxMostrarSenha
+            // 
+            this.checkBoxMostrarSenha.AutoSize = true;
+            this.checkBoxMostrarSenha.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMostrarSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(111, 384);
+            this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
+            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(143, 30);
+            this.checkBoxMostrarSenha.TabIndex = 15;
+            this.checkBoxMostrarSenha.Text = "Mostrar senha";
+            this.checkBoxMostrarSenha.UseVisualStyleBackColor = false;
+            this.checkBoxMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBoxMostrarSenha_CheckedChanged);
             // 
             // JanelaLoginAutor
             // 
@@ -201,6 +217,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1262, 604);
+            this.Controls.Add(this.checkBoxMostrarSenha);
             this.Controls.Add(this.txtBoxSenha);
             this.Controls.Add(this.txtBoxUsuario);
             this.Controls.Add(this.pctBoxUserIcon);
@@ -244,5 +261,6 @@
         private System.Windows.Forms.PictureBox pctBoxUserIcon;
         private System.Windows.Forms.TextBox txtBoxUsuario;
         private System.Windows.Forms.TextBox txtBoxSenha;
+        private System.Windows.Forms.CheckBox checkBoxMostrarSenha;
     }
 }

@@ -36,5 +36,17 @@ namespace NewsletterBlob.View
             new JanelaLoginAutor().Show();
             this.Hide();
         }
+
+        private void checkBoxMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxMostrarSenha.Checked)
+            {
+                txtBoxSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtBoxSenha.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
