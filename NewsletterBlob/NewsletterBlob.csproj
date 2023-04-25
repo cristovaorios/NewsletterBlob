@@ -121,6 +121,9 @@
     <EmbeddedResource Include="View\JanelaLoginLeitor.resx">
       <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaPrincipal.resx">
+      <DependentUpon>JanelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -157,6 +160,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cadastro %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %283%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

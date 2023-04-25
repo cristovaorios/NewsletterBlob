@@ -34,5 +34,11 @@ namespace NewsletterBlob.View
                 txtBoxSenha.UseSystemPasswordChar = true;
             }
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal().Show();
+            this.Hide();
+        }
     }
 }

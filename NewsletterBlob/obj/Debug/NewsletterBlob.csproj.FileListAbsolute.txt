@@ -32,3 +32,4 @@ C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.c
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.exe
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.pdb
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaLoginAutor.resources
+C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaPrincipal.resources

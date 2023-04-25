@@ -16,5 +16,11 @@ namespace NewsletterBlob.View
         {
             InitializeComponent();
         }
+        private void JanelaPrincipal_Load(object sender, EventArgs e){}
+
+        private void pctBoxSetaDireita_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
