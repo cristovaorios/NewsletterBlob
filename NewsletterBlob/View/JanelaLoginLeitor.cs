@@ -30,5 +30,11 @@ namespace NewsletterBlob.View
             new JanelaCadastrarUsuario().Show();
             this.Hide();
         }
+
+        private void lblEntrarAutor_Click(object sender, EventArgs e)
+        {
+            new JanelaLoginAutor().Show();
+            this.Hide();
+        }
     }
 }

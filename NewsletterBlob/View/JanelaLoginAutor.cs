@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace NewsletterBlob.View
 {
-    public partial class JanelaLoginAutor : Form
+    public partial class JanelaLoginAutor: Form
     {
         public JanelaLoginAutor()
         {
             InitializeComponent();
+        }
+
+        private void lblLimpar_Click(object sender, EventArgs e)
+        {
+            txtBoxUsuario.Clear();
+            txtBoxSenha.Clear();
         }
     }
 }

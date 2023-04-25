@@ -115,6 +115,9 @@
     <EmbeddedResource Include="View\JanelaCadastrarUsuario.resx">
       <DependentUpon>JanelaCadastrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaLoginAutor.resx">
+      <DependentUpon>JanelaLoginAutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\JanelaLoginLeitor.resx">
       <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
     </EmbeddedResource>
