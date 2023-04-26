@@ -40,5 +40,11 @@ namespace NewsletterBlob.View
             new JanelaPrincipal().Show();
             this.Hide();
         }
+
+        private void pctBoxArrowBack_Click(object sender, EventArgs e)
+        {
+            new JanelaLoginLeitor().Show();
+            this.Hide();
+        }
     }
 }
