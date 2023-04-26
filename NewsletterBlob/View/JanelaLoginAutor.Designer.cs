@@ -201,6 +201,7 @@
             // 
             this.checkBoxMostrarSenha.AutoSize = true;
             this.checkBoxMostrarSenha.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxMostrarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
             this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxMostrarSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
             this.checkBoxMostrarSenha.Location = new System.Drawing.Point(111, 384);

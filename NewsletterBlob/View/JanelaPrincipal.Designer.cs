@@ -232,6 +232,7 @@
             // 
             this.lblNoticiaComum03.AutoSize = true;
             this.lblNoticiaComum03.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoticiaComum03.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNoticiaComum03.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoticiaComum03.Location = new System.Drawing.Point(992, 651);
             this.lblNoticiaComum03.Name = "lblNoticiaComum03";
@@ -290,6 +291,7 @@
             // 
             this.pctBoxNoticiaComum01.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxNoticiaComum01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctBoxNoticiaComum01.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxNoticiaComum01.Location = new System.Drawing.Point(157, 600);
             this.pctBoxNoticiaComum01.Name = "pctBoxNoticiaComum01";
             this.pctBoxNoticiaComum01.Size = new System.Drawing.Size(149, 136);
@@ -306,6 +308,7 @@
             this.pctBoxNoticiaBanner.Size = new System.Drawing.Size(977, 284);
             this.pctBoxNoticiaBanner.TabIndex = 12;
             this.pctBoxNoticiaBanner.TabStop = false;
+            this.pctBoxNoticiaBanner.Click += new System.EventHandler(this.pctBoxNoticiaBanner_Click);
             // 
             // pctBoxClima
             // 
@@ -340,6 +343,7 @@
             this.pctBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxPerfil.TabIndex = 2;
             this.pctBoxPerfil.TabStop = false;
+            this.pctBoxPerfil.Click += new System.EventHandler(this.pctBoxPerfil_Click);
             // 
             // pctBoxLogo
             // 

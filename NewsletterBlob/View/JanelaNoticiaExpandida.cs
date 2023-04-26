@@ -16,5 +16,17 @@ namespace NewsletterBlob.View
         {
             InitializeComponent();
         }
+
+        private void lblGeral_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal().Show();
+            this.Hide();
+        }
+
+        private void pctBoxLogo_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal().Show();
+            this.Hide();
+        }
     }
 }

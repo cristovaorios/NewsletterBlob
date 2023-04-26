@@ -33,3 +33,7 @@ C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.e
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.pdb
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaLoginAutor.resources
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaPrincipal.resources
+C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaNoticiaExpandida.resources
+C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaContaUsuario.resources
+C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaCadastrarNoticias.resources
+C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaEditarNoticias.resources

@@ -22,5 +22,17 @@ namespace NewsletterBlob.View
         {
 
         }
+
+        private void pctBoxNoticiaBanner_Click(object sender, EventArgs e)
+        {
+            new JanelaNoticiaExpandida().Show();
+            this.Hide();
+        }
+
+        private void pctBoxPerfil_Click(object sender, EventArgs e)
+        {
+            new JanelaCadastrarNoticias().Show();
+            this.Hide();
+        }
     }
 }
