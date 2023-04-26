@@ -16,5 +16,30 @@ namespace NewsletterBlob.View
         {
             InitializeComponent();
         }
+
+        private void lblGeral_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal().Show();
+            this.Hide();
+        }
+
+        private void pctBoxLogo_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal().Show();
+            this.Hide();
+        }
+
+        private void pctBoxLike_Click(object sender, EventArgs e)
+        {
+            int likes = Convert.ToInt32(lblLike.Text);
+            int qtdLikes = likes + 1;
+            lblLike.Text = qtdLikes.ToString();
+        }
+
+        private void pctBoxPerfil_Click(object sender, EventArgs e)
+        {
+            new JanelaOpcoesAutor().Show();
+            this.Hide();
+        }
     }
 }

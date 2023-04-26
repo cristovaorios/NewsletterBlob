@@ -16,5 +16,25 @@ namespace NewsletterBlob.View
         {
             InitializeComponent();
         }
+        private void JanelaPrincipal_Load(object sender, EventArgs e){}
+
+        private void pctBoxSetaDireita_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pctBoxNoticiaBanner_Click(object sender, EventArgs e)
+        {
+            new JanelaNoticiaExpandida().Show();
+            this.Hide();
+        }
+
+        private void pctBoxPerfil_Click(object sender, EventArgs e)
+        {
+            new JanelaOpcoesAutor().Show();
+            this.Hide();
+        }
+
+        private void lblTecnologia_Click(object sender, EventArgs e){}
     }
 }

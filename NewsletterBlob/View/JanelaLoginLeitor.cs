@@ -30,5 +30,29 @@ namespace NewsletterBlob.View
             new JanelaCadastrarUsuario().Show();
             this.Hide();
         }
+
+        private void lblEntrarAutor_Click(object sender, EventArgs e)
+        {
+            new JanelaLoginAutor().Show();
+            this.Hide();
+        }
+
+        private void checkBoxMostrarSenha_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxMostrarSenha.Checked)
+            {
+                txtBoxSenha.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtBoxSenha.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal().Show();
+            this.Hide();
+        }
     }
 }
