@@ -43,10 +43,12 @@
             this.txtBoxUsuario = new System.Windows.Forms.TextBox();
             this.txtBoxSenha = new System.Windows.Forms.TextBox();
             this.checkBoxMostrarSenha = new System.Windows.Forms.CheckBox();
+            this.pctBoxArrowBack = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxPessoasLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLogoLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLockIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxUserIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxArrowBack)).BeginInit();
             this.SuspendLayout();
             // 
             // pctBoxPessoasLogin
@@ -212,6 +214,19 @@
             this.checkBoxMostrarSenha.UseVisualStyleBackColor = false;
             this.checkBoxMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBoxMostrarSenha_CheckedChanged);
             // 
+            // pctBoxArrowBack
+            // 
+            this.pctBoxArrowBack.BackColor = System.Drawing.Color.Transparent;
+            this.pctBoxArrowBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctBoxArrowBack.Image = global::NewsletterBlob.Properties.Resources.Frame__2_;
+            this.pctBoxArrowBack.Location = new System.Drawing.Point(25, 24);
+            this.pctBoxArrowBack.Name = "pctBoxArrowBack";
+            this.pctBoxArrowBack.Size = new System.Drawing.Size(40, 40);
+            this.pctBoxArrowBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBoxArrowBack.TabIndex = 16;
+            this.pctBoxArrowBack.TabStop = false;
+            this.pctBoxArrowBack.Click += new System.EventHandler(this.pctBoxArrowBack_Click);
+            // 
             // JanelaLoginAutor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -219,6 +234,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1262, 604);
+            this.Controls.Add(this.pctBoxArrowBack);
             this.Controls.Add(this.checkBoxMostrarSenha);
             this.Controls.Add(this.txtBoxSenha);
             this.Controls.Add(this.txtBoxUsuario);
@@ -243,6 +259,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLogoLogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLockIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxUserIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxArrowBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,5 +281,6 @@
         private System.Windows.Forms.TextBox txtBoxUsuario;
         private System.Windows.Forms.TextBox txtBoxSenha;
         private System.Windows.Forms.CheckBox checkBoxMostrarSenha;
+        private System.Windows.Forms.PictureBox pctBoxArrowBack;
     }
 }
