@@ -50,5 +50,34 @@ namespace NewsletterBlob.View
                 pctBoxFotoUsuario.Load(caminhoFoto);
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (txtBoxNome.Text.Trim() == "")
+            {
+                pctBoxAlertaNome.Visible = true;
+            }
+            else if (txtBoxEmail.Text.Trim() == "")
+            {
+                pctBoxAlertaEmail.Visible = true;
+            }
+            else if (txtBoxCPF.Text.Trim() == "")
+            {
+                pctBoxAlertaCPF.Visible = true;
+            }
+            else if (txtBoxEndereco.Text.Trim() == "")
+            {
+                pctBoxAlertaEndereco.Visible = true;
+            }
+            else if (txtBoxTelefone.Text.Trim() == "")
+            {
+                pctBoxAlertaTelefone.Visible = true;
+            }
+            else if (txtBoxSenha.Text.Trim() == "")
+            {
+                pctBoxAlertaSenha.Visible = true;
+            }
+            else { };
+        }
     }
 }
