@@ -31,8 +31,10 @@ namespace NewsletterBlob.View
 
         private void pctBoxPerfil_Click(object sender, EventArgs e)
         {
-            new JanelaCadastrarNoticias().Show();
+            new JanelaOpcoesAutor().Show();
             this.Hide();
         }
+
+        private void lblTecnologia_Click(object sender, EventArgs e){}
     }
 }

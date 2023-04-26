@@ -91,7 +91,7 @@
             this.txtBoxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxNome.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxNome.Location = new System.Drawing.Point(292, 190);
+            this.txtBoxNome.Location = new System.Drawing.Point(292, 193);
             this.txtBoxNome.Name = "txtBoxNome";
             this.txtBoxNome.Size = new System.Drawing.Size(300, 20);
             this.txtBoxNome.TabIndex = 16;
@@ -122,7 +122,7 @@
             this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxEmail.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxEmail.Location = new System.Drawing.Point(689, 188);
+            this.txtBoxEmail.Location = new System.Drawing.Point(689, 191);
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(296, 20);
             this.txtBoxEmail.TabIndex = 19;
@@ -153,7 +153,7 @@
             this.txtBoxCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxCPF.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxCPF.Location = new System.Drawing.Point(671, 262);
+            this.txtBoxCPF.Location = new System.Drawing.Point(671, 265);
             this.txtBoxCPF.Name = "txtBoxCPF";
             this.txtBoxCPF.Size = new System.Drawing.Size(314, 20);
             this.txtBoxCPF.TabIndex = 25;
@@ -213,7 +213,7 @@
             this.txtBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxTelefone.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxTelefone.Location = new System.Drawing.Point(705, 331);
+            this.txtBoxTelefone.Location = new System.Drawing.Point(705, 334);
             this.txtBoxTelefone.Name = "txtBoxTelefone";
             this.txtBoxTelefone.Size = new System.Drawing.Size(281, 20);
             this.txtBoxTelefone.TabIndex = 31;
@@ -264,7 +264,7 @@
             this.txtBoxEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxEndereco.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxEndereco.Location = new System.Drawing.Point(322, 331);
+            this.txtBoxEndereco.Location = new System.Drawing.Point(322, 334);
             this.txtBoxEndereco.Name = "txtBoxEndereco";
             this.txtBoxEndereco.Size = new System.Drawing.Size(273, 20);
             this.txtBoxEndereco.TabIndex = 32;
@@ -275,7 +275,7 @@
             this.txtBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxSenha.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxSenha.Location = new System.Drawing.Point(300, 402);
+            this.txtBoxSenha.Location = new System.Drawing.Point(300, 405);
             this.txtBoxSenha.Name = "txtBoxSenha";
             this.txtBoxSenha.Size = new System.Drawing.Size(296, 20);
             this.txtBoxSenha.TabIndex = 38;
@@ -286,7 +286,7 @@
             this.txtBoxConfirmaSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxConfirmaSenha.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxConfirmaSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxConfirmaSenha.Location = new System.Drawing.Point(775, 401);
+            this.txtBoxConfirmaSenha.Location = new System.Drawing.Point(775, 404);
             this.txtBoxConfirmaSenha.Name = "txtBoxConfirmaSenha";
             this.txtBoxConfirmaSenha.Size = new System.Drawing.Size(212, 20);
             this.txtBoxConfirmaSenha.TabIndex = 37;

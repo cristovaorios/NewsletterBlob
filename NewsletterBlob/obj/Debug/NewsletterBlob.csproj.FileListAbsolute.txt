@@ -37,3 +37,5 @@ C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.V
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaContaUsuario.resources
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaCadastrarNoticias.resources
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaEditarNoticias.resources
+C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaNoticiasAutor.resources
+C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.View.JanelaOpcoesAutor.resources

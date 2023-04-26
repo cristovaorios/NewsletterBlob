@@ -103,11 +103,11 @@
             this.lblGeral.AutoSize = true;
             this.lblGeral.BackColor = System.Drawing.Color.Transparent;
             this.lblGeral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblGeral.Font = new System.Drawing.Font("Poppins Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGeral.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblGeral.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeral.ForeColor = System.Drawing.Color.Black;
             this.lblGeral.Location = new System.Drawing.Point(150, 32);
             this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(64, 30);
+            this.lblGeral.Size = new System.Drawing.Size(58, 30);
             this.lblGeral.TabIndex = 7;
             this.lblGeral.Text = "Geral";
             // 
@@ -118,7 +118,7 @@
             this.lblEsporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEsporte.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEsporte.ForeColor = System.Drawing.Color.Black;
-            this.lblEsporte.Location = new System.Drawing.Point(359, 32);
+            this.lblEsporte.Location = new System.Drawing.Point(351, 32);
             this.lblEsporte.Name = "lblEsporte";
             this.lblEsporte.Size = new System.Drawing.Size(76, 30);
             this.lblEsporte.TabIndex = 8;
@@ -131,11 +131,12 @@
             this.lblTecnologia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTecnologia.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTecnologia.ForeColor = System.Drawing.Color.Black;
-            this.lblTecnologia.Location = new System.Drawing.Point(231, 32);
+            this.lblTecnologia.Location = new System.Drawing.Point(223, 32);
             this.lblTecnologia.Name = "lblTecnologia";
             this.lblTecnologia.Size = new System.Drawing.Size(106, 30);
             this.lblTecnologia.TabIndex = 9;
             this.lblTecnologia.Text = "Tecnologia";
+            this.lblTecnologia.Click += new System.EventHandler(this.lblTecnologia_Click);
             // 
             // lblEntretenimento
             // 
@@ -144,7 +145,7 @@
             this.lblEntretenimento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEntretenimento.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntretenimento.ForeColor = System.Drawing.Color.Black;
-            this.lblEntretenimento.Location = new System.Drawing.Point(456, 32);
+            this.lblEntretenimento.Location = new System.Drawing.Point(448, 32);
             this.lblEntretenimento.Name = "lblEntretenimento";
             this.lblEntretenimento.Size = new System.Drawing.Size(145, 30);
             this.lblEntretenimento.TabIndex = 10;
@@ -157,7 +158,7 @@
             this.lblPolitica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPolitica.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPolitica.ForeColor = System.Drawing.Color.Black;
-            this.lblPolitica.Location = new System.Drawing.Point(622, 32);
+            this.lblPolitica.Location = new System.Drawing.Point(614, 32);
             this.lblPolitica.Name = "lblPolitica";
             this.lblPolitica.Size = new System.Drawing.Size(73, 30);
             this.lblPolitica.TabIndex = 11;

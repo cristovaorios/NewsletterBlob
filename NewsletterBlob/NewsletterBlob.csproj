@@ -101,6 +101,18 @@
     <Compile Include="View\JanelaNoticiaExpandida.Designer.cs">
       <DependentUpon>JanelaNoticiaExpandida.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\JanelaNoticiasAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaNoticiasAutor.Designer.cs">
+      <DependentUpon>JanelaNoticiasAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaOpcoesAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaOpcoesAutor.Designer.cs">
+      <DependentUpon>JanelaOpcoesAutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\JanelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +144,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\JanelaNoticiaExpandida.resx">
       <DependentUpon>JanelaNoticiaExpandida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaNoticiasAutor.resx">
+      <DependentUpon>JanelaNoticiasAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaOpcoesAutor.resx">
+      <DependentUpon>JanelaOpcoesAutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\JanelaPrincipal.resx">
       <DependentUpon>JanelaPrincipal.cs</DependentUpon>

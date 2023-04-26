@@ -62,6 +62,7 @@
             this.pctBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxPerfil.TabIndex = 72;
             this.pctBoxPerfil.TabStop = false;
+            this.pctBoxPerfil.Click += new System.EventHandler(this.pctBoxPerfil_Click);
             // 
             // pctBoxArrowBack
             // 

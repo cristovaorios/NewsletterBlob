@@ -334,6 +334,7 @@
             this.pctBoxLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLike.TabIndex = 74;
             this.pctBoxLike.TabStop = false;
+            this.pctBoxLike.Click += new System.EventHandler(this.pctBoxLike_Click);
             // 
             // pctBoxNoticia
             // 
@@ -377,6 +378,7 @@
             this.pctBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxPerfil.TabIndex = 14;
             this.pctBoxPerfil.TabStop = false;
+            this.pctBoxPerfil.Click += new System.EventHandler(this.pctBoxPerfil_Click);
             // 
             // pctBoxLogo
             // 

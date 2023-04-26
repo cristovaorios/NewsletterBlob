@@ -180,7 +180,7 @@
             this.txtBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUsuario.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxUsuario.Location = new System.Drawing.Point(180, 286);
+            this.txtBoxUsuario.Location = new System.Drawing.Point(180, 287);
             this.txtBoxUsuario.Name = "txtBoxUsuario";
             this.txtBoxUsuario.Size = new System.Drawing.Size(261, 20);
             this.txtBoxUsuario.TabIndex = 13;
@@ -191,7 +191,7 @@
             this.txtBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxSenha.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxSenha.Location = new System.Drawing.Point(173, 346);
+            this.txtBoxSenha.Location = new System.Drawing.Point(173, 347);
             this.txtBoxSenha.Name = "txtBoxSenha";
             this.txtBoxSenha.Size = new System.Drawing.Size(268, 20);
             this.txtBoxSenha.TabIndex = 14;
