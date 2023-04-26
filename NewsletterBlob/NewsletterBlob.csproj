@@ -59,6 +59,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="View\JanelaEditarNoticias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaEditarNoticias.Designer.cs">
+      <DependentUpon>JanelaEditarNoticias.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\JanelaCadastrarNoticias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,12 +82,6 @@
     </Compile>
     <Compile Include="View\JanelaContaUsuario.Designer.cs">
       <DependentUpon>JanelaContaUsuario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\JanelaEditarNoticias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\JanelaEditarNoticias.Designer.cs">
-      <DependentUpon>JanelaEditarNoticias.cs</DependentUpon>
     </Compile>
     <Compile Include="View\JanelaLoginAutor.cs">
       <SubType>Form</SubType>
@@ -101,6 +101,18 @@
     <Compile Include="View\JanelaNoticiaExpandida.Designer.cs">
       <DependentUpon>JanelaNoticiaExpandida.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\JanelaNoticiasAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaNoticiasAutor.Designer.cs">
+      <DependentUpon>JanelaNoticiasAutor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\JanelaOpcoesAutor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\JanelaOpcoesAutor.Designer.cs">
+      <DependentUpon>JanelaOpcoesAutor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\JanelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,11 +124,35 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaEditarNoticias.resx">
+      <DependentUpon>JanelaEditarNoticias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaCadastrarNoticias.resx">
+      <DependentUpon>JanelaCadastrarNoticias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\JanelaCadastrarUsuario.resx">
       <DependentUpon>JanelaCadastrarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaContaUsuario.resx">
+      <DependentUpon>JanelaContaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaLoginAutor.resx">
+      <DependentUpon>JanelaLoginAutor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\JanelaLoginLeitor.resx">
       <DependentUpon>JanelaLoginLeitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaNoticiaExpandida.resx">
+      <DependentUpon>JanelaNoticiaExpandida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaNoticiasAutor.resx">
+      <DependentUpon>JanelaNoticiasAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaOpcoesAutor.resx">
+      <DependentUpon>JanelaOpcoesAutor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\JanelaPrincipal.resx">
+      <DependentUpon>JanelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -154,6 +190,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cadastro %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component 4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %284%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,5 +16,17 @@ namespace NewsletterBlob.View
         {
             InitializeComponent();
         }
+
+        private void pctBoxArrowBack_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal().Show();
+            this.Hide();
+        }
+
+        private void pctBoxPerfil_Click(object sender, EventArgs e)
+        {
+            new JanelaOpcoesAutor().Show();
+            this.Hide();
+        }
     }
 }

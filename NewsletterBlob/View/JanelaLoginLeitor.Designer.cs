@@ -44,6 +44,7 @@
             this.txtBoxUsuario = new System.Windows.Forms.TextBox();
             this.txtBoxSenha = new System.Windows.Forms.TextBox();
             this.lblEntrarAutor = new System.Windows.Forms.Label();
+            this.checkBoxMostrarSenha = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxPessoasLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLogoLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLockIcon)).BeginInit();
@@ -65,7 +66,7 @@
             // 
             this.pctBoxLogoLogin.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLogoLogin.Image = global::NewsletterBlob.Properties.Resources.png_news;
-            this.pctBoxLogoLogin.Location = new System.Drawing.Point(232, 50);
+            this.pctBoxLogoLogin.Location = new System.Drawing.Point(239, 50);
             this.pctBoxLogoLogin.Name = "pctBoxLogoLogin";
             this.pctBoxLogoLogin.Size = new System.Drawing.Size(100, 100);
             this.pctBoxLogoLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -78,7 +79,7 @@
             this.lblBoasVindas.BackColor = System.Drawing.Color.Transparent;
             this.lblBoasVindas.Font = new System.Drawing.Font("Poppins SemiBold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBoasVindas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblBoasVindas.Location = new System.Drawing.Point(104, 167);
+            this.lblBoasVindas.Location = new System.Drawing.Point(111, 167);
             this.lblBoasVindas.Name = "lblBoasVindas";
             this.lblBoasVindas.Size = new System.Drawing.Size(371, 42);
             this.lblBoasVindas.TabIndex = 2;
@@ -90,7 +91,7 @@
             this.lblUsuario.BackColor = System.Drawing.Color.Transparent;
             this.lblUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblUsuario.Location = new System.Drawing.Point(106, 261);
+            this.lblUsuario.Location = new System.Drawing.Point(113, 261);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(73, 26);
             this.lblUsuario.TabIndex = 3;
@@ -102,7 +103,7 @@
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblSenha.Location = new System.Drawing.Point(106, 321);
+            this.lblSenha.Location = new System.Drawing.Point(113, 321);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(63, 26);
             this.lblSenha.TabIndex = 4;
@@ -111,7 +112,7 @@
             // pnlUsuario
             // 
             this.pnlUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlUsuario.Location = new System.Drawing.Point(111, 285);
+            this.pnlUsuario.Location = new System.Drawing.Point(118, 285);
             this.pnlUsuario.Name = "pnlUsuario";
             this.pnlUsuario.Size = new System.Drawing.Size(354, 3);
             this.pnlUsuario.TabIndex = 5;
@@ -119,7 +120,7 @@
             // pnlSenha
             // 
             this.pnlSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlSenha.Location = new System.Drawing.Point(111, 346);
+            this.pnlSenha.Location = new System.Drawing.Point(118, 346);
             this.pnlSenha.Name = "pnlSenha";
             this.pnlSenha.Size = new System.Drawing.Size(354, 3);
             this.pnlSenha.TabIndex = 6;
@@ -128,7 +129,7 @@
             // 
             this.pctBoxLockIcon.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLockIcon.Image = global::NewsletterBlob.Properties.Resources.Frame__1_;
-            this.pctBoxLockIcon.Location = new System.Drawing.Point(447, 328);
+            this.pctBoxLockIcon.Location = new System.Drawing.Point(454, 328);
             this.pctBoxLockIcon.Name = "pctBoxLockIcon";
             this.pctBoxLockIcon.Size = new System.Drawing.Size(18, 16);
             this.pctBoxLockIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +143,7 @@
             this.lblLimpar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblLimpar.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLimpar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblLimpar.Location = new System.Drawing.Point(404, 362);
+            this.lblLimpar.Location = new System.Drawing.Point(411, 362);
             this.lblLimpar.Name = "lblLimpar";
             this.lblLimpar.Size = new System.Drawing.Size(63, 26);
             this.lblLimpar.TabIndex = 9;
@@ -156,12 +157,13 @@
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEntrar.ForeColor = System.Drawing.Color.White;
-            this.btnEntrar.Location = new System.Drawing.Point(111, 419);
+            this.btnEntrar.Location = new System.Drawing.Point(118, 419);
             this.btnEntrar.Name = "btnEntrar";
             this.btnEntrar.Size = new System.Drawing.Size(354, 49);
             this.btnEntrar.TabIndex = 10;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // btnCadastrar
             // 
@@ -170,7 +172,7 @@
             this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastrar.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.btnCadastrar.Location = new System.Drawing.Point(111, 476);
+            this.btnCadastrar.Location = new System.Drawing.Point(118, 476);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(354, 49);
             this.btnCadastrar.TabIndex = 11;
@@ -182,7 +184,7 @@
             // 
             this.pctBoxUserIcon.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxUserIcon.Image = global::NewsletterBlob.Properties.Resources.Frame;
-            this.pctBoxUserIcon.Location = new System.Drawing.Point(447, 267);
+            this.pctBoxUserIcon.Location = new System.Drawing.Point(454, 267);
             this.pctBoxUserIcon.Name = "pctBoxUserIcon";
             this.pctBoxUserIcon.Size = new System.Drawing.Size(18, 16);
             this.pctBoxUserIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -195,7 +197,7 @@
             this.txtBoxUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxUsuario.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxUsuario.Location = new System.Drawing.Point(180, 264);
+            this.txtBoxUsuario.Location = new System.Drawing.Point(187, 265);
             this.txtBoxUsuario.Name = "txtBoxUsuario";
             this.txtBoxUsuario.Size = new System.Drawing.Size(261, 20);
             this.txtBoxUsuario.TabIndex = 13;
@@ -206,10 +208,11 @@
             this.txtBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxSenha.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxSenha.Location = new System.Drawing.Point(173, 324);
+            this.txtBoxSenha.Location = new System.Drawing.Point(180, 325);
             this.txtBoxSenha.Name = "txtBoxSenha";
             this.txtBoxSenha.Size = new System.Drawing.Size(268, 20);
             this.txtBoxSenha.TabIndex = 14;
+            this.txtBoxSenha.UseSystemPasswordChar = true;
             // 
             // lblEntrarAutor
             // 
@@ -218,11 +221,27 @@
             this.lblEntrarAutor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEntrarAutor.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntrarAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblEntrarAutor.Location = new System.Drawing.Point(215, 538);
+            this.lblEntrarAutor.Location = new System.Drawing.Point(222, 538);
             this.lblEntrarAutor.Name = "lblEntrarAutor";
             this.lblEntrarAutor.Size = new System.Drawing.Size(150, 26);
             this.lblEntrarAutor.TabIndex = 15;
             this.lblEntrarAutor.Text = "Entrar como Autor";
+            this.lblEntrarAutor.Click += new System.EventHandler(this.lblEntrarAutor_Click);
+            // 
+            // checkBoxMostrarSenha
+            // 
+            this.checkBoxMostrarSenha.AutoSize = true;
+            this.checkBoxMostrarSenha.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxMostrarSenha.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.checkBoxMostrarSenha.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMostrarSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
+            this.checkBoxMostrarSenha.Location = new System.Drawing.Point(118, 362);
+            this.checkBoxMostrarSenha.Name = "checkBoxMostrarSenha";
+            this.checkBoxMostrarSenha.Size = new System.Drawing.Size(143, 30);
+            this.checkBoxMostrarSenha.TabIndex = 16;
+            this.checkBoxMostrarSenha.Text = "Mostrar senha";
+            this.checkBoxMostrarSenha.UseVisualStyleBackColor = false;
+            this.checkBoxMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBoxMostrarSenha_CheckedChanged);
             // 
             // JanelaLoginLeitor
             // 
@@ -231,6 +250,7 @@
             this.AutoSize = true;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1262, 604);
+            this.Controls.Add(this.checkBoxMostrarSenha);
             this.Controls.Add(this.lblEntrarAutor);
             this.Controls.Add(this.txtBoxSenha);
             this.Controls.Add(this.txtBoxUsuario);
@@ -279,5 +299,6 @@
         private System.Windows.Forms.TextBox txtBoxUsuario;
         private System.Windows.Forms.TextBox txtBoxSenha;
         private System.Windows.Forms.Label lblEntrarAutor;
+        private System.Windows.Forms.CheckBox checkBoxMostrarSenha;
     }
 }
