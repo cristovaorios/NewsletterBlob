@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewsletterBlob.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,8 +26,73 @@ namespace NewsletterBlob.View
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            new JanelaPrincipal().Show();
-            this.Hide();
+            if (rdBtnConcordaTermos.Checked)
+            {
+                try
+                {
+                    //Verificação
+                    if(txtBoxNome.Text.Trim() == "")
+                    {
+                        //Visible = true;
+                    }else if (txtBoxEmail.Text.Trim() == "")
+                    {
+                        //Visible = true;
+                    }
+                    else if (txtBoxCPF.Text.Trim() == "")
+                    {
+                        //Visible = true;
+                    }else if(txtBoxTelefone.Text.Trim() == "")
+                    {
+                        //Visible = true;
+                    }else if(txtBoxSenha.Text.Trim() == "")
+                    {
+                        //Visible = true;
+                    }else if(txtBoxConfirmaSenha.Text.Trim() == "")
+                    {
+                        //Visible = true;
+                    }
+                    else
+                    {
+                        ControllerLeitor controllerLeitor = new ControllerLeitor();
+
+                        //Verificando a idade
+
+                        DateTime dataNascimento = Convert.ToDateTime(dtTmPckrDataNasc.Value);
+                        int idade = DateTime.Now.Year - dataNascimento.Year;
+                        if (DateTime.Now.DayOfYear < dataNascimento.DayOfYear)
+                        {
+                            idade = idade - 1;
+                        }
+
+                        if (idade >= 18)
+                        {
+                            if (txtBoxConfirmaSenha.Text == txtBoxSenha.Text)
+                            {
+                                controllerLeitor.cadastrarLeitor(txtBoxNome.Text.Trim(), txtBoxEmail.Text.Trim(),
+                                    dtTmPckrDataNasc.Value, txtBoxCPF.Text.Trim(), txtBoxEndereco.Text.Trim(),
+                                    txtBoxTelefone.Text.Trim(), txtBoxSenha.Text.Trim());
+                                new JanelaPrincipal().Show();
+                                this.Hide();
+                            }
+                            else
+                                MessageBox.Show("As senhas devem ser iguais!", "Confimação de senha diferente", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                        }
+                        else
+                            MessageBox.Show("O usuário deve ser maior de idade!", "Validação de Maioridade", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                    }
+
+                    
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Aceite os termos de contrato para criar uma conta na aplicação!", "Condição dos Termos", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
     }
 }

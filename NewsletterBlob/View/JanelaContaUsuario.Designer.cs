@@ -70,9 +70,10 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(438, 529);
+            this.btnEditar.Location = new System.Drawing.Point(328, 430);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(354, 49);
+            this.btnEditar.Size = new System.Drawing.Size(266, 40);
             this.btnEditar.TabIndex = 68;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -83,17 +84,19 @@
             this.txtBoxSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxSenha.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxSenha.Location = new System.Drawing.Point(446, 403);
+            this.txtBoxSenha.Location = new System.Drawing.Point(334, 327);
+            this.txtBoxSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxSenha.Name = "txtBoxSenha";
-            this.txtBoxSenha.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxSenha.Size = new System.Drawing.Size(222, 16);
             this.txtBoxSenha.TabIndex = 66;
             // 
             // pnlSenha
             // 
             this.pnlSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlSenha.Location = new System.Drawing.Point(387, 427);
+            this.pnlSenha.Location = new System.Drawing.Point(290, 347);
+            this.pnlSenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlSenha.Name = "pnlSenha";
-            this.pnlSenha.Size = new System.Drawing.Size(354, 3);
+            this.pnlSenha.Size = new System.Drawing.Size(266, 2);
             this.pnlSenha.TabIndex = 62;
             // 
             // lblSenha
@@ -102,9 +105,10 @@
             this.lblSenha.BackColor = System.Drawing.Color.Transparent;
             this.lblSenha.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblSenha.Location = new System.Drawing.Point(382, 403);
+            this.lblSenha.Location = new System.Drawing.Point(286, 327);
+            this.lblSenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(63, 26);
+            this.lblSenha.Size = new System.Drawing.Size(51, 22);
             this.lblSenha.TabIndex = 61;
             this.lblSenha.Text = "Senha:";
             // 
@@ -114,9 +118,10 @@
             this.txtBoxEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxEndereco.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxEndereco.Location = new System.Drawing.Point(468, 332);
+            this.txtBoxEndereco.Location = new System.Drawing.Point(351, 270);
+            this.txtBoxEndereco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxEndereco.Name = "txtBoxEndereco";
-            this.txtBoxEndereco.Size = new System.Drawing.Size(273, 20);
+            this.txtBoxEndereco.Size = new System.Drawing.Size(205, 16);
             this.txtBoxEndereco.TabIndex = 60;
             // 
             // txtBoxTelefone
@@ -125,17 +130,19 @@
             this.txtBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxTelefone.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxTelefone.Location = new System.Drawing.Point(851, 331);
+            this.txtBoxTelefone.Location = new System.Drawing.Point(638, 269);
+            this.txtBoxTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxTelefone.Name = "txtBoxTelefone";
-            this.txtBoxTelefone.Size = new System.Drawing.Size(281, 20);
+            this.txtBoxTelefone.Size = new System.Drawing.Size(211, 16);
             this.txtBoxTelefone.TabIndex = 59;
             // 
             // pnlTelefone
             // 
             this.pnlTelefone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlTelefone.Location = new System.Drawing.Point(778, 355);
+            this.pnlTelefone.Location = new System.Drawing.Point(584, 288);
+            this.pnlTelefone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlTelefone.Name = "pnlTelefone";
-            this.pnlTelefone.Size = new System.Drawing.Size(354, 3);
+            this.pnlTelefone.Size = new System.Drawing.Size(266, 2);
             this.pnlTelefone.TabIndex = 58;
             // 
             // lblTelefone
@@ -144,18 +151,20 @@
             this.lblTelefone.BackColor = System.Drawing.Color.Transparent;
             this.lblTelefone.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblTelefone.Location = new System.Drawing.Point(773, 331);
+            this.lblTelefone.Location = new System.Drawing.Point(580, 269);
+            this.lblTelefone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(79, 26);
+            this.lblTelefone.Size = new System.Drawing.Size(63, 22);
             this.lblTelefone.TabIndex = 57;
             this.lblTelefone.Text = "Telefone:";
             // 
             // pnlEndeco
             // 
             this.pnlEndeco.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlEndeco.Location = new System.Drawing.Point(386, 356);
+            this.pnlEndeco.Location = new System.Drawing.Point(290, 289);
+            this.pnlEndeco.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEndeco.Name = "pnlEndeco";
-            this.pnlEndeco.Size = new System.Drawing.Size(354, 3);
+            this.pnlEndeco.Size = new System.Drawing.Size(266, 2);
             this.pnlEndeco.TabIndex = 56;
             // 
             // lblEndereco
@@ -164,9 +173,10 @@
             this.lblEndereco.BackColor = System.Drawing.Color.Transparent;
             this.lblEndereco.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEndereco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblEndereco.Location = new System.Drawing.Point(381, 332);
+            this.lblEndereco.Location = new System.Drawing.Point(286, 270);
+            this.lblEndereco.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEndereco.Name = "lblEndereco";
-            this.lblEndereco.Size = new System.Drawing.Size(86, 26);
+            this.lblEndereco.Size = new System.Drawing.Size(68, 22);
             this.lblEndereco.TabIndex = 55;
             this.lblEndereco.Text = "Endereço:";
             // 
@@ -174,9 +184,10 @@
             // 
             this.dtTmPckrDataNasc.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtTmPckrDataNasc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTmPckrDataNasc.Location = new System.Drawing.Point(555, 261);
+            this.dtTmPckrDataNasc.Location = new System.Drawing.Point(416, 212);
+            this.dtTmPckrDataNasc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtTmPckrDataNasc.Name = "dtTmPckrDataNasc";
-            this.dtTmPckrDataNasc.Size = new System.Drawing.Size(183, 22);
+            this.dtTmPckrDataNasc.Size = new System.Drawing.Size(138, 20);
             this.dtTmPckrDataNasc.TabIndex = 54;
             // 
             // txtBoxCPF
@@ -185,17 +196,19 @@
             this.txtBoxCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxCPF.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxCPF.Location = new System.Drawing.Point(817, 263);
+            this.txtBoxCPF.Location = new System.Drawing.Point(613, 214);
+            this.txtBoxCPF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxCPF.Name = "txtBoxCPF";
-            this.txtBoxCPF.Size = new System.Drawing.Size(314, 20);
+            this.txtBoxCPF.Size = new System.Drawing.Size(236, 16);
             this.txtBoxCPF.TabIndex = 53;
             // 
             // pnlCPF
             // 
             this.pnlCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlCPF.Location = new System.Drawing.Point(777, 287);
+            this.pnlCPF.Location = new System.Drawing.Point(583, 233);
+            this.pnlCPF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlCPF.Name = "pnlCPF";
-            this.pnlCPF.Size = new System.Drawing.Size(354, 3);
+            this.pnlCPF.Size = new System.Drawing.Size(266, 2);
             this.pnlCPF.TabIndex = 52;
             // 
             // lblCPF
@@ -204,18 +217,20 @@
             this.lblCPF.BackColor = System.Drawing.Color.Transparent;
             this.lblCPF.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblCPF.Location = new System.Drawing.Point(772, 263);
+            this.lblCPF.Location = new System.Drawing.Point(579, 214);
+            this.lblCPF.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCPF.Name = "lblCPF";
-            this.lblCPF.Size = new System.Drawing.Size(44, 26);
+            this.lblCPF.Size = new System.Drawing.Size(35, 22);
             this.lblCPF.TabIndex = 51;
             this.lblCPF.Text = "CPF:";
             // 
             // pnlDataNasc
             // 
             this.pnlDataNasc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlDataNasc.Location = new System.Drawing.Point(385, 288);
+            this.pnlDataNasc.Location = new System.Drawing.Point(289, 234);
+            this.pnlDataNasc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlDataNasc.Name = "pnlDataNasc";
-            this.pnlDataNasc.Size = new System.Drawing.Size(354, 3);
+            this.pnlDataNasc.Size = new System.Drawing.Size(266, 2);
             this.pnlDataNasc.TabIndex = 50;
             // 
             // lblDataNasc
@@ -224,9 +239,10 @@
             this.lblDataNasc.BackColor = System.Drawing.Color.Transparent;
             this.lblDataNasc.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDataNasc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblDataNasc.Location = new System.Drawing.Point(380, 264);
+            this.lblDataNasc.Location = new System.Drawing.Point(285, 214);
+            this.lblDataNasc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDataNasc.Name = "lblDataNasc";
-            this.lblDataNasc.Size = new System.Drawing.Size(169, 26);
+            this.lblDataNasc.Size = new System.Drawing.Size(133, 22);
             this.lblDataNasc.TabIndex = 49;
             this.lblDataNasc.Text = "Data de Nascimento:";
             // 
@@ -236,17 +252,19 @@
             this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxEmail.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxEmail.Location = new System.Drawing.Point(835, 189);
+            this.txtBoxEmail.Location = new System.Drawing.Point(626, 154);
+            this.txtBoxEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxEmail.Name = "txtBoxEmail";
-            this.txtBoxEmail.Size = new System.Drawing.Size(296, 20);
+            this.txtBoxEmail.Size = new System.Drawing.Size(222, 16);
             this.txtBoxEmail.TabIndex = 48;
             // 
             // pnlEmail
             // 
             this.pnlEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlEmail.Location = new System.Drawing.Point(776, 213);
+            this.pnlEmail.Location = new System.Drawing.Point(582, 173);
+            this.pnlEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlEmail.Name = "pnlEmail";
-            this.pnlEmail.Size = new System.Drawing.Size(354, 3);
+            this.pnlEmail.Size = new System.Drawing.Size(266, 2);
             this.pnlEmail.TabIndex = 47;
             // 
             // lblEmail
@@ -255,9 +273,10 @@
             this.lblEmail.BackColor = System.Drawing.Color.Transparent;
             this.lblEmail.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblEmail.Location = new System.Drawing.Point(771, 189);
+            this.lblEmail.Location = new System.Drawing.Point(578, 154);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(64, 26);
+            this.lblEmail.Size = new System.Drawing.Size(52, 22);
             this.lblEmail.TabIndex = 46;
             this.lblEmail.Text = "E-mail:";
             // 
@@ -267,17 +286,19 @@
             this.txtBoxNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxNome.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxNome.Location = new System.Drawing.Point(438, 191);
+            this.txtBoxNome.Location = new System.Drawing.Point(328, 155);
+            this.txtBoxNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxNome.Name = "txtBoxNome";
-            this.txtBoxNome.Size = new System.Drawing.Size(300, 20);
+            this.txtBoxNome.Size = new System.Drawing.Size(225, 16);
             this.txtBoxNome.TabIndex = 45;
             // 
             // pnlNome
             // 
             this.pnlNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.pnlNome.Location = new System.Drawing.Point(384, 214);
+            this.pnlNome.Location = new System.Drawing.Point(288, 174);
+            this.pnlNome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNome.Name = "pnlNome";
-            this.pnlNome.Size = new System.Drawing.Size(354, 3);
+            this.pnlNome.Size = new System.Drawing.Size(266, 2);
             this.pnlNome.TabIndex = 44;
             // 
             // lblNome
@@ -286,9 +307,10 @@
             this.lblNome.BackColor = System.Drawing.Color.Transparent;
             this.lblNome.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.lblNome.Location = new System.Drawing.Point(379, 190);
+            this.lblNome.Location = new System.Drawing.Point(284, 154);
+            this.lblNome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(60, 26);
+            this.lblNome.Size = new System.Drawing.Size(48, 22);
             this.lblNome.TabIndex = 43;
             this.lblNome.Text = "Nome:";
             // 
@@ -297,9 +319,10 @@
             this.pctBoxArrowBack.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxArrowBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxArrowBack.Image = global::NewsletterBlob.Properties.Resources.Frame__2_;
-            this.pctBoxArrowBack.Location = new System.Drawing.Point(28, 23);
+            this.pctBoxArrowBack.Location = new System.Drawing.Point(21, 19);
+            this.pctBoxArrowBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pctBoxArrowBack.Name = "pctBoxArrowBack";
-            this.pctBoxArrowBack.Size = new System.Drawing.Size(40, 40);
+            this.pctBoxArrowBack.Size = new System.Drawing.Size(30, 32);
             this.pctBoxArrowBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBoxArrowBack.TabIndex = 42;
             this.pctBoxArrowBack.TabStop = false;
@@ -311,9 +334,10 @@
             this.lblMinhaConta.BackColor = System.Drawing.Color.Transparent;
             this.lblMinhaConta.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMinhaConta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.lblMinhaConta.Location = new System.Drawing.Point(497, 67);
+            this.lblMinhaConta.Location = new System.Drawing.Point(373, 54);
+            this.lblMinhaConta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMinhaConta.Name = "lblMinhaConta";
-            this.lblMinhaConta.Size = new System.Drawing.Size(236, 58);
+            this.lblMinhaConta.Size = new System.Drawing.Size(198, 48);
             this.lblMinhaConta.TabIndex = 41;
             this.lblMinhaConta.Text = "Minha conta";
             // 
@@ -322,9 +346,10 @@
             this.pctBoxPerfil.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxPerfil.Image = global::NewsletterBlob.Properties.Resources.Component_4;
-            this.pctBoxPerfil.Location = new System.Drawing.Point(1177, 23);
+            this.pctBoxPerfil.Location = new System.Drawing.Point(883, 19);
+            this.pctBoxPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pctBoxPerfil.Name = "pctBoxPerfil";
-            this.pctBoxPerfil.Size = new System.Drawing.Size(50, 50);
+            this.pctBoxPerfil.Size = new System.Drawing.Size(38, 41);
             this.pctBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxPerfil.TabIndex = 69;
             this.pctBoxPerfil.TabStop = false;
@@ -333,17 +358,20 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.panel1.Location = new System.Drawing.Point(326, 191);
+            this.panel1.Location = new System.Drawing.Point(244, 155);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(3, 239);
+            this.panel1.Size = new System.Drawing.Size(2, 194);
             this.panel1.TabIndex = 70;
             // 
             // pctBoxFotoUsuario
             // 
             this.pctBoxFotoUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctBoxFotoUsuario.Location = new System.Drawing.Point(130, 202);
+            this.pctBoxFotoUsuario.Location = new System.Drawing.Point(98, 164);
+            this.pctBoxFotoUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pctBoxFotoUsuario.Name = "pctBoxFotoUsuario";
-            this.pctBoxFotoUsuario.Size = new System.Drawing.Size(100, 100);
+            this.pctBoxFotoUsuario.Size = new System.Drawing.Size(76, 82);
+            this.pctBoxFotoUsuario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxFotoUsuario.TabIndex = 71;
             this.pctBoxFotoUsuario.TabStop = false;
             // 
@@ -354,12 +382,14 @@
             this.btnAlterarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterarFoto.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAlterarFoto.ForeColor = System.Drawing.Color.White;
-            this.btnAlterarFoto.Location = new System.Drawing.Point(92, 319);
+            this.btnAlterarFoto.Location = new System.Drawing.Point(69, 259);
+            this.btnAlterarFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAlterarFoto.Name = "btnAlterarFoto";
-            this.btnAlterarFoto.Size = new System.Drawing.Size(180, 49);
+            this.btnAlterarFoto.Size = new System.Drawing.Size(135, 40);
             this.btnAlterarFoto.TabIndex = 72;
             this.btnAlterarFoto.Text = "Alterar foto";
             this.btnAlterarFoto.UseVisualStyleBackColor = false;
+            this.btnAlterarFoto.Click += new System.EventHandler(this.btnAlterarFoto_Click);
             // 
             // btnApagarFoto
             // 
@@ -368,19 +398,20 @@
             this.btnApagarFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApagarFoto.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnApagarFoto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.btnApagarFoto.Location = new System.Drawing.Point(92, 374);
+            this.btnApagarFoto.Location = new System.Drawing.Point(69, 304);
+            this.btnApagarFoto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnApagarFoto.Name = "btnApagarFoto";
-            this.btnApagarFoto.Size = new System.Drawing.Size(180, 49);
+            this.btnApagarFoto.Size = new System.Drawing.Size(135, 40);
             this.btnApagarFoto.TabIndex = 73;
             this.btnApagarFoto.Text = "Apagar foto";
             this.btnApagarFoto.UseVisualStyleBackColor = false;
             // 
             // JanelaContaUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NewsletterBlob.Properties.Resources.Cadastro__1_;
-            this.ClientSize = new System.Drawing.Size(1262, 638);
+            this.ClientSize = new System.Drawing.Size(946, 518);
             this.Controls.Add(this.btnApagarFoto);
             this.Controls.Add(this.btnAlterarFoto);
             this.Controls.Add(this.pctBoxFotoUsuario);
@@ -411,6 +442,7 @@
             this.Controls.Add(this.pctBoxArrowBack);
             this.Controls.Add(this.lblMinhaConta);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "JanelaContaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

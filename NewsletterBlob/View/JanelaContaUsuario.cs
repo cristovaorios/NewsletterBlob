@@ -28,5 +28,27 @@ namespace NewsletterBlob.View
             new JanelaOpcoesAutor().Show();
             this.Hide();
         }
+
+        private void btnAlterarFoto_Click(object sender, EventArgs e)
+        {
+            carregarFoto();
+        }
+
+        private void carregarFoto()
+        {
+            string caminhoFoto = "";
+            var openFile = new OpenFileDialog();
+            openFile.Filter = "Arquivos de imagens jpg e png| *.jpg; *png";
+            openFile.Multiselect = false;
+
+            if(openFile.ShowDialog() == DialogResult.OK)
+            {
+                caminhoFoto = openFile.FileName;
+            }
+            if (caminhoFoto != "")
+            {
+                pctBoxFotoUsuario.Load(caminhoFoto);
+            }
+        }
     }
 }

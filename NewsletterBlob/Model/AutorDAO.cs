@@ -8,5 +8,6 @@ namespace NewsletterBlob.Model
 {
     internal class AutorDAO
     {
+
     }
 }
