@@ -33,23 +33,31 @@ namespace NewsletterBlob.View
                     //Verificação
                     if(txtBoxNome.Text.Trim() == "")
                     {
-                        //Visible = true;
-                    }else if (txtBoxEmail.Text.Trim() == "")
+                        pctBoxAlertaNome.Visible = true;
+                    }
+                    else if (txtBoxEmail.Text.Trim() == "")
                     {
-                        //Visible = true;
+                        pctBoxAlertaEmail.Visible = true;
                     }
                     else if (txtBoxCPF.Text.Trim() == "")
                     {
-                        //Visible = true;
-                    }else if(txtBoxTelefone.Text.Trim() == "")
+                        pctBoxAlertaCPF.Visible = true;
+                    }
+                    else if (txtBoxEndereco.Text.Trim() == "")
                     {
-                        //Visible = true;
-                    }else if(txtBoxSenha.Text.Trim() == "")
+                        pctBoxAlertaEndereco.Visible = true;
+                    }
+                    else if(txtBoxTelefone.Text.Trim() == "")
                     {
-                        //Visible = true;
-                    }else if(txtBoxConfirmaSenha.Text.Trim() == "")
+                        pctBoxAlertaTelefone.Visible = true;
+                    }
+                    else if(txtBoxSenha.Text.Trim() == "")
                     {
-                        //Visible = true;
+                        pctBoxAlertaSenha.Visible = true;
+                    }
+                    else if(txtBoxConfirmaSenha.Text.Trim() == "")
+                    {
+                        pctBoxAlertaConfirmaSenha.Visible = true;
                     }
                     else
                     {

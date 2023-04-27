@@ -31,24 +31,32 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JanelaEditarNoticias));
             this.pctBoxPerfil = new System.Windows.Forms.PictureBox();
             this.pctBoxArrowBack = new System.Windows.Forms.PictureBox();
-            this.lblCadastraNoticia = new System.Windows.Forms.Label();
+            this.lblEditarNoticia = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.txtBoxTitulo = new System.Windows.Forms.TextBox();
+            this.txtBoxSubTitulo = new System.Windows.Forms.TextBox();
+            this.lblSubTitulo = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.txtBoxAutor = new System.Windows.Forms.TextBox();
+            this.lblAutor = new System.Windows.Forms.Label();
+            this.dtTmPckrData = new System.Windows.Forms.DateTimePicker();
+            this.lblImagem = new System.Windows.Forms.Label();
+            this.txtBoxConteudo = new System.Windows.Forms.TextBox();
+            this.lblConteudo = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.btnCarregarImagem = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbBoxCategoria = new System.Windows.Forms.ComboBox();
+            this.pctBoxAlertaAutor = new System.Windows.Forms.PictureBox();
+            this.pctBoxAlertaTitulo = new System.Windows.Forms.PictureBox();
+            this.pctBoxAlertaConteudo = new System.Windows.Forms.PictureBox();
+            this.pctBoxAlertaSubTitulo = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxPerfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxArrowBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaAutor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaTitulo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaConteudo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaSubTitulo)).BeginInit();
             this.SuspendLayout();
             // 
             // pctBoxPerfil
@@ -77,17 +85,17 @@
             this.pctBoxArrowBack.TabStop = false;
             this.pctBoxArrowBack.Click += new System.EventHandler(this.pctBoxArrowBack_Click);
             // 
-            // lblCadastraNoticia
+            // lblEditarNoticia
             // 
-            this.lblCadastraNoticia.AutoSize = true;
-            this.lblCadastraNoticia.BackColor = System.Drawing.Color.Transparent;
-            this.lblCadastraNoticia.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastraNoticia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.lblCadastraNoticia.Location = new System.Drawing.Point(460, 72);
-            this.lblCadastraNoticia.Name = "lblCadastraNoticia";
-            this.lblCadastraNoticia.Size = new System.Drawing.Size(322, 58);
-            this.lblCadastraNoticia.TabIndex = 70;
-            this.lblCadastraNoticia.Text = "Editar publicação";
+            this.lblEditarNoticia.AutoSize = true;
+            this.lblEditarNoticia.BackColor = System.Drawing.Color.Transparent;
+            this.lblEditarNoticia.Font = new System.Drawing.Font("Poppins", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEditarNoticia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblEditarNoticia.Location = new System.Drawing.Point(460, 72);
+            this.lblEditarNoticia.Name = "lblEditarNoticia";
+            this.lblEditarNoticia.Size = new System.Drawing.Size(322, 58);
+            this.lblEditarNoticia.TabIndex = 70;
+            this.lblEditarNoticia.Text = "Editar publicação";
             // 
             // lblTitulo
             // 
@@ -100,110 +108,124 @@
             this.lblTitulo.TabIndex = 73;
             this.lblTitulo.Text = "Título:";
             // 
-            // textBox1
+            // txtBoxTitulo
             // 
-            this.textBox1.Location = new System.Drawing.Point(243, 199);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(375, 22);
-            this.textBox1.TabIndex = 74;
+            this.txtBoxTitulo.Location = new System.Drawing.Point(243, 199);
+            this.txtBoxTitulo.Name = "txtBoxTitulo";
+            this.txtBoxTitulo.Size = new System.Drawing.Size(375, 22);
+            this.txtBoxTitulo.TabIndex = 74;
             // 
-            // textBox2
+            // txtBoxSubTitulo
             // 
-            this.textBox2.Location = new System.Drawing.Point(651, 199);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(375, 22);
-            this.textBox2.TabIndex = 76;
+            this.txtBoxSubTitulo.Location = new System.Drawing.Point(651, 199);
+            this.txtBoxSubTitulo.Name = "txtBoxSubTitulo";
+            this.txtBoxSubTitulo.Size = new System.Drawing.Size(375, 22);
+            this.txtBoxSubTitulo.TabIndex = 76;
             // 
-            // label1
+            // lblSubTitulo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(646, 166);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 30);
-            this.label1.TabIndex = 75;
-            this.label1.Text = "Sub-Título:";
+            this.lblSubTitulo.AutoSize = true;
+            this.lblSubTitulo.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubTitulo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblSubTitulo.Location = new System.Drawing.Point(646, 166);
+            this.lblSubTitulo.Name = "lblSubTitulo";
+            this.lblSubTitulo.Size = new System.Drawing.Size(103, 30);
+            this.lblSubTitulo.TabIndex = 75;
+            this.lblSubTitulo.Text = "Sub-Título:";
             // 
-            // label2
+            // lblData
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(646, 266);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 30);
-            this.label2.TabIndex = 79;
-            this.label2.Text = "Data:";
+            this.lblData.AutoSize = true;
+            this.lblData.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblData.Location = new System.Drawing.Point(646, 266);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(57, 30);
+            this.lblData.TabIndex = 79;
+            this.lblData.Text = "Data:";
             // 
-            // textBox4
+            // txtBoxAutor
             // 
-            this.textBox4.Location = new System.Drawing.Point(243, 299);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(375, 22);
-            this.textBox4.TabIndex = 78;
+            this.txtBoxAutor.Location = new System.Drawing.Point(243, 299);
+            this.txtBoxAutor.Name = "txtBoxAutor";
+            this.txtBoxAutor.Size = new System.Drawing.Size(375, 22);
+            this.txtBoxAutor.TabIndex = 78;
             // 
-            // label3
+            // lblAutor
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(238, 266);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 30);
-            this.label3.TabIndex = 77;
-            this.label3.Text = "Autor:";
+            this.lblAutor.AutoSize = true;
+            this.lblAutor.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblAutor.Location = new System.Drawing.Point(238, 266);
+            this.lblAutor.Name = "lblAutor";
+            this.lblAutor.Size = new System.Drawing.Size(62, 30);
+            this.lblAutor.TabIndex = 77;
+            this.lblAutor.Text = "Autor:";
             // 
-            // dateTimePicker1
+            // dtTmPckrData
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(651, 299);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(375, 22);
-            this.dateTimePicker1.TabIndex = 80;
+            this.dtTmPckrData.Location = new System.Drawing.Point(651, 299);
+            this.dtTmPckrData.Name = "dtTmPckrData";
+            this.dtTmPckrData.Size = new System.Drawing.Size(375, 22);
+            this.dtTmPckrData.TabIndex = 80;
             // 
-            // label4
+            // lblImagem
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label4.Location = new System.Drawing.Point(238, 362);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 30);
-            this.label4.TabIndex = 83;
-            this.label4.Text = "Imagem:";
+            this.lblImagem.AutoSize = true;
+            this.lblImagem.BackColor = System.Drawing.Color.Transparent;
+            this.lblImagem.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblImagem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblImagem.Location = new System.Drawing.Point(238, 362);
+            this.lblImagem.Name = "lblImagem";
+            this.lblImagem.Size = new System.Drawing.Size(90, 30);
+            this.lblImagem.TabIndex = 83;
+            this.lblImagem.Text = "Imagem:";
             // 
-            // textBox5
+            // txtBoxConteudo
             // 
-            this.textBox5.Location = new System.Drawing.Point(651, 395);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(375, 174);
-            this.textBox5.TabIndex = 82;
+            this.txtBoxConteudo.Location = new System.Drawing.Point(651, 395);
+            this.txtBoxConteudo.Multiline = true;
+            this.txtBoxConteudo.Name = "txtBoxConteudo";
+            this.txtBoxConteudo.Size = new System.Drawing.Size(375, 174);
+            this.txtBoxConteudo.TabIndex = 82;
             // 
-            // label5
+            // lblConteudo
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label5.Location = new System.Drawing.Point(646, 362);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 30);
-            this.label5.TabIndex = 81;
-            this.label5.Text = "Conteúdo:";
+            this.lblConteudo.AutoSize = true;
+            this.lblConteudo.BackColor = System.Drawing.Color.Transparent;
+            this.lblConteudo.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConteudo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblConteudo.Location = new System.Drawing.Point(646, 362);
+            this.lblConteudo.Name = "lblConteudo";
+            this.lblConteudo.Size = new System.Drawing.Size(102, 30);
+            this.lblConteudo.TabIndex = 81;
+            this.lblConteudo.Text = "Conteúdo:";
             // 
-            // label6
+            // lblCategoria
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.label6.Location = new System.Drawing.Point(238, 470);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 30);
-            this.label6.TabIndex = 84;
-            this.label6.Text = "Categoria:";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.BackColor = System.Drawing.Color.Transparent;
+            this.lblCategoria.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.lblCategoria.Location = new System.Drawing.Point(238, 470);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(101, 30);
+            this.lblCategoria.TabIndex = 84;
+            this.lblCategoria.Text = "Categoria:";
+            // 
+            // btnCarregarImagem
+            // 
+            this.btnCarregarImagem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
+            this.btnCarregarImagem.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCarregarImagem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCarregarImagem.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCarregarImagem.ForeColor = System.Drawing.Color.White;
+            this.btnCarregarImagem.Location = new System.Drawing.Point(243, 395);
+            this.btnCarregarImagem.Name = "btnCarregarImagem";
+            this.btnCarregarImagem.Size = new System.Drawing.Size(375, 36);
+            this.btnCarregarImagem.TabIndex = 85;
+            this.btnCarregarImagem.Text = "Carregar imagem";
+            this.btnCarregarImagem.UseVisualStyleBackColor = false;
             // 
             // btnEditar
             // 
@@ -212,43 +234,78 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(243, 395);
+            this.btnEditar.Location = new System.Drawing.Point(436, 618);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(375, 36);
-            this.btnEditar.TabIndex = 85;
-            this.btnEditar.Text = "Carregar imagem";
+            this.btnEditar.Size = new System.Drawing.Size(354, 49);
+            this.btnEditar.TabIndex = 86;
+            this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // button1
+            // cmbBoxCategoria
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(436, 618);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(354, 49);
-            this.button1.TabIndex = 86;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbBoxCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cmbBoxCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxCategoria.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cmbBoxCategoria.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBoxCategoria.FormattingEnabled = true;
+            this.cmbBoxCategoria.Items.AddRange(new object[] {
             "Tecnologia",
             "Esporte",
             "Entretenimento",
             "Política"});
-            this.comboBox1.Location = new System.Drawing.Point(243, 503);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(375, 34);
-            this.comboBox1.TabIndex = 87;
+            this.cmbBoxCategoria.Location = new System.Drawing.Point(243, 503);
+            this.cmbBoxCategoria.Name = "cmbBoxCategoria";
+            this.cmbBoxCategoria.Size = new System.Drawing.Size(375, 34);
+            this.cmbBoxCategoria.TabIndex = 87;
+            // 
+            // pctBoxAlertaAutor
+            // 
+            this.pctBoxAlertaAutor.BackColor = System.Drawing.Color.Transparent;
+            this.pctBoxAlertaAutor.Image = global::NewsletterBlob.Properties.Resources.Vector__5_;
+            this.pctBoxAlertaAutor.Location = new System.Drawing.Point(217, 299);
+            this.pctBoxAlertaAutor.Name = "pctBoxAlertaAutor";
+            this.pctBoxAlertaAutor.Size = new System.Drawing.Size(20, 20);
+            this.pctBoxAlertaAutor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxAlertaAutor.TabIndex = 91;
+            this.pctBoxAlertaAutor.TabStop = false;
+            this.pctBoxAlertaAutor.Visible = false;
+            // 
+            // pctBoxAlertaTitulo
+            // 
+            this.pctBoxAlertaTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.pctBoxAlertaTitulo.Image = global::NewsletterBlob.Properties.Resources.Vector__5_;
+            this.pctBoxAlertaTitulo.Location = new System.Drawing.Point(217, 199);
+            this.pctBoxAlertaTitulo.Name = "pctBoxAlertaTitulo";
+            this.pctBoxAlertaTitulo.Size = new System.Drawing.Size(20, 20);
+            this.pctBoxAlertaTitulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxAlertaTitulo.TabIndex = 90;
+            this.pctBoxAlertaTitulo.TabStop = false;
+            this.pctBoxAlertaTitulo.Visible = false;
+            // 
+            // pctBoxAlertaConteudo
+            // 
+            this.pctBoxAlertaConteudo.BackColor = System.Drawing.Color.Transparent;
+            this.pctBoxAlertaConteudo.Image = global::NewsletterBlob.Properties.Resources.Vector__5_;
+            this.pctBoxAlertaConteudo.Location = new System.Drawing.Point(1032, 395);
+            this.pctBoxAlertaConteudo.Name = "pctBoxAlertaConteudo";
+            this.pctBoxAlertaConteudo.Size = new System.Drawing.Size(20, 20);
+            this.pctBoxAlertaConteudo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxAlertaConteudo.TabIndex = 93;
+            this.pctBoxAlertaConteudo.TabStop = false;
+            this.pctBoxAlertaConteudo.Visible = false;
+            // 
+            // pctBoxAlertaSubTitulo
+            // 
+            this.pctBoxAlertaSubTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.pctBoxAlertaSubTitulo.Image = global::NewsletterBlob.Properties.Resources.Vector__5_;
+            this.pctBoxAlertaSubTitulo.Location = new System.Drawing.Point(1032, 199);
+            this.pctBoxAlertaSubTitulo.Name = "pctBoxAlertaSubTitulo";
+            this.pctBoxAlertaSubTitulo.Size = new System.Drawing.Size(20, 20);
+            this.pctBoxAlertaSubTitulo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxAlertaSubTitulo.TabIndex = 92;
+            this.pctBoxAlertaSubTitulo.TabStop = false;
+            this.pctBoxAlertaSubTitulo.Visible = false;
             // 
             // JanelaEditarNoticias
             // 
@@ -257,24 +314,28 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::NewsletterBlob.Properties.Resources.Cadastro__1_;
             this.ClientSize = new System.Drawing.Size(1262, 700);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pctBoxAlertaConteudo);
+            this.Controls.Add(this.pctBoxAlertaSubTitulo);
+            this.Controls.Add(this.pctBoxAlertaAutor);
+            this.Controls.Add(this.pctBoxAlertaTitulo);
+            this.Controls.Add(this.cmbBoxCategoria);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnCarregarImagem);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.lblImagem);
+            this.Controls.Add(this.txtBoxConteudo);
+            this.Controls.Add(this.lblConteudo);
+            this.Controls.Add(this.dtTmPckrData);
+            this.Controls.Add(this.lblData);
+            this.Controls.Add(this.txtBoxAutor);
+            this.Controls.Add(this.lblAutor);
+            this.Controls.Add(this.txtBoxSubTitulo);
+            this.Controls.Add(this.lblSubTitulo);
+            this.Controls.Add(this.txtBoxTitulo);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pctBoxPerfil);
             this.Controls.Add(this.pctBoxArrowBack);
-            this.Controls.Add(this.lblCadastraNoticia);
+            this.Controls.Add(this.lblEditarNoticia);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -283,6 +344,10 @@
             this.Text = "Blob News";
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxPerfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxArrowBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaAutor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaTitulo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaConteudo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaSubTitulo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,21 +357,25 @@
 
         private System.Windows.Forms.PictureBox pctBoxPerfil;
         private System.Windows.Forms.PictureBox pctBoxArrowBack;
-        private System.Windows.Forms.Label lblCadastraNoticia;
+        private System.Windows.Forms.Label lblEditarNoticia;
         private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtBoxTitulo;
+        private System.Windows.Forms.TextBox txtBoxSubTitulo;
+        private System.Windows.Forms.Label lblSubTitulo;
+        private System.Windows.Forms.Label lblData;
+        private System.Windows.Forms.TextBox txtBoxAutor;
+        private System.Windows.Forms.Label lblAutor;
+        private System.Windows.Forms.DateTimePicker dtTmPckrData;
+        private System.Windows.Forms.Label lblImagem;
+        private System.Windows.Forms.TextBox txtBoxConteudo;
+        private System.Windows.Forms.Label lblConteudo;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Button btnCarregarImagem;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbBoxCategoria;
+        private System.Windows.Forms.PictureBox pctBoxAlertaAutor;
+        private System.Windows.Forms.PictureBox pctBoxAlertaTitulo;
+        private System.Windows.Forms.PictureBox pctBoxAlertaConteudo;
+        private System.Windows.Forms.PictureBox pctBoxAlertaSubTitulo;
     }
 }
