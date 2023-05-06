@@ -72,7 +72,6 @@ namespace NewsletterBlob.View
                 }
                 else
                 {
-                    MessageBox.Show($"Você conseguir logar com a conta: {email}");
                     new JanelaPrincipal(email).Show();
                     this.Hide();
                 }

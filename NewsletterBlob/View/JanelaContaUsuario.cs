@@ -45,9 +45,6 @@ namespace NewsletterBlob.View
                 {
                     using (MemoryStream ms = new MemoryStream(leitor.ImagemPerfil))
                     {
-                        //Apontando o MemoryStream para o início do stream de dados
-                        ms.Seek(0, SeekOrigin.Begin);
-
                         // converter MemoryStream em Stream
                         Stream stream = new MemoryStream(ms.ToArray());
 
@@ -57,9 +54,8 @@ namespace NewsletterBlob.View
                         {
                             //posicionando o ponteiro de leitura do stream no início dos dados da imagem
                             stream.Seek(0, SeekOrigin.Begin);
-                            MessageBox.Show("Position: "+stream.Position);
                             imagem = Image.FromStream(stream);
-                            // Atribua a imagem ao PictureBox
+                            // Atribuindo a imagem ao PictureBox
                             pctBoxFotoUsuario.Image = imagem;
                         }
                         catch (ArgumentException ex)
@@ -91,34 +87,13 @@ namespace NewsletterBlob.View
         private void btnAlterarFoto_Click(object sender, EventArgs e)
         {
             byte[] imagem = carregarFoto();
-            ControllerLeitor controllerLeitor = new ControllerLeitor();
-            controllerLeitor.alterarFotoPerfil(this.email, imagem);
+            if (imagem != null)
+            {
+                new ControllerLeitor().alterarFotoPerfil(this.email, imagem);
+                MessageBox.Show("Imagem de perfil alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-        
-        /*private byte[] carregarFoto()
-        {
-            string caminhoFoto = "";
-            var openFile = new OpenFileDialog();
-            openFile.Filter = "Arquivos de imagens jpg e png| *.jpg; *png";
-            openFile.Multiselect = false;
 
-            if(openFile.ShowDialog() == DialogResult.OK)
-            {
-                caminhoFoto = openFile.FileName;
-            }
-            if (caminhoFoto != "")
-            {
-                pctBoxFotoUsuario.Load(caminhoFoto);
-                MessageBox.Show("Caminho foto: "+caminhoFoto);
-                byte[] imagemBytes = File.ReadAllBytes(caminhoFoto);
-                return imagemBytes;
-            }
-            else
-            {
-                return null;
-            }
-        }*/
-        
         private byte[] carregarFoto()
         {
             var openFile = new OpenFileDialog();
@@ -133,6 +108,8 @@ namespace NewsletterBlob.View
                 {
                     using (var reader = new BinaryReader(stream))
                     {
+                        // reposiciona o ponteiro de leitura no início do stream
+                        stream.Seek(0, SeekOrigin.Begin);
                         return reader.ReadBytes((int)stream.Length);
                     }
                 }

@@ -84,6 +84,68 @@ namespace NewsletterBlob.Model
             }
         }
 
+        public int validaEmail(string email)
+        {
+            try
+            {
+
+                //String de Conexão
+                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                //Criação do Objeto de Conexão
+                MySqlConnection conexao = new MySqlConnection(strconexao);
+                //Abertura da Conexao
+                conexao.Open();
+                //Adicionando Registro
+                MySqlCommand command = conexao.CreateCommand();
+                command.CommandText = $"select verifica_email('{email}');";
+                MySqlDataReader reader = command.ExecuteReader();
+                int result = 0;
+                //Retornando o resultado
+                while (reader.Read())
+                {
+                    result = reader.GetInt32(0);
+                }
+                conexao.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+        }
+
+        public int validaCpf(string cpf)
+        {
+            try
+            {
+
+                //String de Conexão
+                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                //Criação do Objeto de Conexão
+                MySqlConnection conexao = new MySqlConnection(strconexao);
+                //Abertura da Conexao
+                conexao.Open();
+                //Adicionando Registro
+                MySqlCommand command = conexao.CreateCommand();
+                command.CommandText = $"select verifica_cpf('{cpf}');";
+                MySqlDataReader reader = command.ExecuteReader();
+                int result = 0;
+                //Retornando o resultado
+                while (reader.Read())
+                {
+                    result = reader.GetInt32(0);
+                }
+                conexao.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+        }
+
         public void adicionarFotoPerfil(string email, byte[] imagem)
         {
             try
@@ -91,24 +153,22 @@ namespace NewsletterBlob.Model
                 //String de Conexão
                 string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
                 //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
-                //Abertura da Conexao
-                conexao.Open();
-
-                //Salvando Imagem em um diretório temporário
-                string caminho = $"C:/Users/PEDRO/source/repos/NewsletterBlob/images/{email.Split('@')[0]}.jpg";
-                using (var stream = new FileStream(caminho, FileMode.Create))
+                using (MySqlConnection conexao = new MySqlConnection(strconexao))
                 {
-                    stream.Write(imagem, 0, imagem.Length);
+                    //Abertura da Conexao
+                    conexao.Open();
+                    //Adicionando Imagem
+                    using (MySqlCommand command = conexao.CreateCommand())
+                    {
+                        // utiliza parâmetros para evitar problemas com caracteres especiais e ataques de injeção de SQL
+                        command.CommandText = "UPDATE tb_usuario_leitor SET imagem_de_perfil = @imagem WHERE email = @email";
+                        command.Parameters.AddWithValue("@imagem", imagem);
+                        command.Parameters.AddWithValue("@email", email);
+                        command.ExecuteNonQuery();
+                    }
+                    //Fechando a conexão
+                    conexao.Close();
                 }
-
-                //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"UPDATE tb_usuario_leitor SET imagem_de_perfil = LOAD_FILE('{caminho.Replace("\\", "\\\\")}') WHERE email = '{email}'";
-                command.ExecuteNonQuery();
-
-                //Fechando a conexão
-                conexao.Close();
             }
             catch (Exception ex)
             {

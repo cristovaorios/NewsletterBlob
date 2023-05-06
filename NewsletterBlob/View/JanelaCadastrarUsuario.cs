@@ -76,11 +76,29 @@ namespace NewsletterBlob.View
                         {
                             if (txtBoxConfirmaSenha.Text == txtBoxSenha.Text)
                             {
-                                controllerLeitor.cadastrarLeitor(txtBoxNome.Text.Trim(), txtBoxEmail.Text.Trim(),
-                                    dtTmPckrDataNasc.Value, txtBoxCPF.Text.Trim(), txtBoxEndereco.Text.Trim(),
-                                    txtBoxTelefone.Text.Trim(), txtBoxSenha.Text.Trim());
-                                new JanelaPrincipal().Show();
-                                this.Hide();
+                                if (!controllerLeitor.verificaEmail(txtBoxEmail.Text.Trim()))
+                                {
+                                    pctBoxAlertaEmail.Visible = true;
+                                }
+                                else if(!controllerLeitor.verificaCpf(txtBoxCPF.Text.Trim()))
+                                {
+                                    pctBoxAlertaCPF.Visible = true;
+                                }
+                                else
+                                {
+                                    pctBoxAlertaNome.Visible = false;
+                                    pctBoxAlertaEmail.Visible = false;
+                                    pctBoxAlertaCPF.Visible = false;
+                                    pctBoxAlertaEndereco.Visible = false;
+                                    pctBoxAlertaTelefone.Visible = false;
+                                    pctBoxAlertaSenha.Visible = false;
+                                    pctBoxAlertaConfirmaSenha.Visible = false;
+                                    controllerLeitor.cadastrarLeitor(txtBoxNome.Text.Trim(), txtBoxEmail.Text.Trim(),
+                                        dtTmPckrDataNasc.Value, txtBoxCPF.Text.Trim(), txtBoxEndereco.Text.Trim(),
+                                        txtBoxTelefone.Text.Trim(), txtBoxSenha.Text.Trim());
+                                    new JanelaLoginLeitor().Show();
+                                    this.Hide();
+                                }
                             }
                             else
                                 MessageBox.Show("As senhas devem ser iguais!", "Confimação de senha diferente", MessageBoxButtons.OK, MessageBoxIcon.Stop);
