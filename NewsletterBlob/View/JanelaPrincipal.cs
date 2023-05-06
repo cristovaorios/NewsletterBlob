@@ -12,9 +12,15 @@ namespace NewsletterBlob.View
 {
     public partial class JanelaPrincipal : Form
     {
+        private string email;
         public JanelaPrincipal()
         {
             InitializeComponent();
+        }
+        public JanelaPrincipal(string email)
+        {
+            InitializeComponent();
+            this.email = email;
         }
         private void JanelaPrincipal_Load(object sender, EventArgs e){}
 
@@ -31,7 +37,7 @@ namespace NewsletterBlob.View
 
         private void pctBoxPerfil_Click(object sender, EventArgs e)
         {
-            new JanelaOpcoesAutor().Show();
+            new JanelaContaUsuario(email).Show();
             this.Hide();
         }
 

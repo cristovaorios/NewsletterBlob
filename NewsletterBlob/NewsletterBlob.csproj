@@ -72,6 +72,7 @@
     <Compile Include="Controller\ControllerAutor.cs" />
     <Compile Include="Controller\ControllerCategoria.cs" />
     <Compile Include="Controller\ControllerComentario.cs" />
+    <Compile Include="Controller\ControllerCurtida.cs" />
     <Compile Include="Controller\ControllerLeitor.cs" />
     <Compile Include="Controller\ControllerNoticias.cs" />
     <Compile Include="Model\Autor.cs" />
@@ -80,6 +81,8 @@
     <Compile Include="Model\CategoriaDAO.cs" />
     <Compile Include="Model\Comentario.cs" />
     <Compile Include="Model\ComentarioDAO.cs" />
+    <Compile Include="Model\Curtida.cs" />
+    <Compile Include="Model\CurtidaDAO.cs" />
     <Compile Include="Model\Leitor.cs" />
     <Compile Include="Model\LeitorDAO.cs" />
     <Compile Include="Model\Noticia.cs" />

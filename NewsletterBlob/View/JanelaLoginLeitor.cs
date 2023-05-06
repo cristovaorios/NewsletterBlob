@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NewsletterBlob.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,8 +52,34 @@ namespace NewsletterBlob.View
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            new JanelaPrincipal().Show();
-            this.Hide();
+            try
+            {
+                ControllerLeitor controllerLeitor = new ControllerLeitor();
+
+                string user = txtBoxUsuario.Text.Trim();
+                string password = txtBoxSenha.Text.Trim();
+
+                //Verificando Usuário e Senha
+                string email = controllerLeitor.verificaUsuarioSenha(user, password);
+
+                if (user == "" || password == "")
+                {
+                    MessageBox.Show("Digite usuário e senha para acessar a aplicação!", "Campos Vazios!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else if (email == null)
+                {
+                    MessageBox.Show("Usuário ou Senha Incorretos!", "Acesso Negado", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    MessageBox.Show($"Você conseguir logar com a conta: {email}");
+                    new JanelaPrincipal(email).Show();
+                    this.Hide();
+                }
+            }catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

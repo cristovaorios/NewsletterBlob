@@ -30,6 +30,21 @@ namespace NewsletterBlob.Model
             this.telefone = telefone;
             this.senha = senha;
         }
+        public Leitor(string nome, string email, string cpf, string endereco, string telefone, string senha, DateTime dataDeNascimento, byte[] imagemPerfil)
+        {
+            this.nome = nome;
+            this.email = email;
+            this.cpf = cpf;
+            this.endereco = endereco;
+            this.telefone = telefone;
+            this.senha = senha;
+            this.dataDeNascimento = dataDeNascimento;
+            this.imagemPerfil = imagemPerfil;
+        }
+        public Leitor()
+        {
+            //Empty
+        }
 
         //GETTERS and SETTERS
         public string Nome
