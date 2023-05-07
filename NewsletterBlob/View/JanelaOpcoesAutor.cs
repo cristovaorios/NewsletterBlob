@@ -12,20 +12,27 @@ namespace NewsletterBlob.View
 {
     public partial class JanelaOpcoesAutor : Form
     {
+        private string identificador;
         public JanelaOpcoesAutor()
         {
             InitializeComponent();
         }
 
+        public JanelaOpcoesAutor(string identificador)
+        {
+            this.identificador = identificador;
+            InitializeComponent();
+        }
+
         private void btnSair_Click(object sender, EventArgs e)
         {
-            new JanelaPrincipal().Show();
+            new JanelaPrincipal(identificador, true).Show();
             this.Hide();
         }
 
         private void btnMinhaConta_Click(object sender, EventArgs e)
         {
-            new JanelaContaUsuario().Show();
+            new JanelaContaUsuario(identificador, true).Show();
             this.Hide();
         }
 

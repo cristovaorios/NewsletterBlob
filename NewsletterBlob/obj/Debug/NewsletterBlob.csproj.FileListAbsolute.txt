@@ -89,3 +89,5 @@ C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\bin\Debug\System.Numerics.
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\crist\Pictures\NewsletterBlob\NewsletterBlob\obj\Debug\NewsletterBlob.csproj.CopyComplete
+C:\Users\PEDRO\source\repos\NewsletterBlob\NewsletterBlob\bin\Debug\Newtonsoft.Json.dll
+C:\Users\PEDRO\source\repos\NewsletterBlob\NewsletterBlob\bin\Debug\Newtonsoft.Json.xml

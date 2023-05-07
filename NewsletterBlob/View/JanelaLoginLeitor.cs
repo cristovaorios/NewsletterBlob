@@ -72,7 +72,7 @@ namespace NewsletterBlob.View
                 }
                 else
                 {
-                    new JanelaPrincipal(email).Show();
+                    new JanelaPrincipal(email, false).Show();
                     this.Hide();
                 }
             }catch (Exception ex)

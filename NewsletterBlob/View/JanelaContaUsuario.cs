@@ -12,58 +12,99 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace NewsletterBlob.View
 {
     public partial class JanelaContaUsuario : Form
     {
-        private string email;
-        public JanelaContaUsuario(string email)
+        private string identificador;
+        private bool ehAutor = false;
+        public JanelaContaUsuario(string identificador, bool ehAutor)
         {
-            this.email = email;
+            this.identificador = identificador;
+            this.ehAutor = ehAutor;
             InitializeComponent();
-            carregarDados(email);
+            carregarDados();
         }
         public JanelaContaUsuario()
         {
             InitializeComponent();
         }
 
-        private void carregarDados(string email)
+        private void carregarDados()
         {
             try
             {
-                Leitor leitor = new ControllerLeitor().exibirLeitor(email);
-                txtBoxNome.Text = leitor.Nome;
-                txtBoxEmail.Text = leitor.Email;
-                dtTmPckrDataNasc.Value = leitor.DataDeNascimento;
-                txtBoxCPF.Text = leitor.Cpf;
-                txtBoxEndereco.Text = leitor.Endereco;
-                txtBoxTelefone.Text = leitor.Telefone;
-                txtBoxSenha.Text = leitor.Senha;
-                if (leitor.ImagemPerfil != null && leitor.ImagemPerfil.Length > 0)
+                if (ehAutor)
                 {
-                    using (MemoryStream ms = new MemoryStream(leitor.ImagemPerfil))
+                    Autor autor = new ControllerAutor().exibirAutor(identificador);
+                    txtBoxNome.Text = autor.Nome;
+                    txtBoxEmail.Text = autor.Email;
+                    dtTmPckrDataNasc.Value = autor.DataDeNascimento;
+                    txtBoxCPF.Text = autor.Cpf;
+                    txtBoxEndereco.Text = autor.Endereco;
+                    txtBoxTelefone.Text = autor.Telefone;
+                    txtBoxSenha.Text = autor.Senha;
+                    if (autor.ImagemPerfil != null && autor.ImagemPerfil.Length > 0)
                     {
-                        // converter MemoryStream em Stream
-                        Stream stream = new MemoryStream(ms.ToArray());
+                        using (MemoryStream ms = new MemoryStream(autor.ImagemPerfil))
+                        {
+                            // converter MemoryStream em Stream
+                            Stream stream = new MemoryStream(ms.ToArray());
 
-                        // solução para erro de parâmetro inválido
-                        Image imagem = null;
-                        try
-                        {
-                            //posicionando o ponteiro de leitura do stream no início dos dados da imagem
-                            stream.Seek(0, SeekOrigin.Begin);
-                            imagem = Image.FromStream(stream);
-                            // Atribuindo a imagem ao PictureBox
-                            pctBoxFotoUsuario.Image = imagem;
-                        }
-                        catch (ArgumentException ex)
-                        {
-                            MessageBox.Show("Não foi possível carregar a imagem!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); ;
+                            // solução para erro de parâmetro inválido
+                            Image imagem = null;
+                            try
+                            {
+                                //posicionando o ponteiro de leitura do stream no início dos dados da imagem
+                                stream.Seek(0, SeekOrigin.Begin);
+                                imagem = Image.FromStream(stream);
+                                // Atribuindo a imagem ao PictureBox
+                                pctBoxFotoUsuario.Image = imagem;
+                            }
+                            catch (ArgumentException ex)
+                            {
+                                MessageBox.Show("Não foi possível carregar a imagem!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                     }
                 }
+                else
+                {
+                    Leitor leitor = new ControllerLeitor().exibirLeitor(identificador);
+                    txtBoxNome.Text = leitor.Nome;
+                    txtBoxEmail.Text = leitor.Email;
+                    dtTmPckrDataNasc.Value = leitor.DataDeNascimento;
+                    txtBoxCPF.Text = leitor.Cpf;
+                    txtBoxEndereco.Text = leitor.Endereco;
+                    txtBoxTelefone.Text = leitor.Telefone;
+                    txtBoxSenha.Text = leitor.Senha;
+                    if (leitor.ImagemPerfil != null && leitor.ImagemPerfil.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(leitor.ImagemPerfil))
+                        {
+                            // converter MemoryStream em Stream
+                            Stream stream = new MemoryStream(ms.ToArray());
+
+                            // solução para erro de parâmetro inválido
+                            Image imagem = null;
+                            try
+                            {
+                                //posicionando o ponteiro de leitura do stream no início dos dados da imagem
+                                stream.Seek(0, SeekOrigin.Begin);
+                                imagem = Image.FromStream(stream);
+                                // Atribuindo a imagem ao PictureBox
+                                pctBoxFotoUsuario.Image = imagem;
+                            }
+                            catch (ArgumentException ex)
+                            {
+                                MessageBox.Show("Não foi possível carregar a imagem!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+                
             }
             catch(Exception err)
             {
@@ -74,14 +115,17 @@ namespace NewsletterBlob.View
 
         private void pctBoxArrowBack_Click(object sender, EventArgs e)
         {
-            new JanelaPrincipal(email).Show();
+            new JanelaPrincipal(identificador, ehAutor).Show();
             this.Hide();
         }
 
         private void pctBoxPerfil_Click(object sender, EventArgs e)
         {
-            new JanelaOpcoesAutor().Show();
-            this.Hide();
+            if (ehAutor)
+            {
+                new JanelaOpcoesAutor().Show();
+                this.Hide();
+            }
         }
 
         private void btnAlterarFoto_Click(object sender, EventArgs e)
@@ -89,8 +133,16 @@ namespace NewsletterBlob.View
             byte[] imagem = carregarFoto();
             if (imagem != null)
             {
-                new ControllerLeitor().alterarFotoPerfil(this.email, imagem);
-                MessageBox.Show("Imagem de perfil alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (ehAutor)
+                {
+                    new ControllerAutor().alterarFotoPerfil(this.identificador, imagem);
+                    MessageBox.Show("Imagem de perfil alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    new ControllerLeitor().alterarFotoPerfil(this.identificador, imagem);
+                    MessageBox.Show("Imagem de perfil alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -148,26 +200,32 @@ namespace NewsletterBlob.View
             }
             else
             {
-                ControllerLeitor controllerLeitor = new ControllerLeitor();
-
-                //Verificando a idade
-                DateTime dataNascimento = Convert.ToDateTime(dtTmPckrDataNasc.Value);
-                int idade = DateTime.Now.Year - dataNascimento.Year;
-                if (DateTime.Now.DayOfYear < dataNascimento.DayOfYear)
+                if (ehAutor)
                 {
-                    idade = idade - 1;
-                }
-
-                if (idade >= 18)
-                {
-                    controllerLeitor.editarLeitor(email, txtBoxNome.Text.Trim(), txtBoxEmail.Text.Trim(),
-                        dtTmPckrDataNasc.Value, txtBoxCPF.Text.Trim(), txtBoxEndereco.Text.Trim(),
-                        txtBoxTelefone.Text.Trim(), txtBoxSenha.Text.Trim());
-                    email = txtBoxEmail.Text.Trim();
+                    //Controller Autor
                 }
                 else
-                    MessageBox.Show("O usuário deve ser maior de idade!", "Validação de Maioridade", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                
+                {
+                    ControllerLeitor controllerLeitor = new ControllerLeitor();
+
+                    //Verificando a idade
+                    DateTime dataNascimento = Convert.ToDateTime(dtTmPckrDataNasc.Value);
+                    int idade = DateTime.Now.Year - dataNascimento.Year;
+                    if (DateTime.Now.DayOfYear < dataNascimento.DayOfYear)
+                    {
+                        idade = idade - 1;
+                    }
+
+                    if (idade >= 18)
+                    {
+                        controllerLeitor.editarLeitor(identificador, txtBoxNome.Text.Trim(), txtBoxEmail.Text.Trim(),
+                            dtTmPckrDataNasc.Value, txtBoxCPF.Text.Trim(), txtBoxEndereco.Text.Trim(),
+                            txtBoxTelefone.Text.Trim(), txtBoxSenha.Text.Trim());
+                        identificador = txtBoxEmail.Text.Trim();
+                    }
+                    else
+                        MessageBox.Show("O usuário deve ser maior de idade!", "Validação de Maioridade", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }            
             }
         }
 
@@ -180,9 +238,18 @@ namespace NewsletterBlob.View
                     DialogResult op = MessageBox.Show("Tem certeza que deseja excluir a foto de perfil?", "Aviso!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (op == DialogResult.Yes)
                     {
-                        ControllerLeitor controllerLeitor = new ControllerLeitor();
-                        controllerLeitor.removerFotoPerfil(this.email);
-                        pctBoxFotoUsuario.Image = null;
+                        if (ehAutor)
+                        {
+                            ControllerAutor controllerAutor = new ControllerAutor();
+                            controllerAutor.removerFotoPerfil(this.identificador);
+                            pctBoxFotoUsuario.Image = null;
+                        }
+                        else
+                        {
+                            ControllerLeitor controllerLeitor = new ControllerLeitor();
+                            controllerLeitor.removerFotoPerfil(this.identificador);
+                            pctBoxFotoUsuario.Image = null;
+                        }
                     }
                 }
             }
