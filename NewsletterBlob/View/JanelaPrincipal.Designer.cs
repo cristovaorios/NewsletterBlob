@@ -42,7 +42,7 @@
             this.pnlDivisor2 = new System.Windows.Forms.Panel();
             this.lblDivisor = new System.Windows.Forms.Label();
             this.lblNoticiaComum01 = new System.Windows.Forms.Label();
-            this.lblNoticiacomum02 = new System.Windows.Forms.Label();
+            this.lblNoticiaComum02 = new System.Windows.Forms.Label();
             this.lblNoticiaComum03 = new System.Windows.Forms.Label();
             this.pctBoxSetaDireita = new System.Windows.Forms.PictureBox();
             this.pctBoxSetaEsquerda = new System.Windows.Forms.PictureBox();
@@ -70,7 +70,7 @@
             // 
             this.pnlTaskbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.pnlTaskbar.Location = new System.Drawing.Point(0, 72);
-            this.pnlTaskbar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTaskbar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTaskbar.Name = "pnlTaskbar";
             this.pnlTaskbar.Size = new System.Drawing.Size(964, 2);
             this.pnlTaskbar.TabIndex = 1;
@@ -190,7 +190,7 @@
             // 
             this.pnlDivisor1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.pnlDivisor1.Location = new System.Drawing.Point(118, 436);
-            this.pnlDivisor1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDivisor1.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDivisor1.Name = "pnlDivisor1";
             this.pnlDivisor1.Size = new System.Drawing.Size(289, 1);
             this.pnlDivisor1.TabIndex = 14;
@@ -199,7 +199,7 @@
             // 
             this.pnlDivisor2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.pnlDivisor2.Location = new System.Drawing.Point(562, 436);
-            this.pnlDivisor2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlDivisor2.Margin = new System.Windows.Forms.Padding(2);
             this.pnlDivisor2.Name = "pnlDivisor2";
             this.pnlDivisor2.Size = new System.Drawing.Size(289, 1);
             this.pnlDivisor2.TabIndex = 15;
@@ -219,38 +219,38 @@
             // 
             // lblNoticiaComum01
             // 
-            this.lblNoticiaComum01.AutoSize = true;
             this.lblNoticiaComum01.BackColor = System.Drawing.Color.Transparent;
             this.lblNoticiaComum01.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNoticiaComum01.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoticiaComum01.Location = new System.Drawing.Point(234, 529);
             this.lblNoticiaComum01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNoticiaComum01.MaximumSize = new System.Drawing.Size(122, 75);
             this.lblNoticiaComum01.Name = "lblNoticiaComum01";
             this.lblNoticiaComum01.Size = new System.Drawing.Size(122, 25);
             this.lblNoticiaComum01.TabIndex = 20;
             this.lblNoticiaComum01.Text = "Título da notícia";
             // 
-            // lblNoticiacomum02
+            // lblNoticiaComum02
             // 
-            this.lblNoticiacomum02.AutoSize = true;
-            this.lblNoticiacomum02.BackColor = System.Drawing.Color.Transparent;
-            this.lblNoticiacomum02.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNoticiacomum02.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNoticiacomum02.Location = new System.Drawing.Point(490, 529);
-            this.lblNoticiacomum02.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNoticiacomum02.Name = "lblNoticiacomum02";
-            this.lblNoticiacomum02.Size = new System.Drawing.Size(122, 25);
-            this.lblNoticiacomum02.TabIndex = 21;
-            this.lblNoticiacomum02.Text = "Título da notícia";
+            this.lblNoticiaComum02.BackColor = System.Drawing.Color.Transparent;
+            this.lblNoticiaComum02.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNoticiaComum02.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoticiaComum02.Location = new System.Drawing.Point(490, 529);
+            this.lblNoticiaComum02.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNoticiaComum02.MaximumSize = new System.Drawing.Size(122, 75);
+            this.lblNoticiaComum02.Name = "lblNoticiaComum02";
+            this.lblNoticiaComum02.Size = new System.Drawing.Size(122, 25);
+            this.lblNoticiaComum02.TabIndex = 21;
+            this.lblNoticiaComum02.Text = "Título da notícia";
             // 
             // lblNoticiaComum03
             // 
-            this.lblNoticiaComum03.AutoSize = true;
             this.lblNoticiaComum03.BackColor = System.Drawing.Color.Transparent;
             this.lblNoticiaComum03.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNoticiaComum03.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoticiaComum03.Location = new System.Drawing.Point(744, 529);
             this.lblNoticiaComum03.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNoticiaComum03.MaximumSize = new System.Drawing.Size(122, 75);
             this.lblNoticiaComum03.Name = "lblNoticiaComum03";
             this.lblNoticiaComum03.Size = new System.Drawing.Size(122, 25);
             this.lblNoticiaComum03.TabIndex = 22;
@@ -262,7 +262,7 @@
             this.pctBoxSetaDireita.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxSetaDireita.Image = global::NewsletterBlob.Properties.Resources.Vector__3_;
             this.pctBoxSetaDireita.Location = new System.Drawing.Point(870, 212);
-            this.pctBoxSetaDireita.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxSetaDireita.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxSetaDireita.Name = "pctBoxSetaDireita";
             this.pctBoxSetaDireita.Size = new System.Drawing.Size(15, 32);
             this.pctBoxSetaDireita.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -276,7 +276,7 @@
             this.pctBoxSetaEsquerda.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxSetaEsquerda.Image = global::NewsletterBlob.Properties.Resources.Vector__2_;
             this.pctBoxSetaEsquerda.Location = new System.Drawing.Point(83, 212);
-            this.pctBoxSetaEsquerda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxSetaEsquerda.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxSetaEsquerda.Name = "pctBoxSetaEsquerda";
             this.pctBoxSetaEsquerda.Size = new System.Drawing.Size(15, 32);
             this.pctBoxSetaEsquerda.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -289,7 +289,7 @@
             this.pctBoxNoticiaComum03.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctBoxNoticiaComum03.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxNoticiaComum03.Location = new System.Drawing.Point(628, 488);
-            this.pctBoxNoticiaComum03.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxNoticiaComum03.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxNoticiaComum03.Name = "pctBoxNoticiaComum03";
             this.pctBoxNoticiaComum03.Size = new System.Drawing.Size(112, 111);
             this.pctBoxNoticiaComum03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -302,7 +302,7 @@
             this.pctBoxNoticiaComum02.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctBoxNoticiaComum02.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxNoticiaComum02.Location = new System.Drawing.Point(374, 488);
-            this.pctBoxNoticiaComum02.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxNoticiaComum02.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxNoticiaComum02.Name = "pctBoxNoticiaComum02";
             this.pctBoxNoticiaComum02.Size = new System.Drawing.Size(112, 111);
             this.pctBoxNoticiaComum02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -315,7 +315,7 @@
             this.pctBoxNoticiaComum01.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctBoxNoticiaComum01.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxNoticiaComum01.Location = new System.Drawing.Point(118, 488);
-            this.pctBoxNoticiaComum01.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxNoticiaComum01.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxNoticiaComum01.Name = "pctBoxNoticiaComum01";
             this.pctBoxNoticiaComum01.Size = new System.Drawing.Size(112, 111);
             this.pctBoxNoticiaComum01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -328,7 +328,7 @@
             this.pctBoxNoticiaBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctBoxNoticiaBanner.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxNoticiaBanner.Location = new System.Drawing.Point(118, 112);
-            this.pctBoxNoticiaBanner.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxNoticiaBanner.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxNoticiaBanner.Name = "pctBoxNoticiaBanner";
             this.pctBoxNoticiaBanner.Size = new System.Drawing.Size(733, 231);
             this.pctBoxNoticiaBanner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -341,7 +341,7 @@
             this.pctBoxClima.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxClima.Image = global::NewsletterBlob.Properties.Resources.Vector__1_;
             this.pctBoxClima.Location = new System.Drawing.Point(789, 24);
-            this.pctBoxClima.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxClima.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxClima.Name = "pctBoxClima";
             this.pctBoxClima.Size = new System.Drawing.Size(22, 26);
             this.pctBoxClima.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -353,7 +353,7 @@
             this.pctBoxLocalizacao.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLocalizacao.Image = global::NewsletterBlob.Properties.Resources.Vector;
             this.pctBoxLocalizacao.Location = new System.Drawing.Point(696, 24);
-            this.pctBoxLocalizacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxLocalizacao.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxLocalizacao.Name = "pctBoxLocalizacao";
             this.pctBoxLocalizacao.Size = new System.Drawing.Size(20, 26);
             this.pctBoxLocalizacao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -366,7 +366,7 @@
             this.pctBoxPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxPerfil.Image = global::NewsletterBlob.Properties.Resources.Component_4;
             this.pctBoxPerfil.Location = new System.Drawing.Point(892, 17);
-            this.pctBoxPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxPerfil.Name = "pctBoxPerfil";
             this.pctBoxPerfil.Size = new System.Drawing.Size(38, 41);
             this.pctBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -395,7 +395,7 @@
             this.Controls.Add(this.pctBoxSetaDireita);
             this.Controls.Add(this.pctBoxSetaEsquerda);
             this.Controls.Add(this.lblNoticiaComum03);
-            this.Controls.Add(this.lblNoticiacomum02);
+            this.Controls.Add(this.lblNoticiaComum02);
             this.Controls.Add(this.lblNoticiaComum01);
             this.Controls.Add(this.pctBoxNoticiaComum03);
             this.Controls.Add(this.pctBoxNoticiaComum02);
@@ -419,7 +419,7 @@
             this.Controls.Add(this.pctBoxLogo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "JanelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -463,7 +463,7 @@
         private System.Windows.Forms.PictureBox pctBoxNoticiaComum02;
         private System.Windows.Forms.PictureBox pctBoxNoticiaComum03;
         private System.Windows.Forms.Label lblNoticiaComum01;
-        private System.Windows.Forms.Label lblNoticiacomum02;
+        private System.Windows.Forms.Label lblNoticiaComum02;
         private System.Windows.Forms.Label lblNoticiaComum03;
         private System.Windows.Forms.PictureBox pctBoxSetaEsquerda;
         private System.Windows.Forms.PictureBox pctBoxSetaDireita;

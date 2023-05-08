@@ -11,14 +11,16 @@ namespace NewsletterBlob.Controller
     internal class ControllerNoticias
     {
         //Cadastrar Notícia
-        public void cadastrarNoticia()
+        public void cadastrarNoticia(string registroProfissional, string titulo, string subtitulo, string texto, byte[] imagem, string categoria, string autores, DateTime dataPublicacao)
         {
             try
             {
-                Noticia noticia = new Noticia();
+                Noticia noticia = new Noticia(titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao);
                 NoticiaDAO noticiaDAO = new NoticiaDAO();
-                
-                MessageBox.Show("Notícia Cadastrada com Sucesso!", "Mensagem de SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //Capturando Id de Autor pelo registro profissional
+                int idAutor = new AutorDAO().getIdByRegistroProfissional(registroProfissional);
+                noticiaDAO.adicionarNoticia(idAutor, noticia);
             }
             catch (Exception ex)
             {
@@ -27,12 +29,12 @@ namespace NewsletterBlob.Controller
         }
 
         //Ler Notícias
-        public Leitor exibirNoticias(string email)
+        public Noticia exibirNoticia(int id)
         {
             try
             {
-                Leitor leitor = new LeitorDAO().listarLeitor(email);
-                return leitor;
+                Noticia noticia = new NoticiaDAO().listarNoticia(id);
+                return noticia;
             }
             catch (Exception ex)
             {

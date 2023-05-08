@@ -38,7 +38,7 @@ namespace NewsletterBlob.View
 
         private void btnCriarPublicacao_Click(object sender, EventArgs e)
         {
-            new JanelaCadastrarNoticias().Show();
+            new JanelaCadastrarNoticias(identificador).Show();
             this.Hide();
         }
 

@@ -113,6 +113,7 @@ namespace NewsletterBlob.Controller
             }
         }
 
+
         //Editar Usuário Leitor
         public void editarLeitor(string old_email, string nome, string email, DateTime dataDeNascimento, string cpf, string endereco, string telefone, string senha)
         {
