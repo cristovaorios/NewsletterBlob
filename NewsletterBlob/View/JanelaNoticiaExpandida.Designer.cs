@@ -44,7 +44,9 @@
             this.lblConteudoNoticia = new System.Windows.Forms.Label();
             this.pnlComentario = new System.Windows.Forms.Panel();
             this.pnlComentario01 = new System.Windows.Forms.Panel();
+            this.pctBoxDeletaComentario = new System.Windows.Forms.PictureBox();
             this.lblComentario01 = new System.Windows.Forms.Label();
+            this.pctBoxFotoLeitor = new System.Windows.Forms.PictureBox();
             this.pnlUnderlineComment = new System.Windows.Forms.Panel();
             this.lblComentario = new System.Windows.Forms.Label();
             this.lblEscreverComentario = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@
             this.btnPostarComentario = new System.Windows.Forms.Button();
             this.lblLike = new System.Windows.Forms.Label();
             this.pctBoxLike = new System.Windows.Forms.PictureBox();
-            this.pctBoxDeletaComentario = new System.Windows.Forms.PictureBox();
-            this.pctBoxFotoLeitor = new System.Windows.Forms.PictureBox();
             this.pctBoxNoticia = new System.Windows.Forms.PictureBox();
             this.pctBoxClima = new System.Windows.Forms.PictureBox();
             this.pctBoxLocalizacao = new System.Windows.Forms.PictureBox();
@@ -61,9 +61,9 @@
             this.pctBoxLogo = new System.Windows.Forms.PictureBox();
             this.pnlComentario.SuspendLayout();
             this.pnlComentario01.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDeletaComentario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFotoLeitor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxNoticia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxClima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocalizacao)).BeginInit();
@@ -254,6 +254,18 @@
             this.pnlComentario01.Size = new System.Drawing.Size(351, 77);
             this.pnlComentario01.TabIndex = 34;
             // 
+            // pctBoxDeletaComentario
+            // 
+            this.pctBoxDeletaComentario.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pctBoxDeletaComentario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctBoxDeletaComentario.Image = global::NewsletterBlob.Properties.Resources.Vector__7_;
+            this.pctBoxDeletaComentario.Location = new System.Drawing.Point(309, 28);
+            this.pctBoxDeletaComentario.Name = "pctBoxDeletaComentario";
+            this.pctBoxDeletaComentario.Size = new System.Drawing.Size(24, 25);
+            this.pctBoxDeletaComentario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBoxDeletaComentario.TabIndex = 32;
+            this.pctBoxDeletaComentario.TabStop = false;
+            // 
             // lblComentario01
             // 
             this.lblComentario01.AutoSize = true;
@@ -264,6 +276,17 @@
             this.lblComentario01.Size = new System.Drawing.Size(216, 50);
             this.lblComentario01.TabIndex = 31;
             this.lblComentario01.Text = "Duis laoreet viverra mauris, a \r\nvolutpat lacus congue sed.";
+            // 
+            // pctBoxFotoLeitor
+            // 
+            this.pctBoxFotoLeitor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctBoxFotoLeitor.Location = new System.Drawing.Point(17, 18);
+            this.pctBoxFotoLeitor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pctBoxFotoLeitor.Name = "pctBoxFotoLeitor";
+            this.pctBoxFotoLeitor.Size = new System.Drawing.Size(39, 40);
+            this.pctBoxFotoLeitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxFotoLeitor.TabIndex = 0;
+            this.pctBoxFotoLeitor.TabStop = false;
             // 
             // pnlUnderlineComment
             // 
@@ -348,28 +371,6 @@
             this.pctBoxLike.TabIndex = 74;
             this.pctBoxLike.TabStop = false;
             this.pctBoxLike.Click += new System.EventHandler(this.pctBoxLike_Click);
-            // 
-            // pctBoxDeletaComentario
-            // 
-            this.pctBoxDeletaComentario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctBoxDeletaComentario.Image = global::NewsletterBlob.Properties.Resources.Vector__7_;
-            this.pctBoxDeletaComentario.Location = new System.Drawing.Point(309, 28);
-            this.pctBoxDeletaComentario.Name = "pctBoxDeletaComentario";
-            this.pctBoxDeletaComentario.Size = new System.Drawing.Size(24, 25);
-            this.pctBoxDeletaComentario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctBoxDeletaComentario.TabIndex = 32;
-            this.pctBoxDeletaComentario.TabStop = false;
-            // 
-            // pctBoxFotoLeitor
-            // 
-            this.pctBoxFotoLeitor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctBoxFotoLeitor.Location = new System.Drawing.Point(17, 18);
-            this.pctBoxFotoLeitor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pctBoxFotoLeitor.Name = "pctBoxFotoLeitor";
-            this.pctBoxFotoLeitor.Size = new System.Drawing.Size(39, 40);
-            this.pctBoxFotoLeitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctBoxFotoLeitor.TabIndex = 0;
-            this.pctBoxFotoLeitor.TabStop = false;
             // 
             // pctBoxNoticia
             // 
@@ -477,9 +478,9 @@
             this.pnlComentario.PerformLayout();
             this.pnlComentario01.ResumeLayout(false);
             this.pnlComentario01.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDeletaComentario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFotoLeitor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxNoticia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxClima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocalizacao)).EndInit();
