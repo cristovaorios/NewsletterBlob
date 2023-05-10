@@ -37,13 +37,11 @@
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.pnlEmail = new System.Windows.Forms.Panel();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtBoxCPF = new System.Windows.Forms.TextBox();
             this.pnlCPF = new System.Windows.Forms.Panel();
             this.lblCPF = new System.Windows.Forms.Label();
             this.pnlDataNasc = new System.Windows.Forms.Panel();
             this.lblDataNasc = new System.Windows.Forms.Label();
             this.dtTmPckrDataNasc = new System.Windows.Forms.DateTimePicker();
-            this.txtBoxTelefone = new System.Windows.Forms.TextBox();
             this.pnlTelefone = new System.Windows.Forms.Panel();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.pnlEndeco = new System.Windows.Forms.Panel();
@@ -64,6 +62,8 @@
             this.pctBoxAlertaTelefone = new System.Windows.Forms.PictureBox();
             this.pctBoxAlertaCPF = new System.Windows.Forms.PictureBox();
             this.pctBoxAlertaEmail = new System.Windows.Forms.PictureBox();
+            this.txtBoxCPF = new System.Windows.Forms.MaskedTextBox();
+            this.txtBoxTelefone = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxArrowBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaNome)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxAlertaEndereco)).BeginInit();
@@ -166,18 +166,6 @@
             this.lblEmail.TabIndex = 17;
             this.lblEmail.Text = "E-mail:";
             // 
-            // txtBoxCPF
-            // 
-            this.txtBoxCPF.BackColor = System.Drawing.Color.White;
-            this.txtBoxCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxCPF.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxCPF.Location = new System.Drawing.Point(669, 265);
-            this.txtBoxCPF.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxCPF.Name = "txtBoxCPF";
-            this.txtBoxCPF.Size = new System.Drawing.Size(315, 20);
-            this.txtBoxCPF.TabIndex = 25;
-            // 
             // pnlCPF
             // 
             this.pnlCPF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
@@ -229,18 +217,6 @@
             this.dtTmPckrDataNasc.Name = "dtTmPckrDataNasc";
             this.dtTmPckrDataNasc.Size = new System.Drawing.Size(183, 22);
             this.dtTmPckrDataNasc.TabIndex = 26;
-            // 
-            // txtBoxTelefone
-            // 
-            this.txtBoxTelefone.BackColor = System.Drawing.Color.White;
-            this.txtBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxTelefone.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
-            this.txtBoxTelefone.Location = new System.Drawing.Point(704, 332);
-            this.txtBoxTelefone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBoxTelefone.Name = "txtBoxTelefone";
-            this.txtBoxTelefone.Size = new System.Drawing.Size(281, 20);
-            this.txtBoxTelefone.TabIndex = 31;
             // 
             // pnlTelefone
             // 
@@ -475,12 +451,34 @@
             this.pctBoxAlertaEmail.TabStop = false;
             this.pctBoxAlertaEmail.Visible = false;
             // 
+            // txtBoxCPF
+            // 
+            this.txtBoxCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxCPF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
+            this.txtBoxCPF.Location = new System.Drawing.Point(668, 266);
+            this.txtBoxCPF.Mask = "000,000,000-00";
+            this.txtBoxCPF.Name = "txtBoxCPF";
+            this.txtBoxCPF.Size = new System.Drawing.Size(103, 15);
+            this.txtBoxCPF.TabIndex = 50;
+            // 
+            // txtBoxTelefone
+            // 
+            this.txtBoxTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtBoxTelefone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(45)))), ((int)(((byte)(88)))));
+            this.txtBoxTelefone.Location = new System.Drawing.Point(705, 334);
+            this.txtBoxTelefone.Mask = "(00) 90000-0000";
+            this.txtBoxTelefone.Name = "txtBoxTelefone";
+            this.txtBoxTelefone.Size = new System.Drawing.Size(103, 15);
+            this.txtBoxTelefone.TabIndex = 51;
+            // 
             // JanelaCadastrarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::NewsletterBlob.Properties.Resources.Cadastro__1_;
             this.ClientSize = new System.Drawing.Size(1261, 700);
+            this.Controls.Add(this.txtBoxTelefone);
+            this.Controls.Add(this.txtBoxCPF);
             this.Controls.Add(this.pctBoxAlertaConfirmaSenha);
             this.Controls.Add(this.pctBoxAlertaTelefone);
             this.Controls.Add(this.pctBoxAlertaCPF);
@@ -497,13 +495,11 @@
             this.Controls.Add(this.pnlSenha);
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.txtBoxEndereco);
-            this.Controls.Add(this.txtBoxTelefone);
             this.Controls.Add(this.pnlTelefone);
             this.Controls.Add(this.lblTelefone);
             this.Controls.Add(this.pnlEndeco);
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.dtTmPckrDataNasc);
-            this.Controls.Add(this.txtBoxCPF);
             this.Controls.Add(this.pnlCPF);
             this.Controls.Add(this.lblCPF);
             this.Controls.Add(this.pnlDataNasc);
@@ -546,13 +542,11 @@
         private System.Windows.Forms.TextBox txtBoxEmail;
         private System.Windows.Forms.Panel pnlEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtBoxCPF;
         private System.Windows.Forms.Panel pnlCPF;
         private System.Windows.Forms.Label lblCPF;
         private System.Windows.Forms.Panel pnlDataNasc;
         private System.Windows.Forms.Label lblDataNasc;
         private System.Windows.Forms.DateTimePicker dtTmPckrDataNasc;
-        private System.Windows.Forms.TextBox txtBoxTelefone;
         private System.Windows.Forms.Panel pnlTelefone;
         private System.Windows.Forms.Label lblTelefone;
         private System.Windows.Forms.Panel pnlEndeco;
@@ -573,5 +567,7 @@
         private System.Windows.Forms.PictureBox pctBoxAlertaTelefone;
         private System.Windows.Forms.PictureBox pctBoxAlertaCPF;
         private System.Windows.Forms.PictureBox pctBoxAlertaEmail;
+        private System.Windows.Forms.MaskedTextBox txtBoxCPF;
+        private System.Windows.Forms.MaskedTextBox txtBoxTelefone;
     }
 }
