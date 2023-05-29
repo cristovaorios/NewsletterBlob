@@ -132,7 +132,6 @@ namespace NewsletterBlob.Model
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -264,36 +263,41 @@ namespace NewsletterBlob.Model
                     // Abertura da Conexão
                     conexao.Open();
                     // Comando SQL para buscar as notícias do autor
-                    string query = "SELECT * FROM tb_noticia ORDER BY qtd_curtidas DESC, qtd_comentarios DESC LIMIT 3;";
+                    string query = "SELECT id_noticia, id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_curtidas " +
+                        "FROM tb_noticia ORDER BY qtd_curtidas DESC, qtd_comentarios DESC LIMIT 3;";
                     using (MySqlCommand command = new MySqlCommand(query, conexao))
                     {
-                        command.Prepare();
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             // Itera sobre os resultados da consulta e cria objetos Noticia
                             while (reader.Read())
                             {
                                 int idNoticia = reader.GetInt32(0);
-                                string titulo = reader.GetString(1);
-                                string subtitulo = reader.GetString(2);
-                                string texto = reader.GetString(3);
+                                int idAutor = reader.GetInt32(1);
+                                string titulo = reader.GetString(2);
+                                string subtitulo = reader.GetString(3);
+                                string texto = reader.GetString(4);
                                 byte[] imagem = (byte[])reader["imagem"];
-                                string categoria = reader.GetString(5);
-                                string autores = reader.GetString(6);
-                                DateTime dataPublicacao = reader.GetDateTime(7);
-                                int qtdCurtidas = reader.GetInt32(9);
-
-                                Noticia noticia = new Noticia(idNoticia, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao, qtdCurtidas);
+                                string categoria = reader.GetString(6);
+                                string autores = reader.GetString(7);
+                                DateTime dataPublicacao = reader.GetDateTime(8);
+                                int qtdCurtidas = 0;
+                                if (!reader.IsDBNull(9))
+                                {
+                                    qtdCurtidas = reader.GetInt32(9);
+                                }
+                                Noticia noticia = new Noticia(idNoticia, idAutor, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao, qtdCurtidas);
                                 noticias.Add(noticia);
                             }
+                            // Retorna as notícias encontradas
+                            return noticias;
                         }
                     }
                 }
-                // Retorna as notícias encontradas
-                return noticias;
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.Message, "NoticiaDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }

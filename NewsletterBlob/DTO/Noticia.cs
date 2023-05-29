@@ -33,10 +33,10 @@ namespace NewsletterBlob.Model
             this.autores = autores;
             this.dataPublicacao = dataPublicacao;
         }
-        public Noticia(int id, int idAutor, string titulo, string subtitulo, string texto, byte[] imagem, string categoria, string autores, DateTime dataPublicacao)
+        public Noticia(int id, int idAutor, string titulo, string subtitulo, string texto, byte[] imagem, string categoria, string autores, DateTime dataPublicacao, int qtdCurtidas)
         {
-            this.idAutor = idAutor;
             this.id = id;
+            this.idAutor = idAutor;
             this.titulo = titulo;
             this.subtitulo = subtitulo;
             this.texto = texto;
@@ -44,6 +44,7 @@ namespace NewsletterBlob.Model
             this.categoria = categoria;
             this.autores = autores;
             this.dataPublicacao = dataPublicacao;
+            this.qtdCurtidas = qtdCurtidas;
         }
         public Noticia( int id, string titulo, string subtitulo, string texto, byte[] imagem, string categoria, string autores, DateTime dataPublicacao)
         {

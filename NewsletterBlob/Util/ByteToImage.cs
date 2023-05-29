@@ -14,6 +14,7 @@ namespace NewsletterBlob.Util
         {
             using (MemoryStream ms = new MemoryStream(byteArrayIn))
             {
+                ms.Seek(0, SeekOrigin.Begin);
                 return Image.FromStream(ms);
             }
         }

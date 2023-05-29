@@ -25,14 +25,13 @@ namespace NewsletterBlob.View
         public JanelaPrincipal()
         {
             InitializeComponent();
-            carregarNoticias();
         }
         public JanelaPrincipal(string identificador, bool ehAutor)
         {
             InitializeComponent();
             this.identificador = identificador;
             this.ehAutor = ehAutor;
-            carregarNoticias();
+            carregarNoticiasPrincipais();
             /* Recurso Cidade Temperatura de API
             try
             {
@@ -49,23 +48,28 @@ namespace NewsletterBlob.View
         }
 
         
-        private void carregarNoticias()
+        private void carregarNoticiasPrincipais()
         {
-            MessageBox.Show("Erro ao carregar notícias");
-            /*
             List<Noticia> noticias = new ControllerNoticias().exibirPrincipaisNoticias();
-            //Picture Box 1
-            pctBoxNoticiaComum01.Image = ByteToImage.ByteArrayToImage(noticias[0].Imagem);
-            lblNoticiaComum01.Text = noticias[0].Texto;
+            
+            if(noticias != null && noticias.Count >= 3)
+            {
+                //Picture Box 1
+                pctBoxNoticiaComum01.Image = ByteToImage.ByteArrayToImage(noticias[0].Imagem);
+                lblNoticiaComum01.Text = noticias[0].Texto;
 
-            //Picture Box 2
-            pctBoxNoticiaComum02.Image = ByteToImage.ByteArrayToImage(noticias[1].Imagem);
-            lblNoticiaComum02.Text = noticias[1].Texto;
+                //Picture Box 2
+                pctBoxNoticiaComum02.Image = ByteToImage.ByteArrayToImage(noticias[1].Imagem);
+                lblNoticiaComum02.Text = noticias[1].Texto;
 
-            //Picture Box 3
-            pctBoxNoticiaComum02.Image = ByteToImage.ByteArrayToImage(noticias[2].Imagem);
-            lblNoticiaComum02.Text = noticias[2].Texto;
-            */
+                //Picture Box 3
+                pctBoxNoticiaComum03.Image = ByteToImage.ByteArrayToImage(noticias[2].Imagem);
+                lblNoticiaComum03.Text = noticias[2].Texto;
+            }
+            else
+            {
+                MessageBox.Show("Não foi possível carregar as notícias!");
+            }
         }
 
         private void JanelaPrincipal_Load(object sender, EventArgs e)
