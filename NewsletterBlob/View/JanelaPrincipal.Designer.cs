@@ -296,6 +296,7 @@
             this.pctBoxNoticiaComum03.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxNoticiaComum03.TabIndex = 19;
             this.pctBoxNoticiaComum03.TabStop = false;
+            this.pctBoxNoticiaComum03.Click += new System.EventHandler(this.pctBoxNoticiaComum03_Click);
             // 
             // pctBoxNoticiaComum02
             // 
@@ -309,6 +310,7 @@
             this.pctBoxNoticiaComum02.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxNoticiaComum02.TabIndex = 18;
             this.pctBoxNoticiaComum02.TabStop = false;
+            this.pctBoxNoticiaComum02.Click += new System.EventHandler(this.pctBoxNoticiaComum02_Click);
             // 
             // pctBoxNoticiaComum01
             // 
@@ -322,6 +324,7 @@
             this.pctBoxNoticiaComum01.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxNoticiaComum01.TabIndex = 17;
             this.pctBoxNoticiaComum01.TabStop = false;
+            this.pctBoxNoticiaComum01.Click += new System.EventHandler(this.pctBoxNoticiaComum01_Click);
             // 
             // pctBoxNoticiaBanner
             // 

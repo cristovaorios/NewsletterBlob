@@ -21,6 +21,7 @@ namespace NewsletterBlob.View
     {
         private bool ehAutor = false;
         private string identificador;
+        private List<Noticia> noticiasPrincipais;
 
         public JanelaPrincipal()
         {
@@ -31,7 +32,7 @@ namespace NewsletterBlob.View
             InitializeComponent();
             this.identificador = identificador;
             this.ehAutor = ehAutor;
-            carregarNoticiasPrincipais();
+            noticiasPrincipais = carregarNoticiasPrincipais();
             /* Recurso Cidade Temperatura de API
             try
             {
@@ -48,7 +49,7 @@ namespace NewsletterBlob.View
         }
 
         
-        private void carregarNoticiasPrincipais()
+        private List<Noticia> carregarNoticiasPrincipais()
         {
             List<Noticia> noticias = new ControllerNoticias().exibirPrincipaisNoticias();
             
@@ -65,10 +66,12 @@ namespace NewsletterBlob.View
                 //Picture Box 3
                 pctBoxNoticiaComum03.Image = ByteToImage.ByteArrayToImage(noticias[2].Imagem);
                 lblNoticiaComum03.Text = noticias[2].Texto;
+                return noticias;
             }
             else
             {
                 MessageBox.Show("Não foi possível carregar as notícias!");
+                return null;
             }
         }
 
@@ -84,7 +87,7 @@ namespace NewsletterBlob.View
 
         private void pctBoxNoticiaBanner_Click(object sender, EventArgs e)
         {
-            new JanelaNoticiaExpandida().Show();
+            new JanelaNoticiaExpandida(identificador, ehAutor, noticiasPrincipais[0].Id).Show();
             this.Hide();
         }
 
@@ -107,6 +110,33 @@ namespace NewsletterBlob.View
         private void pctBoxSetaEsquerda_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void pctBoxNoticiaComum01_Click(object sender, EventArgs e)
+        {
+            if (noticiasPrincipais != null && noticiasPrincipais.Count >= 3)
+            {
+                new JanelaNoticiaExpandida(identificador, ehAutor, noticiasPrincipais[0].Id).Show();
+                this.Hide();
+            }
+        }
+
+        private void pctBoxNoticiaComum02_Click(object sender, EventArgs e)
+        {
+            if (noticiasPrincipais != null && noticiasPrincipais.Count >= 3)
+            {
+                new JanelaNoticiaExpandida(identificador, ehAutor, noticiasPrincipais[1].Id).Show();
+                this.Hide();
+            }
+        }
+
+        private void pctBoxNoticiaComum03_Click(object sender, EventArgs e)
+        {
+            if (noticiasPrincipais != null && noticiasPrincipais.Count >= 3)
+            {
+                new JanelaNoticiaExpandida(identificador, ehAutor, noticiasPrincipais[2].Id).Show();
+                this.Hide();
+            }
         }
     }
 }

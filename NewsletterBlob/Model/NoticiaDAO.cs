@@ -64,7 +64,7 @@ namespace NewsletterBlob.Model
                 conexao.Open();
                 //Adicionando Registro
                 MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"SELECT id_noticia, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao FROM tb_noticia WHERE id_noticia = @id;";
+                command.CommandText = $"SELECT id_noticia, id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_curtidas FROM tb_noticia WHERE id_noticia = @id;";
                 command.Parameters.AddWithValue("@id", id);
                 command.Prepare();
                 MySqlDataReader reader = command.ExecuteReader();
@@ -72,8 +72,21 @@ namespace NewsletterBlob.Model
                 //Retornando o resultado
                 while (reader.Read())
                 {
-                    noticia = new Noticia(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3), (byte[])reader["imagem"],
-                    reader.GetString(5), reader.GetString(6), reader.GetDateTime(7));
+                    int idNoticia = reader.GetInt32(0);
+                    int idAutor = reader.GetInt32(1);
+                    string titulo = reader.GetString(2);
+                    string subtitulo = reader.GetString(3);
+                    string texto = reader.GetString(4);
+                    byte[] imagem = (byte[])reader["imagem"];
+                    string categoria = reader.GetString(6);
+                    string autores = reader.GetString(7);
+                    DateTime dataPublicacao = reader.GetDateTime(8);
+                    int qtdCurtidas = 0;
+                    if (!reader.IsDBNull(9))
+                    {
+                        qtdCurtidas = reader.GetInt32(9);
+                    }
+                    noticia = new Noticia(idNoticia, idAutor, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao, qtdCurtidas);
                 }
                 //Retornando o leitor
                 return noticia;
@@ -289,15 +302,14 @@ namespace NewsletterBlob.Model
                                 Noticia noticia = new Noticia(idNoticia, idAutor, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao, qtdCurtidas);
                                 noticias.Add(noticia);
                             }
-                            // Retorna as notícias encontradas
-                            return noticias;
                         }
                     }
                 }
+                // Retorna as notícias encontradas
+                return noticias;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "NoticiaDAO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
         }
@@ -328,16 +340,20 @@ namespace NewsletterBlob.Model
                             while (reader.Read())
                             {
                                 int idNoticia = reader.GetInt32(0);
-                                string titulo = reader.GetString(1);
-                                string subtitulo = reader.GetString(2);
-                                string texto = reader.GetString(3);
+                                int idAutor = reader.GetInt32(1);
+                                string titulo = reader.GetString(2);
+                                string subtitulo = reader.GetString(3);
+                                string texto = reader.GetString(4);
                                 byte[] imagem = (byte[])reader["imagem"];
-                                string categoria = reader.GetString(5);
-                                string autores = reader.GetString(6);
-                                DateTime dataPublicacao = reader.GetDateTime(7);
-                                int qtdCurtidas = reader.GetInt32(9);
-
-                                Noticia noticia = new Noticia(idNoticia, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao, qtdCurtidas);
+                                string categoria = reader.GetString(6);
+                                string autores = reader.GetString(7);
+                                DateTime dataPublicacao = reader.GetDateTime(8);
+                                int qtdCurtidas = 0;
+                                if (!reader.IsDBNull(9))
+                                {
+                                    qtdCurtidas = reader.GetInt32(9);
+                                }
+                                Noticia noticia = new Noticia(idNoticia, idAutor, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao, qtdCurtidas);
                                 noticias.Add(noticia);
                             }
                         }
