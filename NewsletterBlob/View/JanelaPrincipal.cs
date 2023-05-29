@@ -12,6 +12,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Numerics;
+using static System.Net.Mime.MediaTypeNames;
+using NewsletterBlob.Util;
 
 namespace NewsletterBlob.View
 {
@@ -46,39 +48,24 @@ namespace NewsletterBlob.View
             }*/
         }
 
+        
         private void carregarNoticias()
         {
-            List<Noticia> noticias = new List<Noticia>();
-            for (int i = 1; i < 3; i++)
-            {
-                noticias.Add(new ControllerNoticias().exibirNoticia(i));
-            }
-            using (MemoryStream ms = new MemoryStream(noticias[0].Imagem))
-            {
-                // converter MemoryStream em Stream
-                Stream stream = new MemoryStream(ms.ToArray());
-                // solução para erro de parâmetro inválido
-                Image imagem = null;
-                //posicionando o ponteiro de leitura do stream no início dos dados da imagem
-                stream.Seek(0, SeekOrigin.Begin);
-                imagem = Image.FromStream(stream);
-                // Atribuindo a imagem ao PictureBox
-                pctBoxNoticiaComum01.Image = imagem;
-            }
+            MessageBox.Show("Erro ao carregar notícias");
+            /*
+            List<Noticia> noticias = new ControllerNoticias().exibirPrincipaisNoticias();
+            //Picture Box 1
+            pctBoxNoticiaComum01.Image = ByteToImage.ByteArrayToImage(noticias[0].Imagem);
             lblNoticiaComum01.Text = noticias[0].Texto;
-            using (MemoryStream ms = new MemoryStream(noticias[1].Imagem))
-            {
-                // converter MemoryStream em Stream
-                Stream stream = new MemoryStream(ms.ToArray());
-                // solução para erro de parâmetro inválido
-                Image imagem = null;
-                //posicionando o ponteiro de leitura do stream no início dos dados da imagem
-                stream.Seek(0, SeekOrigin.Begin);
-                imagem = Image.FromStream(stream);
-                // Atribuindo a imagem ao PictureBox
-                pctBoxNoticiaComum02.Image = imagem;
-            }
+
+            //Picture Box 2
+            pctBoxNoticiaComum02.Image = ByteToImage.ByteArrayToImage(noticias[1].Imagem);
             lblNoticiaComum02.Text = noticias[1].Texto;
+
+            //Picture Box 3
+            pctBoxNoticiaComum02.Image = ByteToImage.ByteArrayToImage(noticias[2].Imagem);
+            lblNoticiaComum02.Text = noticias[2].Texto;
+            */
         }
 
         private void JanelaPrincipal_Load(object sender, EventArgs e)
@@ -112,5 +99,10 @@ namespace NewsletterBlob.View
         }
 
         private void lblTecnologia_Click(object sender, EventArgs e){}
+
+        private void pctBoxSetaEsquerda_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

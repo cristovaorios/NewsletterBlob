@@ -44,7 +44,7 @@ namespace NewsletterBlob.View
 
         private void btnEditarPublicacao_Click(object sender, EventArgs e)
         {
-            new JanelaNoticiasAutor().Show();
+            new JanelaNoticiasAutor(identificador).Show();
             this.Hide();
         }
     }

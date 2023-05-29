@@ -80,17 +80,17 @@
     <Compile Include="Controller\ControllerCurtida.cs" />
     <Compile Include="Controller\ControllerLeitor.cs" />
     <Compile Include="Controller\ControllerNoticias.cs" />
-    <Compile Include="Model\Autor.cs" />
+    <Compile Include="DTO\Autor.cs" />
     <Compile Include="Model\AutorDAO.cs" />
-    <Compile Include="Model\Categoria.cs" />
+    <Compile Include="DTO\Categoria.cs" />
     <Compile Include="Model\CategoriaDAO.cs" />
-    <Compile Include="Model\Comentario.cs" />
+    <Compile Include="DTO\Comentario.cs" />
     <Compile Include="Model\ComentarioDAO.cs" />
-    <Compile Include="Model\Curtida.cs" />
+    <Compile Include="DTO\Curtida.cs" />
     <Compile Include="Model\CurtidaDAO.cs" />
-    <Compile Include="Model\Leitor.cs" />
+    <Compile Include="DTO\Leitor.cs" />
     <Compile Include="Model\LeitorDAO.cs" />
-    <Compile Include="Model\Noticia.cs" />
+    <Compile Include="DTO\Noticia.cs" />
     <Compile Include="Model\NoticiaDAO.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +99,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Util\ByteToImage.cs" />
     <Compile Include="View\JanelaEditarNoticias.cs">
       <SubType>Form</SubType>
     </Compile>

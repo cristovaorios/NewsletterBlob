@@ -43,22 +43,82 @@ namespace NewsletterBlob.Controller
             }
         }
 
-        //Editar Notícia
-        public void editarNoticia(string old_email, string nome, string email, DateTime dataDeNascimento, string cpf, string endereco, string telefone, string senha)
+        //Notícias Autor
+        public List<Noticia> listarNoticiasAutor(string identificador)
         {
             try
             {
-                Leitor leitor = new Leitor(nome, email, dataDeNascimento, cpf, endereco, telefone, senha);
-                new LeitorDAO().atualizarLeitor(leitor, old_email);
+                List<Noticia> lista = new NoticiaDAO().listarNoticiaPorAutor(identificador);
+                return lista;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+        }
+
+        //Editar Notícia
+        public void editarNoticia(int id_noticia, string titulo, string subtitulo, string texto, byte[] imagem, string categoria, string autores, DateTime dataPublicacao)
+        {
+            try
+            {
+                Noticia noticia = new Noticia(id_noticia, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao);
+                new NoticiaDAO().atualizarNoticia(noticia);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível editar os dados!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Não foi possível editar os dados!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         //Excluir Usuário Leitor
+        public void excluirNoticia(string identificador, int idNoticia)
+        {
+            try
+            {
+                int resp = new NoticiaDAO().deletarNoticia(identificador, idNoticia);
+                MessageBox.Show("Publicação excluída com sucesso!", "Messagem de Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
+        }
+
+        //Listar Todas as Notícias
+        public List<Noticia> exibirPrincipaisNoticias()
+        {
+            try
+            {
+                List<Noticia> lista = new NoticiaDAO().listarPrincipaisNoticias();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+        }
+
+        //Listar Notícias do Banner
+        public List<Noticia> exibirNoticiasBanner()
+        {
+            try
+            {
+                List<Noticia> lista = new NoticiaDAO().listarNoticiasBanner();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+
+        }
 
     }
 }
