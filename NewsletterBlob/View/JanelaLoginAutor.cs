@@ -59,7 +59,7 @@ namespace NewsletterBlob.View
                 else
                 {
                     new JanelaPrincipal(registroProfissional, true).Show();
-                    this.Hide();
+                    this.Close();
                 }
             }
             catch (Exception ex)

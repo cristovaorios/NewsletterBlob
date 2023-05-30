@@ -138,5 +138,10 @@ namespace NewsletterBlob.View
                 this.Hide();
             }
         }
+
+        private void btnPostarComentario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

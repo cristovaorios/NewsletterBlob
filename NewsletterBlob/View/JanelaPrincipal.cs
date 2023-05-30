@@ -19,13 +19,17 @@ namespace NewsletterBlob.View
 {
     public partial class JanelaPrincipal : Form
     {
+        
         private bool ehAutor = false;
         private string identificador;
         private List<Noticia> noticiasPrincipais;
+        private List<Noticia> noticiasBanner;
+        int numImg = 0;
 
         public JanelaPrincipal()
         {
             InitializeComponent();
+            noticiasBanner = new ControllerNoticias().exibirNoticiasBanner();
         }
         public JanelaPrincipal(string identificador, bool ehAutor)
         {
@@ -33,6 +37,7 @@ namespace NewsletterBlob.View
             this.identificador = identificador;
             this.ehAutor = ehAutor;
             noticiasPrincipais = carregarNoticiasPrincipais();
+            noticiasBanner = new ControllerNoticias().exibirNoticiasBanner();
             /* Recurso Cidade Temperatura de API
             try
             {
@@ -57,15 +62,15 @@ namespace NewsletterBlob.View
             {
                 //Picture Box 1
                 pctBoxNoticiaComum01.Image = ByteToImage.ByteArrayToImage(noticias[0].Imagem);
-                lblNoticiaComum01.Text = noticias[0].Texto;
+                lblNoticiaComum01.Text = noticias[0].Titulo;
 
                 //Picture Box 2
                 pctBoxNoticiaComum02.Image = ByteToImage.ByteArrayToImage(noticias[1].Imagem);
-                lblNoticiaComum02.Text = noticias[1].Texto;
+                lblNoticiaComum02.Text = noticias[1].Titulo;
 
                 //Picture Box 3
                 pctBoxNoticiaComum03.Image = ByteToImage.ByteArrayToImage(noticias[2].Imagem);
-                lblNoticiaComum03.Text = noticias[2].Texto;
+                lblNoticiaComum03.Text = noticias[2].Titulo;
                 return noticias;
             }
             else
@@ -74,15 +79,53 @@ namespace NewsletterBlob.View
                 return null;
             }
         }
-
-        private void JanelaPrincipal_Load(object sender, EventArgs e)
+        public void Carrossel()
         {
+            converterFoto(numImg, pctBoxNoticiaBanner, lblNoticiaBanner);
 
+            if (numImg == 4)
+            {
+                numImg = 0;
+            }
+            else
+            {
+                numImg++;
+            }
+        }
+
+        public void Carrossel_Invertido()
+        {
+            if (numImg == 0)
+            {
+                numImg = 4;
+            }
+            else
+            {
+                numImg--;
+            }
+            converterFoto(numImg, pctBoxNoticiaBanner, lblNoticiaBanner);
+            
+
+        }
+        private void timerCarrossel_Tick(object sender, EventArgs e)
+        {
+            Carrossel();
         }
 
         private void pctBoxSetaDireita_Click(object sender, EventArgs e)
         {
-            
+            Carrossel();
+        }
+
+        private void pctBoxSetaEsquerda_Click(object sender, EventArgs e)
+        {
+            Carrossel_Invertido();
+        }
+
+
+        private void JanelaPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void pctBoxNoticiaBanner_Click(object sender, EventArgs e)
@@ -107,10 +150,7 @@ namespace NewsletterBlob.View
 
         private void lblTecnologia_Click(object sender, EventArgs e){}
 
-        private void pctBoxSetaEsquerda_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void pctBoxNoticiaComum01_Click(object sender, EventArgs e)
         {
@@ -138,5 +178,35 @@ namespace NewsletterBlob.View
                 this.Hide();
             }
         }
+        public void converterFoto(int numImg, PictureBox pb, Label lb)
+        {
+            try
+            {
+                if (noticiasBanner != null && numImg >= 0 && numImg < noticiasBanner.Count)
+                {
+                    // Recupera a imagem da lista usando o índice numImg
+                    byte[] fotoBytes = noticiasBanner[numImg].Imagem;
+
+                    // Converte o objeto byte[] em um objeto Image
+                    using (MemoryStream ms = new MemoryStream(fotoBytes))
+                    {
+                        System.Drawing.Image foto = System.Drawing.Image.FromStream(ms);
+
+                        // Define a propriedade Image do PictureBox com a imagem convertida
+                        pb.Image = foto;
+                        lb.Text = noticiasBanner[numImg].Titulo;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Não há imagens disponíveis.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

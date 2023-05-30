@@ -76,12 +76,12 @@
             this.lblPolitica.AutoSize = true;
             this.lblPolitica.BackColor = System.Drawing.Color.Transparent;
             this.lblPolitica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblPolitica.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPolitica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPolitica.ForeColor = System.Drawing.Color.Black;
             this.lblPolitica.Location = new System.Drawing.Point(464, 25);
             this.lblPolitica.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPolitica.Name = "lblPolitica";
-            this.lblPolitica.Size = new System.Drawing.Size(61, 25);
+            this.lblPolitica.Size = new System.Drawing.Size(53, 17);
             this.lblPolitica.TabIndex = 23;
             this.lblPolitica.Text = "Política";
             // 
@@ -90,12 +90,12 @@
             this.lblEntretenimento.AutoSize = true;
             this.lblEntretenimento.BackColor = System.Drawing.Color.Transparent;
             this.lblEntretenimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblEntretenimento.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntretenimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntretenimento.ForeColor = System.Drawing.Color.Black;
             this.lblEntretenimento.Location = new System.Drawing.Point(339, 25);
             this.lblEntretenimento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEntretenimento.Name = "lblEntretenimento";
-            this.lblEntretenimento.Size = new System.Drawing.Size(119, 25);
+            this.lblEntretenimento.Size = new System.Drawing.Size(104, 17);
             this.lblEntretenimento.TabIndex = 22;
             this.lblEntretenimento.Text = "Entretenimento";
             // 
@@ -104,12 +104,12 @@
             this.lblTecnologia.AutoSize = true;
             this.lblTecnologia.BackColor = System.Drawing.Color.Transparent;
             this.lblTecnologia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblTecnologia.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTecnologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTecnologia.ForeColor = System.Drawing.Color.Black;
             this.lblTecnologia.Location = new System.Drawing.Point(170, 25);
             this.lblTecnologia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTecnologia.Name = "lblTecnologia";
-            this.lblTecnologia.Size = new System.Drawing.Size(89, 25);
+            this.lblTecnologia.Size = new System.Drawing.Size(78, 17);
             this.lblTecnologia.TabIndex = 21;
             this.lblTecnologia.Text = "Tecnologia";
             // 
@@ -118,12 +118,12 @@
             this.lblEsporte.AutoSize = true;
             this.lblEsporte.BackColor = System.Drawing.Color.Transparent;
             this.lblEsporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblEsporte.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEsporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEsporte.ForeColor = System.Drawing.Color.Black;
             this.lblEsporte.Location = new System.Drawing.Point(266, 25);
             this.lblEsporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEsporte.Name = "lblEsporte";
-            this.lblEsporte.Size = new System.Drawing.Size(63, 25);
+            this.lblEsporte.Size = new System.Drawing.Size(57, 17);
             this.lblEsporte.TabIndex = 20;
             this.lblEsporte.Text = "Esporte";
             // 
@@ -132,12 +132,12 @@
             this.lblGeral.AutoSize = true;
             this.lblGeral.BackColor = System.Drawing.Color.Transparent;
             this.lblGeral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblGeral.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGeral.ForeColor = System.Drawing.Color.Black;
             this.lblGeral.Location = new System.Drawing.Point(112, 25);
             this.lblGeral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(49, 25);
+            this.lblGeral.Size = new System.Drawing.Size(43, 17);
             this.lblGeral.TabIndex = 19;
             this.lblGeral.Text = "Geral";
             this.lblGeral.Click += new System.EventHandler(this.lblGeral_Click);
@@ -146,12 +146,12 @@
             // 
             this.lblClima.AutoSize = true;
             this.lblClima.BackColor = System.Drawing.Color.Transparent;
-            this.lblClima.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClima.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClima.ForeColor = System.Drawing.Color.Black;
             this.lblClima.Location = new System.Drawing.Point(815, 25);
             this.lblClima.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClima.Name = "lblClima";
-            this.lblClima.Size = new System.Drawing.Size(45, 25);
+            this.lblClima.Size = new System.Drawing.Size(39, 17);
             this.lblClima.TabIndex = 18;
             this.lblClima.Text = "32°C";
             // 
@@ -159,12 +159,12 @@
             // 
             this.lblLocalizacao.AutoSize = true;
             this.lblLocalizacao.BackColor = System.Drawing.Color.Transparent;
-            this.lblLocalizacao.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalizacao.ForeColor = System.Drawing.Color.Black;
             this.lblLocalizacao.Location = new System.Drawing.Point(720, 25);
             this.lblLocalizacao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLocalizacao.Name = "lblLocalizacao";
-            this.lblLocalizacao.Size = new System.Drawing.Size(67, 25);
+            this.lblLocalizacao.Size = new System.Drawing.Size(63, 17);
             this.lblLocalizacao.TabIndex = 17;
             this.lblLocalizacao.Text = "São Luís";
             // 
@@ -172,7 +172,7 @@
             // 
             this.pnlTaskbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.pnlTaskbar.Location = new System.Drawing.Point(0, 71);
-            this.pnlTaskbar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTaskbar.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTaskbar.Name = "pnlTaskbar";
             this.pnlTaskbar.Size = new System.Drawing.Size(964, 2);
             this.pnlTaskbar.TabIndex = 13;
@@ -181,11 +181,11 @@
             // 
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitulo.Font = new System.Drawing.Font("Poppins", 16F, System.Drawing.FontStyle.Bold);
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.Location = new System.Drawing.Point(109, 110);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(81, 39);
+            this.lblTitulo.Size = new System.Drawing.Size(70, 26);
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Título";
             // 
@@ -205,11 +205,11 @@
             // 
             this.lblAutores.AutoSize = true;
             this.lblAutores.BackColor = System.Drawing.Color.Transparent;
-            this.lblAutores.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAutores.Location = new System.Drawing.Point(112, 199);
             this.lblAutores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAutores.Name = "lblAutores";
-            this.lblAutores.Size = new System.Drawing.Size(55, 22);
+            this.lblAutores.Size = new System.Drawing.Size(48, 15);
             this.lblAutores.TabIndex = 26;
             this.lblAutores.Text = "Autores";
             // 
@@ -217,12 +217,12 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.BackColor = System.Drawing.Color.Transparent;
-            this.lblData.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lblData.Location = new System.Drawing.Point(112, 228);
             this.lblData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(38, 22);
+            this.lblData.Size = new System.Drawing.Size(33, 15);
             this.lblData.TabIndex = 27;
             this.lblData.Text = "Data";
             // 
@@ -230,7 +230,7 @@
             // 
             this.lblConteudoNoticia.BackColor = System.Drawing.Color.Transparent;
             this.lblConteudoNoticia.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.lblConteudoNoticia.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblConteudoNoticia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConteudoNoticia.Location = new System.Drawing.Point(112, 534);
             this.lblConteudoNoticia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConteudoNoticia.Name = "lblConteudoNoticia";
@@ -248,7 +248,7 @@
             this.pnlComentario.Controls.Add(this.pnlUnderlineComment);
             this.pnlComentario.Controls.Add(this.lblComentario);
             this.pnlComentario.Location = new System.Drawing.Point(640, 119);
-            this.pnlComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlComentario.Margin = new System.Windows.Forms.Padding(2);
             this.pnlComentario.Name = "pnlComentario";
             this.pnlComentario.Size = new System.Drawing.Size(290, 397);
             this.pnlComentario.TabIndex = 30;
@@ -260,7 +260,7 @@
             this.pnlComentario01.Controls.Add(this.lblComentario01);
             this.pnlComentario01.Controls.Add(this.pctBoxFotoLeitor);
             this.pnlComentario01.Location = new System.Drawing.Point(13, 66);
-            this.pnlComentario01.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlComentario01.Margin = new System.Windows.Forms.Padding(2);
             this.pnlComentario01.Name = "pnlComentario01";
             this.pnlComentario01.Size = new System.Drawing.Size(264, 63);
             this.pnlComentario01.TabIndex = 34;
@@ -271,7 +271,7 @@
             this.pctBoxDeletaComentario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxDeletaComentario.Image = global::NewsletterBlob.Properties.Resources.Vector__7_;
             this.pctBoxDeletaComentario.Location = new System.Drawing.Point(232, 23);
-            this.pctBoxDeletaComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxDeletaComentario.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxDeletaComentario.Name = "pctBoxDeletaComentario";
             this.pctBoxDeletaComentario.Size = new System.Drawing.Size(18, 20);
             this.pctBoxDeletaComentario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -282,11 +282,11 @@
             // 
             this.lblComentario01.AutoSize = true;
             this.lblComentario01.BackColor = System.Drawing.Color.Transparent;
-            this.lblComentario01.Font = new System.Drawing.Font("Poppins", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComentario01.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComentario01.Location = new System.Drawing.Point(49, 12);
             this.lblComentario01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblComentario01.Name = "lblComentario01";
-            this.lblComentario01.Size = new System.Drawing.Size(171, 38);
+            this.lblComentario01.Size = new System.Drawing.Size(146, 26);
             this.lblComentario01.TabIndex = 31;
             this.lblComentario01.Text = "Duis laoreet viverra mauris, a \r\nvolutpat lacus congue sed.";
             // 
@@ -294,7 +294,7 @@
             // 
             this.pctBoxFotoLeitor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctBoxFotoLeitor.Location = new System.Drawing.Point(13, 15);
-            this.pctBoxFotoLeitor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxFotoLeitor.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxFotoLeitor.Name = "pctBoxFotoLeitor";
             this.pctBoxFotoLeitor.Size = new System.Drawing.Size(30, 33);
             this.pctBoxFotoLeitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -306,7 +306,7 @@
             this.pnlUnderlineComment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.pnlUnderlineComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.pnlUnderlineComment.Location = new System.Drawing.Point(74, 41);
-            this.pnlUnderlineComment.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlUnderlineComment.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUnderlineComment.Name = "pnlUnderlineComment";
             this.pnlUnderlineComment.Size = new System.Drawing.Size(150, 2);
             this.pnlUnderlineComment.TabIndex = 32;
@@ -329,18 +329,18 @@
             // 
             this.lblEscreverComentario.AutoSize = true;
             this.lblEscreverComentario.BackColor = System.Drawing.Color.Transparent;
-            this.lblEscreverComentario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEscreverComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEscreverComentario.Location = new System.Drawing.Point(650, 528);
             this.lblEscreverComentario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEscreverComentario.Name = "lblEscreverComentario";
-            this.lblEscreverComentario.Size = new System.Drawing.Size(153, 22);
+            this.lblEscreverComentario.Size = new System.Drawing.Size(139, 15);
             this.lblEscreverComentario.TabIndex = 35;
             this.lblEscreverComentario.Text = "Escreva um comentário:";
             // 
             // txtBoxComentario
             // 
             this.txtBoxComentario.Location = new System.Drawing.Point(653, 552);
-            this.txtBoxComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBoxComentario.Margin = new System.Windows.Forms.Padding(2);
             this.txtBoxComentario.Multiline = true;
             this.txtBoxComentario.Name = "txtBoxComentario";
             this.txtBoxComentario.Size = new System.Drawing.Size(265, 52);
@@ -351,26 +351,27 @@
             this.btnPostarComentario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.btnPostarComentario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPostarComentario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPostarComentario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPostarComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostarComentario.ForeColor = System.Drawing.Color.White;
             this.btnPostarComentario.Location = new System.Drawing.Point(653, 608);
-            this.btnPostarComentario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnPostarComentario.Margin = new System.Windows.Forms.Padding(2);
             this.btnPostarComentario.Name = "btnPostarComentario";
             this.btnPostarComentario.Size = new System.Drawing.Size(264, 31);
             this.btnPostarComentario.TabIndex = 73;
             this.btnPostarComentario.Text = "Postar";
             this.btnPostarComentario.UseVisualStyleBackColor = false;
+            this.btnPostarComentario.Click += new System.EventHandler(this.btnPostarComentario_Click);
             // 
             // lblLike
             // 
             this.lblLike.AutoSize = true;
             this.lblLike.BackColor = System.Drawing.Color.Transparent;
-            this.lblLike.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.lblLike.Location = new System.Drawing.Point(682, 653);
             this.lblLike.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLike.Name = "lblLike";
-            this.lblLike.Size = new System.Drawing.Size(21, 25);
+            this.lblLike.Size = new System.Drawing.Size(16, 17);
             this.lblLike.TabIndex = 75;
             this.lblLike.Text = "0";
             // 
@@ -380,7 +381,7 @@
             this.pctBoxLike.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxLike.Image = global::NewsletterBlob.Properties.Resources.Vector__4_;
             this.pctBoxLike.Location = new System.Drawing.Point(656, 652);
-            this.pctBoxLike.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxLike.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxLike.Name = "pctBoxLike";
             this.pctBoxLike.Size = new System.Drawing.Size(22, 24);
             this.pctBoxLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -392,7 +393,7 @@
             // 
             this.pctBoxNoticia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctBoxNoticia.Location = new System.Drawing.Point(116, 260);
-            this.pctBoxNoticia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxNoticia.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxNoticia.Name = "pctBoxNoticia";
             this.pctBoxNoticia.Size = new System.Drawing.Size(484, 256);
             this.pctBoxNoticia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -404,7 +405,7 @@
             this.pctBoxClima.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxClima.Image = global::NewsletterBlob.Properties.Resources.Vector__1_;
             this.pctBoxClima.Location = new System.Drawing.Point(789, 24);
-            this.pctBoxClima.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxClima.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxClima.Name = "pctBoxClima";
             this.pctBoxClima.Size = new System.Drawing.Size(22, 26);
             this.pctBoxClima.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -416,7 +417,7 @@
             this.pctBoxLocalizacao.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLocalizacao.Image = global::NewsletterBlob.Properties.Resources.Vector;
             this.pctBoxLocalizacao.Location = new System.Drawing.Point(696, 24);
-            this.pctBoxLocalizacao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxLocalizacao.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxLocalizacao.Name = "pctBoxLocalizacao";
             this.pctBoxLocalizacao.Size = new System.Drawing.Size(20, 26);
             this.pctBoxLocalizacao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -429,7 +430,7 @@
             this.pctBoxPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxPerfil.Image = global::NewsletterBlob.Properties.Resources.Component_4;
             this.pctBoxPerfil.Location = new System.Drawing.Point(892, 16);
-            this.pctBoxPerfil.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pctBoxPerfil.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxPerfil.Name = "pctBoxPerfil";
             this.pctBoxPerfil.Size = new System.Drawing.Size(38, 41);
             this.pctBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -485,7 +486,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "JanelaNoticiaExpandida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
