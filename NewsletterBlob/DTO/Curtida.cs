@@ -8,12 +8,19 @@ namespace NewsletterBlob.Model
 {
     internal class Curtida
     {
+        private int idNoticia;
+        private int idAutor;
         private bool estaCurtido;
 
-        public bool EstaCurtido
+        public Curtida(int idNoticia, int idAutor, bool estaCurtido)
         {
-            get { return estaCurtido; }
-            set { estaCurtido = value; }
+            this.idNoticia = idNoticia;
+            this.idAutor = idAutor;
+            this.estaCurtido = estaCurtido;
         }
+
+        public int IdNoticia { get => idNoticia; set => idNoticia = value; }
+        public int IdAutor { get => idAutor; set => idAutor = value; }
+        public bool EstaCurtido { get => estaCurtido; set => estaCurtido = value; }
     }
 }

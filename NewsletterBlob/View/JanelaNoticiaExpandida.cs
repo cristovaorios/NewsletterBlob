@@ -25,10 +25,10 @@ namespace NewsletterBlob.View
             this.identificador = identificador;
             this.idNoticia = idNoticia;
             InitializeComponent();
-            carregarNoticia();
+            carregarNoticia(idNoticia);
         }
 
-        private void carregarNoticia()
+        private void carregarNoticia(int idNoticia)
         {
             try
             {
@@ -93,9 +93,36 @@ namespace NewsletterBlob.View
 
         private void pctBoxLike_Click(object sender, EventArgs e)
         {
-            int likes = Convert.ToInt32(lblLike.Text);
-            int qtdLikes = likes + 1;
-            lblLike.Text = qtdLikes.ToString();
+            bool jaCurtiu = new ControllerCurtida().verificarNoticiaCurtida(idNoticia, identificador, ehAutor);
+            if (jaCurtiu)
+            {
+                bool estaCurtida = new ControllerCurtida().verificarCurtidaOuDescurtida(idNoticia, identificador, ehAutor);
+                if (estaCurtida)
+                {
+                    new ControllerCurtida().descurtirNoticia(idNoticia, identificador, ehAutor, false);
+                    int likes = Convert.ToInt32(lblLike.Text);
+                    int qtdLikes = likes - 1;
+                    lblLike.Text = qtdLikes.ToString();
+                }
+                else
+                {
+                    new ControllerCurtida().curtirNoticia(idNoticia, identificador, ehAutor, true);
+                    int likes = Convert.ToInt32(lblLike.Text);
+                    int qtdLikes = likes + 1;
+                    lblLike.Text = qtdLikes.ToString();
+                }
+            }
+            else
+            {
+                new ControllerCurtida().cadastrarCurtida(idNoticia, identificador, ehAutor, true);
+                int likes = Convert.ToInt32(lblLike.Text);
+                int qtdLikes = likes + 1;
+                lblLike.Text = qtdLikes.ToString();
+            }
+<<<<<<< Updated upstream
+            
+=======
+>>>>>>> Stashed changes
         }
 
         private void pctBoxPerfil_Click(object sender, EventArgs e)
