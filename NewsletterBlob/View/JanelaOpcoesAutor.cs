@@ -26,7 +26,7 @@ namespace NewsletterBlob.View
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            new JanelaPrincipal(identificador, true).Show();
+            new JanelaLoginAutor().Show();
             this.Hide();
         }
 
@@ -45,6 +45,12 @@ namespace NewsletterBlob.View
         private void btnEditarPublicacao_Click(object sender, EventArgs e)
         {
             new JanelaNoticiasAutor(identificador).Show();
+            this.Hide();
+        }
+
+        private void pctBoxArrowBack_Click(object sender, EventArgs e)
+        {
+            new JanelaPrincipal(identificador, true).Show();
             this.Hide();
         }
     }

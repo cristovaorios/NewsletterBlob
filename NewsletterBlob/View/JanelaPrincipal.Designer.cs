@@ -79,12 +79,12 @@
             // 
             this.lblLocalizacao.AutoSize = true;
             this.lblLocalizacao.BackColor = System.Drawing.Color.Transparent;
-            this.lblLocalizacao.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLocalizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalizacao.ForeColor = System.Drawing.Color.Black;
             this.lblLocalizacao.Location = new System.Drawing.Point(720, 26);
             this.lblLocalizacao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLocalizacao.Name = "lblLocalizacao";
-            this.lblLocalizacao.Size = new System.Drawing.Size(67, 25);
+            this.lblLocalizacao.Size = new System.Drawing.Size(63, 17);
             this.lblLocalizacao.TabIndex = 5;
             this.lblLocalizacao.Text = "São Luís";
             // 
@@ -92,12 +92,12 @@
             // 
             this.lblClima.AutoSize = true;
             this.lblClima.BackColor = System.Drawing.Color.Transparent;
-            this.lblClima.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClima.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClima.ForeColor = System.Drawing.Color.Black;
             this.lblClima.Location = new System.Drawing.Point(815, 26);
             this.lblClima.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblClima.Name = "lblClima";
-            this.lblClima.Size = new System.Drawing.Size(45, 25);
+            this.lblClima.Size = new System.Drawing.Size(39, 17);
             this.lblClima.TabIndex = 6;
             this.lblClima.Text = "32°C";
             // 
@@ -106,12 +106,12 @@
             this.lblGeral.AutoSize = true;
             this.lblGeral.BackColor = System.Drawing.Color.Transparent;
             this.lblGeral.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblGeral.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGeral.ForeColor = System.Drawing.Color.Black;
             this.lblGeral.Location = new System.Drawing.Point(112, 26);
             this.lblGeral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(49, 25);
+            this.lblGeral.Size = new System.Drawing.Size(43, 17);
             this.lblGeral.TabIndex = 7;
             this.lblGeral.Text = "Geral";
             // 
@@ -120,12 +120,12 @@
             this.lblEsporte.AutoSize = true;
             this.lblEsporte.BackColor = System.Drawing.Color.Transparent;
             this.lblEsporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblEsporte.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEsporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEsporte.ForeColor = System.Drawing.Color.Black;
             this.lblEsporte.Location = new System.Drawing.Point(263, 26);
             this.lblEsporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEsporte.Name = "lblEsporte";
-            this.lblEsporte.Size = new System.Drawing.Size(63, 25);
+            this.lblEsporte.Size = new System.Drawing.Size(57, 17);
             this.lblEsporte.TabIndex = 8;
             this.lblEsporte.Text = "Esporte";
             // 
@@ -134,12 +134,12 @@
             this.lblTecnologia.AutoSize = true;
             this.lblTecnologia.BackColor = System.Drawing.Color.Transparent;
             this.lblTecnologia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblTecnologia.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTecnologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTecnologia.ForeColor = System.Drawing.Color.Black;
             this.lblTecnologia.Location = new System.Drawing.Point(167, 26);
             this.lblTecnologia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTecnologia.Name = "lblTecnologia";
-            this.lblTecnologia.Size = new System.Drawing.Size(89, 25);
+            this.lblTecnologia.Size = new System.Drawing.Size(78, 17);
             this.lblTecnologia.TabIndex = 9;
             this.lblTecnologia.Text = "Tecnologia";
             this.lblTecnologia.Click += new System.EventHandler(this.lblTecnologia_Click);
@@ -149,12 +149,12 @@
             this.lblEntretenimento.AutoSize = true;
             this.lblEntretenimento.BackColor = System.Drawing.Color.Transparent;
             this.lblEntretenimento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblEntretenimento.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEntretenimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntretenimento.ForeColor = System.Drawing.Color.Black;
             this.lblEntretenimento.Location = new System.Drawing.Point(336, 26);
             this.lblEntretenimento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEntretenimento.Name = "lblEntretenimento";
-            this.lblEntretenimento.Size = new System.Drawing.Size(119, 25);
+            this.lblEntretenimento.Size = new System.Drawing.Size(104, 17);
             this.lblEntretenimento.TabIndex = 10;
             this.lblEntretenimento.Text = "Entretenimento";
             // 
@@ -163,12 +163,12 @@
             this.lblPolitica.AutoSize = true;
             this.lblPolitica.BackColor = System.Drawing.Color.Transparent;
             this.lblPolitica.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblPolitica.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPolitica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPolitica.ForeColor = System.Drawing.Color.Black;
             this.lblPolitica.Location = new System.Drawing.Point(460, 26);
             this.lblPolitica.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPolitica.Name = "lblPolitica";
-            this.lblPolitica.Size = new System.Drawing.Size(61, 25);
+            this.lblPolitica.Size = new System.Drawing.Size(53, 17);
             this.lblPolitica.TabIndex = 11;
             this.lblPolitica.Text = "Política";
             // 
@@ -221,7 +221,7 @@
             // 
             this.lblNoticiaComum01.BackColor = System.Drawing.Color.Transparent;
             this.lblNoticiaComum01.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNoticiaComum01.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoticiaComum01.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoticiaComum01.Location = new System.Drawing.Point(234, 529);
             this.lblNoticiaComum01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoticiaComum01.MaximumSize = new System.Drawing.Size(122, 75);
@@ -234,7 +234,7 @@
             // 
             this.lblNoticiaComum02.BackColor = System.Drawing.Color.Transparent;
             this.lblNoticiaComum02.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNoticiaComum02.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoticiaComum02.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoticiaComum02.Location = new System.Drawing.Point(490, 529);
             this.lblNoticiaComum02.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoticiaComum02.MaximumSize = new System.Drawing.Size(122, 75);
@@ -247,7 +247,7 @@
             // 
             this.lblNoticiaComum03.BackColor = System.Drawing.Color.Transparent;
             this.lblNoticiaComum03.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNoticiaComum03.Font = new System.Drawing.Font("Poppins", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNoticiaComum03.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoticiaComum03.Location = new System.Drawing.Point(744, 529);
             this.lblNoticiaComum03.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNoticiaComum03.MaximumSize = new System.Drawing.Size(122, 75);

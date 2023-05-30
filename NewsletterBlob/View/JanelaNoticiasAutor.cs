@@ -42,21 +42,21 @@ namespace NewsletterBlob.View
                 pbImagem.Size = new Size(112, 111);
                 pbImagem.SizeMode = PictureBoxSizeMode.Zoom;
                 pbImagem.Image = ByteToImage.ByteArrayToImage(noticia.Imagem);
+                pbImagem.SizeMode = PictureBoxSizeMode.Zoom;
                 // Evento de clique no Panel
                 pbImagem.Click += (sender, e) =>
                 {
                     idNoticia = noticia.Id; // Armazenar o id da notícia na variável global
 
-                    // Alterar a opacidade do Panel
+                    // Alterar o BorderStyle do Panel clicado
                     foreach (Control control in pnlNoticiasAutor.Controls)
                     {
                         if (control is Panel)
                         {
-                            control.BackColor = Color.Transparent; // Restaurar a opacidade normal de todos os Panels
+                            Panel panel = (Panel)control;
+                            panel.BorderStyle = (panel == pnlNoticia) ? BorderStyle.FixedSingle : BorderStyle.None;
                         }
                     }
-                    MessageBox.Show("Você clicou no Panel: " + noticia.Titulo);
-                    pnlNoticia.BackColor = Color.FromArgb(200, pnlNoticia.BackColor); // Definir a opacidade do Panel clicado
                 };
 
                 Label lblTitulo = new Label();

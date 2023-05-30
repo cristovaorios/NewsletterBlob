@@ -22,6 +22,7 @@ namespace NewsletterBlob.View
         private bool ehAutor = false;
         private string identificador;
         private List<Noticia> noticiasPrincipais;
+        private List<Noticia> noticiasBanner;
 
         public JanelaPrincipal()
         {
@@ -33,6 +34,7 @@ namespace NewsletterBlob.View
             this.identificador = identificador;
             this.ehAutor = ehAutor;
             noticiasPrincipais = carregarNoticiasPrincipais();
+            noticiasBanner = new ControllerNoticias().exibirNoticiasBanner();
             /* Recurso Cidade Temperatura de API
             try
             {
@@ -73,6 +75,11 @@ namespace NewsletterBlob.View
                 MessageBox.Show("Não foi possível carregar as notícias!");
                 return null;
             }
+        }
+
+        private void carregarNoticiasCarrossel()
+        {
+
         }
 
         private void JanelaPrincipal_Load(object sender, EventArgs e)
