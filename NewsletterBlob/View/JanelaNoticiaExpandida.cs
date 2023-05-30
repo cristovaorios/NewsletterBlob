@@ -25,10 +25,10 @@ namespace NewsletterBlob.View
             this.identificador = identificador;
             this.idNoticia = idNoticia;
             InitializeComponent();
-            carregarNoticia();
+            carregarNoticia(idNoticia);
         }
 
-        private void carregarNoticia()
+        private void carregarNoticia(int idNoticia)
         {
             try
             {
@@ -119,7 +119,10 @@ namespace NewsletterBlob.View
                 int qtdLikes = likes + 1;
                 lblLike.Text = qtdLikes.ToString();
             }
+<<<<<<< Updated upstream
             
+=======
+>>>>>>> Stashed changes
         }
 
         private void pctBoxPerfil_Click(object sender, EventArgs e)
