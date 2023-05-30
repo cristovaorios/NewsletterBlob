@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JanelaPrincipal));
             this.pnlTaskbar = new System.Windows.Forms.Panel();
             this.lblLocalizacao = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@
             this.pctBoxLocalizacao = new System.Windows.Forms.PictureBox();
             this.pctBoxPerfil = new System.Windows.Forms.PictureBox();
             this.pctBoxLogo = new System.Windows.Forms.PictureBox();
+            this.timerCarrossel = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxSetaDireita)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxSetaEsquerda)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxNoticiaComum03)).BeginInit();
@@ -331,6 +333,7 @@
             this.pctBoxNoticiaBanner.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxNoticiaBanner.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pctBoxNoticiaBanner.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctBoxNoticiaBanner.InitialImage = null;
             this.pctBoxNoticiaBanner.Location = new System.Drawing.Point(118, 112);
             this.pctBoxNoticiaBanner.Margin = new System.Windows.Forms.Padding(2);
             this.pctBoxNoticiaBanner.Name = "pctBoxNoticiaBanner";
@@ -389,6 +392,12 @@
             this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLogo.TabIndex = 0;
             this.pctBoxLogo.TabStop = false;
+            // 
+            // timerCarrossel
+            // 
+            this.timerCarrossel.Enabled = true;
+            this.timerCarrossel.Interval = 5000;
+            this.timerCarrossel.Tick += new System.EventHandler(this.timerCarrossel_Tick);
             // 
             // JanelaPrincipal
             // 
@@ -471,5 +480,6 @@
         private System.Windows.Forms.Label lblNoticiaComum03;
         private System.Windows.Forms.PictureBox pctBoxSetaEsquerda;
         private System.Windows.Forms.PictureBox pctBoxSetaDireita;
+        private System.Windows.Forms.Timer timerCarrossel;
     }
 }

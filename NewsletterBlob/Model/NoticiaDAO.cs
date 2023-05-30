@@ -1,6 +1,8 @@
 ﻿using MySqlConnector;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -330,7 +332,7 @@ namespace NewsletterBlob.Model
                     // Abertura da Conexão
                     conexao.Open();
                     // Comando SQL para buscar as notícias do autor
-                    string query = "SELECT * FROM tb_noticias ORDER BY RAND() LIMIT 5;";
+                    string query = "SELECT * FROM tb_noticia ORDER BY RAND() LIMIT 5;";
                     using (MySqlCommand command = new MySqlCommand(query, conexao))
                     {
                         command.Prepare();
@@ -367,6 +369,6 @@ namespace NewsletterBlob.Model
                 return null;
             }
         }
-
+       
     }
 }
