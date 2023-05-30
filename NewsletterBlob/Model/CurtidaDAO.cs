@@ -238,9 +238,5 @@ namespace NewsletterBlob.Model
                 return 0;
             }
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     }
 }
