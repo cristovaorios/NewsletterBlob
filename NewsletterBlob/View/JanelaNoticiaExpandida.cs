@@ -119,10 +119,7 @@ namespace NewsletterBlob.View
                 int qtdLikes = likes + 1;
                 lblLike.Text = qtdLikes.ToString();
             }
-<<<<<<< Updated upstream
-            
-=======
->>>>>>> Stashed changes
+
         }
 
         private void pctBoxPerfil_Click(object sender, EventArgs e)

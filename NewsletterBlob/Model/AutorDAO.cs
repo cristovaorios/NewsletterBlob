@@ -10,6 +10,8 @@ namespace NewsletterBlob.Model
 {
     internal class AutorDAO
     {
+        private const string conect = "server=localhost;userid=root;password=12345;database=db_blobnews";
+
         public List<string> comparaUsuarioSenha(string registroProfissional, string senha)
         {
             try
@@ -17,7 +19,7 @@ namespace NewsletterBlob.Model
                 List<string> usuario = new List<string>();
 
                 //String de Conexão
-                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                string strconexao = conect;
                 //Criação do Objeto de Conexão
                 MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
@@ -58,7 +60,7 @@ namespace NewsletterBlob.Model
             try
             {
                 //String de Conexão
-                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                string strconexao = conect;
                 //Criação do Objeto de Conexão
                 using (MySqlConnection conexao = new MySqlConnection(strconexao))
                 {
@@ -88,7 +90,7 @@ namespace NewsletterBlob.Model
             try
             {
                 //String de Conexão
-                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                string strconexao = conect;
                 //Criação do Objeto de Conexão
                 MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
@@ -114,7 +116,7 @@ namespace NewsletterBlob.Model
                 Autor autor = new Autor();
 
                 //String de Conexão
-                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                string strconexao = conect;
                 //Criação do Objeto de Conexão
                 MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
@@ -153,7 +155,7 @@ namespace NewsletterBlob.Model
             try
             {
                 //String de Conexão
-                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                string strconexao = conect;
                 //Criação do Objeto de Conexão
                 MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
@@ -189,7 +191,7 @@ namespace NewsletterBlob.Model
             try
             {
                 //String de Conexão
-                string strconexao = "server=localhost;userid=root;password=;database=db_blobnews";
+                string strconexao = conect;
                 //Criação do Objeto de Conexão
                 MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao

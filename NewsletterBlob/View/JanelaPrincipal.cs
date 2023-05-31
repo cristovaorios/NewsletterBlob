@@ -25,19 +25,37 @@ namespace NewsletterBlob.View
         private List<Noticia> noticiasPrincipais;
         private List<Noticia> noticiasBanner;
         int numImg = 0;
+        int indiceNoticiaAtual;
+
+
 
         public JanelaPrincipal()
         {
             InitializeComponent();
-            noticiasBanner = new ControllerNoticias().exibirNoticiasBanner();
+            //Carregando confiracoes nos lbls
+            config_label_noticia_banner(lblNoticiaBanner);
+            config_label_noticias_princi(lblNoticiaComum01);
+            config_label_noticias_princi(lblNoticiaComum02);
+            config_label_noticias_princi(lblNoticiaComum03);
+
         }
         public JanelaPrincipal(string identificador, bool ehAutor)
         {
             InitializeComponent();
+            
             this.identificador = identificador;
             this.ehAutor = ehAutor;
             noticiasPrincipais = carregarNoticiasPrincipais();
             noticiasBanner = new ControllerNoticias().exibirNoticiasBanner();
+            if (noticiasBanner != null && noticiasBanner.Count > 0)
+            {
+                // Defina a primeira imagem do banner como o InitialImage do pctBoxNoticiaBanner
+                byte[] primeiraImagem = noticiasBanner[numImg].Imagem;
+                pctBoxNoticiaBanner.InitialImage = ByteToImage.ByteArrayToImage(primeiraImagem);
+            }
+
+
+
             /* Recurso Cidade Temperatura de API
             try
             {
@@ -63,14 +81,17 @@ namespace NewsletterBlob.View
                 //Picture Box 1
                 pctBoxNoticiaComum01.Image = ByteToImage.ByteArrayToImage(noticias[0].Imagem);
                 lblNoticiaComum01.Text = noticias[0].Titulo;
+                config_size_label(lblNoticiaComum01);
 
                 //Picture Box 2
                 pctBoxNoticiaComum02.Image = ByteToImage.ByteArrayToImage(noticias[1].Imagem);
                 lblNoticiaComum02.Text = noticias[1].Titulo;
+                config_size_label(lblNoticiaComum02);
 
                 //Picture Box 3
                 pctBoxNoticiaComum03.Image = ByteToImage.ByteArrayToImage(noticias[2].Imagem);
                 lblNoticiaComum03.Text = noticias[2].Titulo;
+                config_size_label(lblNoticiaComum03);
                 return noticias;
             }
             else
@@ -81,6 +102,7 @@ namespace NewsletterBlob.View
         }
         public void Carrossel()
         {
+            indiceNoticiaAtual = numImg;
             converterFoto(numImg, pctBoxNoticiaBanner, lblNoticiaBanner);
 
             if (numImg == 4)
@@ -90,22 +112,21 @@ namespace NewsletterBlob.View
             else
             {
                 numImg++;
-            }
+            } 
         }
 
         public void Carrossel_Invertido()
         {
+            indiceNoticiaAtual = numImg -1 ;
             if (numImg == 0)
             {
-                numImg = 4;
+                numImg = noticiasBanner.Count - 1;
             }
             else
             {
                 numImg--;
             }
             converterFoto(numImg, pctBoxNoticiaBanner, lblNoticiaBanner);
-            
-
         }
         private void timerCarrossel_Tick(object sender, EventArgs e)
         {
@@ -130,7 +151,11 @@ namespace NewsletterBlob.View
 
         private void pctBoxNoticiaBanner_Click(object sender, EventArgs e)
         {
-            new JanelaNoticiaExpandida(identificador, ehAutor, noticiasPrincipais[0].Id).Show();
+            if(indiceNoticiaAtual < 0)
+            {
+                indiceNoticiaAtual = 4;
+            }
+            new JanelaNoticiaExpandida(identificador, ehAutor, noticiasBanner[indiceNoticiaAtual].Id).Show();
             this.Hide();
         }
 
@@ -195,6 +220,7 @@ namespace NewsletterBlob.View
                         // Define a propriedade Image do PictureBox com a imagem convertida
                         pb.Image = foto;
                         lb.Text = noticiasBanner[numImg].Titulo;
+                        config_size_label(lb);
                     }
                 }
                 else
@@ -206,6 +232,29 @@ namespace NewsletterBlob.View
             {
                 MessageBox.Show(ex.Message, "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        public void config_label_noticias_princi(Label lbl)
+        {
+            lbl.AutoSize = false;
+            lbl.TextAlign = ContentAlignment.MiddleCenter;
+            int larguraMaxima = 200;
+            lbl.MaximumSize = new Size(larguraMaxima, 0);
+            int alturaMaxima = 500;
+            lbl.MaximumSize = new Size(larguraMaxima, alturaMaxima);
+        }
+        public void config_label_noticia_banner(Label lbl)
+        {
+            lbl.AutoSize = false;
+            lbl.TextAlign = ContentAlignment.MiddleCenter;
+            int larguraMaxima = 200;
+            int alturaMaxima = 500;
+            lbl.MaximumSize = new Size(larguraMaxima, alturaMaxima);
+
+        }
+        private void config_size_label(Label lbl)
+        {
+            SizeF tamanhoTexto = TextRenderer.MeasureText(lbl.Text, lbl.Font, lbl.MaximumSize, TextFormatFlags.WordBreak);
+            lbl.Height = (int)Math.Ceiling(tamanhoTexto.Height);
         }
 
     }
