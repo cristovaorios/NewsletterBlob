@@ -180,6 +180,15 @@ namespace NewsletterBlob.View
 
                     lblLike.Text = noticia.QtdCurtidas.ToString();
 
+                    if(new ControllerCurtida().verificarNoticiaCurtida(idNoticia, identificador))
+                    {
+                        pctBoxLike.Image = Resources.Vector__8_;
+                    }
+                    else
+                    {
+                        pctBoxLike.Image = Resources.Vector__4_;
+                    }
+
                     // Calcular a altura do texto e ajustar a altura do label
                     int tituloHeight = TextRenderer.MeasureText(noticia.Titulo, lblTitulo.Font, lblTitulo.MaximumSize, TextFormatFlags.WordBreak).Height;
                     int subtituloHeight = TextRenderer.MeasureText(noticia.SubTitulo, lblSubTitulo.Font, lblSubTitulo.MaximumSize, TextFormatFlags.WordBreak).Height;
@@ -222,7 +231,6 @@ namespace NewsletterBlob.View
                 bool jaCurtiu = new ControllerCurtida().verificarNoticiaCurtida(idNoticia, identificador);
                 if (jaCurtiu)
                 {
-                 
                     MessageBox.Show("Entrei em descurtir");
                     int resp = new ControllerCurtida().descurtirNoticia(idNoticia, identificador);
                     if (resp == 0)
@@ -234,6 +242,7 @@ namespace NewsletterBlob.View
                         int likes = Convert.ToInt32(lblLike.Text);
                         int qtdLikes = likes - 1;
                         lblLike.Text = qtdLikes.ToString();
+                        pctBoxLike.Image = Resources.Vector__4_;
                     }
                 }
                 else
@@ -243,6 +252,7 @@ namespace NewsletterBlob.View
                     int likes = Convert.ToInt32(lblLike.Text);
                     int qtdLikes = likes + 1;
                     lblLike.Text = qtdLikes.ToString();
+                    pctBoxLike.Image = Resources.Vector__8_;
                 }
             }
             else
