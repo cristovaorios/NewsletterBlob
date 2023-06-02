@@ -10,7 +10,7 @@ namespace NewsletterBlob.Model
 {
     internal class AutorDAO
     {
-        private const string conect = "server=localhost;userid=root;password=12345;database=db_blobnews";
+        private const string conect = "server=localhost;userid=root;password=;database=db_blobnews";
 
         public List<string> comparaUsuarioSenha(string registroProfissional, string senha)
         {

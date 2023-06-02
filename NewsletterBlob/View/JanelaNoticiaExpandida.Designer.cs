@@ -42,7 +42,7 @@
             this.lblAutores = new System.Windows.Forms.Label();
             this.lblData = new System.Windows.Forms.Label();
             this.lblConteudoNoticia = new System.Windows.Forms.Label();
-            this.pnlComentario = new System.Windows.Forms.Panel();
+            this.pnlComentarios = new System.Windows.Forms.Panel();
             this.pnlComentario01 = new System.Windows.Forms.Panel();
             this.pctBoxDeletaComentario = new System.Windows.Forms.PictureBox();
             this.lblComentario01 = new System.Windows.Forms.Label();
@@ -59,7 +59,7 @@
             this.pctBoxLocalizacao = new System.Windows.Forms.PictureBox();
             this.pctBoxPerfil = new System.Windows.Forms.PictureBox();
             this.pctBoxLogo = new System.Windows.Forms.PictureBox();
-            this.pnlComentario.SuspendLayout();
+            this.pnlComentarios.SuspendLayout();
             this.pnlComentario01.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDeletaComentario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFotoLeitor)).BeginInit();
@@ -239,19 +239,19 @@
             this.lblConteudoNoticia.Text = resources.GetString("lblConteudoNoticia.Text");
             this.lblConteudoNoticia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnlComentario
+            // pnlComentarios
             // 
-            this.pnlComentario.AutoScroll = true;
-            this.pnlComentario.BackColor = System.Drawing.Color.Transparent;
-            this.pnlComentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlComentario.Controls.Add(this.pnlComentario01);
-            this.pnlComentario.Controls.Add(this.pnlUnderlineComment);
-            this.pnlComentario.Controls.Add(this.lblComentario);
-            this.pnlComentario.Location = new System.Drawing.Point(640, 119);
-            this.pnlComentario.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlComentario.Name = "pnlComentario";
-            this.pnlComentario.Size = new System.Drawing.Size(290, 397);
-            this.pnlComentario.TabIndex = 30;
+            this.pnlComentarios.AutoScroll = true;
+            this.pnlComentarios.BackColor = System.Drawing.Color.Transparent;
+            this.pnlComentarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlComentarios.Controls.Add(this.pnlComentario01);
+            this.pnlComentarios.Controls.Add(this.pnlUnderlineComment);
+            this.pnlComentarios.Controls.Add(this.lblComentario);
+            this.pnlComentarios.Location = new System.Drawing.Point(640, 119);
+            this.pnlComentarios.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlComentarios.Name = "pnlComentarios";
+            this.pnlComentarios.Size = new System.Drawing.Size(290, 397);
+            this.pnlComentarios.TabIndex = 30;
             // 
             // pnlComentario01
             // 
@@ -304,7 +304,6 @@
             // pnlUnderlineComment
             // 
             this.pnlUnderlineComment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.pnlUnderlineComment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
             this.pnlUnderlineComment.Location = new System.Drawing.Point(74, 41);
             this.pnlUnderlineComment.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUnderlineComment.Name = "pnlUnderlineComment";
@@ -324,6 +323,7 @@
             this.lblComentario.Size = new System.Drawing.Size(105, 18);
             this.lblComentario.TabIndex = 31;
             this.lblComentario.Text = "Comentários";
+            this.lblComentario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lblEscreverComentario
             // 
@@ -463,7 +463,7 @@
             this.Controls.Add(this.pctBoxLike);
             this.Controls.Add(this.btnPostarComentario);
             this.Controls.Add(this.lblEscreverComentario);
-            this.Controls.Add(this.pnlComentario);
+            this.Controls.Add(this.pnlComentarios);
             this.Controls.Add(this.txtBoxComentario);
             this.Controls.Add(this.lblConteudoNoticia);
             this.Controls.Add(this.pctBoxNoticia);
@@ -491,8 +491,8 @@
             this.Name = "JanelaNoticiaExpandida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blob News";
-            this.pnlComentario.ResumeLayout(false);
-            this.pnlComentario.PerformLayout();
+            this.pnlComentarios.ResumeLayout(false);
+            this.pnlComentarios.PerformLayout();
             this.pnlComentario01.ResumeLayout(false);
             this.pnlComentario01.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDeletaComentario)).EndInit();
@@ -528,7 +528,7 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.PictureBox pctBoxNoticia;
         private System.Windows.Forms.Label lblConteudoNoticia;
-        private System.Windows.Forms.Panel pnlComentario;
+        private System.Windows.Forms.Panel pnlComentarios;
         private System.Windows.Forms.Label lblComentario;
         private System.Windows.Forms.Panel pnlUnderlineComment;
         private System.Windows.Forms.Panel pnlComentario01;

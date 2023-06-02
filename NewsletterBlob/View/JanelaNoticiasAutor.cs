@@ -114,6 +114,7 @@ namespace NewsletterBlob.View
                 if(resp == DialogResult.Yes)
                 {
                     new ControllerNoticias().excluirNoticia(identificador, idNoticia);
+                    CarregarNoticiasAutor();
                 }
             }
             else

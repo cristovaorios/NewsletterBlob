@@ -75,15 +75,12 @@
     <Compile Include="API\WeatherInfo.cs" />
     <Compile Include="API\WeatherService.cs" />
     <Compile Include="Controller\ControllerAutor.cs" />
-    <Compile Include="Controller\ControllerCategoria.cs" />
     <Compile Include="Controller\ControllerComentario.cs" />
     <Compile Include="Controller\ControllerCurtida.cs" />
     <Compile Include="Controller\ControllerLeitor.cs" />
     <Compile Include="Controller\ControllerNoticias.cs" />
     <Compile Include="DTO\Autor.cs" />
     <Compile Include="Model\AutorDAO.cs" />
-    <Compile Include="DTO\Categoria.cs" />
-    <Compile Include="Model\CategoriaDAO.cs" />
     <Compile Include="DTO\Comentario.cs" />
     <Compile Include="Model\ComentarioDAO.cs" />
     <Compile Include="DTO\Curtida.cs" />
@@ -262,6 +259,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Vector %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-no-profile-photo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

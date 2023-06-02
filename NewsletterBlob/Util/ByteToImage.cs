@@ -12,10 +12,17 @@ namespace NewsletterBlob.Util
     {
         public static Image ByteArrayToImage(byte[] byteArrayIn)
         {
-            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            if (byteArrayIn == null)
             {
-                ms.Seek(0, SeekOrigin.Begin);
-                return Image.FromStream(ms);
+                return null;
+            }
+            else
+            {
+                using (MemoryStream ms = new MemoryStream(byteArrayIn))
+                {
+                    ms.Seek(0, SeekOrigin.Begin);
+                    return Image.FromStream(ms);
+                }
             }
         }
     }

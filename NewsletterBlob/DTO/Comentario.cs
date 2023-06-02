@@ -9,10 +9,18 @@ namespace NewsletterBlob.Model
     internal class Comentario
     {
         //Atributtes
+        private int idComentario;
         private int idNoticia;
         private int idAutor;
         private byte[] imagemAutor;
         private string texto;
+
+        public Comentario(int idAutor, byte[] imagemAutor, string texto)
+        {
+            this.idAutor = idAutor;
+            this.imagemAutor = imagemAutor;
+            this.texto = texto;
+        }
 
         //Constructor
         public Comentario(int idNoticia, int idAutor, byte[] imagemAutor, string texto)
@@ -23,11 +31,24 @@ namespace NewsletterBlob.Model
             this.texto = texto;
         }
 
+        public Comentario(int idComentario, int idNoticia, int idAutor, byte[] imagemAutor, string texto)
+        {
+            this.IdComentario = idComentario;
+            this.idNoticia = idNoticia;
+            this.idAutor = idAutor;
+            this.imagemAutor = imagemAutor;
+            this.texto = texto;
+        }
+
+        public Comentario()
+        {
+        }
+
         //Getters and Setters
         public int IdNoticia { get => idNoticia; set => idNoticia = value; }
         public int IdAutor { get => idAutor; set => idAutor = value; }
         public byte[] ImagemAutor { get => imagemAutor; set => imagemAutor = value; }
         public string Texto { get => texto; set => texto = value; }
-
+        public int IdComentario { get => idComentario; set => idComentario = value; }
     }
 }

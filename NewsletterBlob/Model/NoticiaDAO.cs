@@ -31,8 +31,8 @@ namespace NewsletterBlob.Model
                 //Adicionando Registro
                 MySqlCommand command = conexao.CreateCommand();
                 // utiliza parâmetros para evitar problemas com caracteres especiais e ataques de injeção de SQL
-                command.CommandText = $"INSERT INTO tb_noticia (id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao)" +
-                    $"VALUES (@id_autor, @titulo, @subtitulo, @texto, @imagem, @categoria, @autores, @data_publicacao)";
+                command.CommandText = $"INSERT INTO tb_noticia (id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_comentarios, qtd_curtidas)" +
+                    $"VALUES (@id_autor, @titulo, @subtitulo, @texto, @imagem, @categoria, @autores, @data_publicacao, 0, 0)";
                 command.Parameters.AddWithValue("@id_autor", idAutor);
                 command.Parameters.AddWithValue("@titulo", noticia.Titulo);
                 command.Parameters.AddWithValue("@subtitulo", noticia.SubTitulo);

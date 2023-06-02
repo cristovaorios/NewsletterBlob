@@ -10,6 +10,7 @@ namespace NewsletterBlob.Model
     internal class Leitor
     {
         //Atributtes
+        private int id;
         private string nome;
         private string email;
         private string cpf;
@@ -29,6 +30,18 @@ namespace NewsletterBlob.Model
             this.endereco = endereco;
             this.telefone = telefone;
             this.senha = senha;
+        }
+        public Leitor(int id, string nome, string email, string cpf, string endereco, string telefone, string senha, DateTime dataDeNascimento, byte[] imagemPerfil)
+        {
+            this.id = id;
+            this.nome = nome;
+            this.email = email;
+            this.cpf = cpf;
+            this.endereco = endereco;
+            this.telefone = telefone;
+            this.senha = senha;
+            this.dataDeNascimento = dataDeNascimento;
+            this.imagemPerfil = imagemPerfil;
         }
         public Leitor(string nome, string email, string cpf, string endereco, string telefone, string senha, DateTime dataDeNascimento, byte[] imagemPerfil)
         {
@@ -88,21 +101,6 @@ namespace NewsletterBlob.Model
             set { imagemPerfil = value; }
         }
 
-
-        //Methods
-        public void comentar()
-        {
-
-        }
-
-        public void curtir()
-        {
-
-        }
-
-        public void excluirComentarios()
-        {
-
-        }
+        public int Id { get => id; set => id = value; }
     }
 }

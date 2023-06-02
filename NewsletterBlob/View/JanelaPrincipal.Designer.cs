@@ -215,9 +215,9 @@
             this.lblDivisor.Location = new System.Drawing.Point(454, 427);
             this.lblDivisor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDivisor.Name = "lblDivisor";
-            this.lblDivisor.Size = new System.Drawing.Size(59, 15);
+            this.lblDivisor.Size = new System.Drawing.Size(66, 15);
             this.lblDivisor.TabIndex = 16;
-            this.lblDivisor.Text = "Recentes";
+            this.lblDivisor.Text = "Destaques";
             // 
             // lblNoticiaComum01
             // 

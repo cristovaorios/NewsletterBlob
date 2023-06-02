@@ -11,11 +11,11 @@ namespace NewsletterBlob.Controller
     internal class ControllerCurtida
     {
         //Cadastrar Curtida
-        public void cadastrarCurtida(int idNoticia, string identificador, bool ehAutor, bool estaCurtido)
+        public void cadastrarCurtida(int idNoticia, string identificador, bool estaCurtido)
         {
             try
             {
-                int id = getId(identificador, ehAutor);
+                int id = getId(identificador);
 
                 if (id == 0)
                     MessageBox.Show("Usuário não encontrado!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -39,11 +39,11 @@ namespace NewsletterBlob.Controller
         }
 
         //Verificar se já curtiu a notícia
-        public bool verificarNoticiaCurtida(int idNoticia, string identificador, bool ehAutor)
+        public bool verificarNoticiaCurtida(int idNoticia, string identificador)
         {
             try
             {
-                int id = getId(identificador, ehAutor);
+                int id = getId(identificador);
 
                 if (id == 0)
                 {
@@ -63,62 +63,12 @@ namespace NewsletterBlob.Controller
             }
         }
 
-        //Verificar se já curtiu a notícia
-        public bool verificarCurtidaOuDescurtida(int idNoticia, string identificador, bool ehAutor)
-        {
-            try
-            {
-                int id = getId(identificador, ehAutor);
-
-                if (id == 0)
-                {
-                    MessageBox.Show("Usuário não encontrado!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                else
-                {
-                    bool estaCurtido = new CurtidaDAO().verificarCurtidaDescurtida(idNoticia, id);
-                    return estaCurtido;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-        }
-
-        //Curtir Notícia
-        public int curtirNoticia(int idNoticia, string identificador, bool ehAutor, bool estaCurtido)
-        {
-            try
-            {
-                int id = getId(identificador, ehAutor);
-
-                if (id == 0)
-                {
-                    MessageBox.Show("Usuário não encontrado!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return 0;
-                }
-                else
-                {
-                    int resp = new CurtidaDAO().descurtir(idNoticia, id, estaCurtido);
-                    return resp;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
-            }
-        }
-
         //Descurtir Notícia
-        public int descurtirNoticia(int idNoticia, string identificador, bool ehAutor, bool estaCurtido)
+        public int descurtirNoticia(int idNoticia, string identificador)
         {
             try
             {
-                int id = getId(identificador, ehAutor);
+                int id = getId(identificador);
 
                 if (id == 0)
                 {
@@ -127,7 +77,7 @@ namespace NewsletterBlob.Controller
                 }
                 else
                 {
-                    int resp = new CurtidaDAO().descurtir(idNoticia, id, estaCurtido);
+                    int resp = new CurtidaDAO().excluirCurtida(idNoticia, id);
                     return resp;
                 }
             }
@@ -138,17 +88,9 @@ namespace NewsletterBlob.Controller
             }
         }
 
-        private int getId(string identificador, bool ehAutor)
+        private int getId(string identificador)
         {
-            int id = 0;
-            if (ehAutor)
-            {
-                id = new CurtidaDAO().getIdAutorCurtida(identificador);
-            }
-            else
-            {
-                id = new CurtidaDAO().getIdLeitorCurtida(identificador);
-            }
+            int id = new CurtidaDAO().getIdLeitorCurtida(identificador);
             return id;
         }
     }
