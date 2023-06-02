@@ -44,16 +44,17 @@
             this.lblConteudoNoticia = new System.Windows.Forms.Label();
             this.pnlComentarios = new System.Windows.Forms.Panel();
             this.pnlComentario01 = new System.Windows.Forms.Panel();
-            this.pctBoxDeletaComentario = new System.Windows.Forms.PictureBox();
             this.lblComentario01 = new System.Windows.Forms.Label();
-            this.pctBoxFotoLeitor = new System.Windows.Forms.PictureBox();
             this.pnlUnderlineComment = new System.Windows.Forms.Panel();
             this.lblComentario = new System.Windows.Forms.Label();
             this.lblEscreverComentario = new System.Windows.Forms.Label();
             this.txtBoxComentario = new System.Windows.Forms.TextBox();
             this.btnPostarComentario = new System.Windows.Forms.Button();
             this.lblLike = new System.Windows.Forms.Label();
+            this.pctBoxLikeCheio = new System.Windows.Forms.PictureBox();
             this.pctBoxLike = new System.Windows.Forms.PictureBox();
+            this.pctBoxDeletaComentario = new System.Windows.Forms.PictureBox();
+            this.pctBoxFotoLeitor = new System.Windows.Forms.PictureBox();
             this.pctBoxNoticia = new System.Windows.Forms.PictureBox();
             this.pctBoxClima = new System.Windows.Forms.PictureBox();
             this.pctBoxLocalizacao = new System.Windows.Forms.PictureBox();
@@ -61,9 +62,10 @@
             this.pctBoxLogo = new System.Windows.Forms.PictureBox();
             this.pnlComentarios.SuspendLayout();
             this.pnlComentario01.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLikeCheio)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDeletaComentario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFotoLeitor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxNoticia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxClima)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocalizacao)).BeginInit();
@@ -78,10 +80,9 @@
             this.lblPolitica.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPolitica.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPolitica.ForeColor = System.Drawing.Color.Black;
-            this.lblPolitica.Location = new System.Drawing.Point(464, 25);
-            this.lblPolitica.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPolitica.Location = new System.Drawing.Point(619, 410);
             this.lblPolitica.Name = "lblPolitica";
-            this.lblPolitica.Size = new System.Drawing.Size(53, 17);
+            this.lblPolitica.Size = new System.Drawing.Size(64, 20);
             this.lblPolitica.TabIndex = 23;
             this.lblPolitica.Text = "Política";
             // 
@@ -92,10 +93,9 @@
             this.lblEntretenimento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEntretenimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEntretenimento.ForeColor = System.Drawing.Color.Black;
-            this.lblEntretenimento.Location = new System.Drawing.Point(339, 25);
-            this.lblEntretenimento.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEntretenimento.Location = new System.Drawing.Point(452, 410);
             this.lblEntretenimento.Name = "lblEntretenimento";
-            this.lblEntretenimento.Size = new System.Drawing.Size(104, 17);
+            this.lblEntretenimento.Size = new System.Drawing.Size(122, 20);
             this.lblEntretenimento.TabIndex = 22;
             this.lblEntretenimento.Text = "Entretenimento";
             // 
@@ -106,10 +106,9 @@
             this.lblTecnologia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTecnologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTecnologia.ForeColor = System.Drawing.Color.Black;
-            this.lblTecnologia.Location = new System.Drawing.Point(170, 25);
-            this.lblTecnologia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTecnologia.Location = new System.Drawing.Point(227, 410);
             this.lblTecnologia.Name = "lblTecnologia";
-            this.lblTecnologia.Size = new System.Drawing.Size(78, 17);
+            this.lblTecnologia.Size = new System.Drawing.Size(90, 20);
             this.lblTecnologia.TabIndex = 21;
             this.lblTecnologia.Text = "Tecnologia";
             // 
@@ -120,10 +119,9 @@
             this.lblEsporte.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblEsporte.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEsporte.ForeColor = System.Drawing.Color.Black;
-            this.lblEsporte.Location = new System.Drawing.Point(266, 25);
-            this.lblEsporte.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEsporte.Location = new System.Drawing.Point(355, 410);
             this.lblEsporte.Name = "lblEsporte";
-            this.lblEsporte.Size = new System.Drawing.Size(57, 17);
+            this.lblEsporte.Size = new System.Drawing.Size(67, 20);
             this.lblEsporte.TabIndex = 20;
             this.lblEsporte.Text = "Esporte";
             // 
@@ -134,10 +132,9 @@
             this.lblGeral.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGeral.ForeColor = System.Drawing.Color.Black;
-            this.lblGeral.Location = new System.Drawing.Point(112, 25);
-            this.lblGeral.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGeral.Location = new System.Drawing.Point(149, 410);
             this.lblGeral.Name = "lblGeral";
-            this.lblGeral.Size = new System.Drawing.Size(43, 17);
+            this.lblGeral.Size = new System.Drawing.Size(50, 20);
             this.lblGeral.TabIndex = 19;
             this.lblGeral.Text = "Geral";
             this.lblGeral.Click += new System.EventHandler(this.lblGeral_Click);
@@ -148,10 +145,9 @@
             this.lblClima.BackColor = System.Drawing.Color.Transparent;
             this.lblClima.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClima.ForeColor = System.Drawing.Color.Black;
-            this.lblClima.Location = new System.Drawing.Point(815, 25);
-            this.lblClima.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblClima.Location = new System.Drawing.Point(1087, 410);
             this.lblClima.Name = "lblClima";
-            this.lblClima.Size = new System.Drawing.Size(39, 17);
+            this.lblClima.Size = new System.Drawing.Size(46, 20);
             this.lblClima.TabIndex = 18;
             this.lblClima.Text = "32°C";
             // 
@@ -161,20 +157,19 @@
             this.lblLocalizacao.BackColor = System.Drawing.Color.Transparent;
             this.lblLocalizacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLocalizacao.ForeColor = System.Drawing.Color.Black;
-            this.lblLocalizacao.Location = new System.Drawing.Point(720, 25);
-            this.lblLocalizacao.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLocalizacao.Location = new System.Drawing.Point(960, 410);
             this.lblLocalizacao.Name = "lblLocalizacao";
-            this.lblLocalizacao.Size = new System.Drawing.Size(63, 17);
+            this.lblLocalizacao.Size = new System.Drawing.Size(75, 20);
             this.lblLocalizacao.TabIndex = 17;
             this.lblLocalizacao.Text = "São Luís";
             // 
             // pnlTaskbar
             // 
             this.pnlTaskbar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.pnlTaskbar.Location = new System.Drawing.Point(0, 71);
-            this.pnlTaskbar.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlTaskbar.Location = new System.Drawing.Point(0, 466);
+            this.pnlTaskbar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlTaskbar.Name = "pnlTaskbar";
-            this.pnlTaskbar.Size = new System.Drawing.Size(964, 2);
+            this.pnlTaskbar.Size = new System.Drawing.Size(1285, 2);
             this.pnlTaskbar.TabIndex = 13;
             // 
             // lblTitulo
@@ -182,10 +177,9 @@
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(109, 110);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(145, 514);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(70, 26);
+            this.lblTitulo.Size = new System.Drawing.Size(87, 31);
             this.lblTitulo.TabIndex = 24;
             this.lblTitulo.Text = "Título";
             // 
@@ -194,10 +188,9 @@
             this.lblSubTitulo.AutoSize = true;
             this.lblSubTitulo.BackColor = System.Drawing.Color.Transparent;
             this.lblSubTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSubTitulo.Location = new System.Drawing.Point(112, 161);
-            this.lblSubTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSubTitulo.Location = new System.Drawing.Point(149, 577);
             this.lblSubTitulo.Name = "lblSubTitulo";
-            this.lblSubTitulo.Size = new System.Drawing.Size(83, 17);
+            this.lblSubTitulo.Size = new System.Drawing.Size(95, 20);
             this.lblSubTitulo.TabIndex = 25;
             this.lblSubTitulo.Text = "Sub-Título";
             // 
@@ -206,10 +199,9 @@
             this.lblAutores.AutoSize = true;
             this.lblAutores.BackColor = System.Drawing.Color.Transparent;
             this.lblAutores.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAutores.Location = new System.Drawing.Point(112, 199);
-            this.lblAutores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblAutores.Location = new System.Drawing.Point(149, 624);
             this.lblAutores.Name = "lblAutores";
-            this.lblAutores.Size = new System.Drawing.Size(48, 15);
+            this.lblAutores.Size = new System.Drawing.Size(59, 18);
             this.lblAutores.TabIndex = 26;
             this.lblAutores.Text = "Autores";
             // 
@@ -219,10 +211,9 @@
             this.lblData.BackColor = System.Drawing.Color.Transparent;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblData.Location = new System.Drawing.Point(112, 228);
-            this.lblData.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblData.Location = new System.Drawing.Point(149, 660);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(33, 15);
+            this.lblData.Size = new System.Drawing.Size(39, 18);
             this.lblData.TabIndex = 27;
             this.lblData.Text = "Data";
             // 
@@ -231,10 +222,9 @@
             this.lblConteudoNoticia.BackColor = System.Drawing.Color.Transparent;
             this.lblConteudoNoticia.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.lblConteudoNoticia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConteudoNoticia.Location = new System.Drawing.Point(112, 534);
-            this.lblConteudoNoticia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblConteudoNoticia.Location = new System.Drawing.Point(149, 1036);
             this.lblConteudoNoticia.Name = "lblConteudoNoticia";
-            this.lblConteudoNoticia.Size = new System.Drawing.Size(488, 518);
+            this.lblConteudoNoticia.Size = new System.Drawing.Size(651, 638);
             this.lblConteudoNoticia.TabIndex = 29;
             this.lblConteudoNoticia.Text = resources.GetString("lblConteudoNoticia.Text");
             this.lblConteudoNoticia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -247,10 +237,10 @@
             this.pnlComentarios.Controls.Add(this.pnlComentario01);
             this.pnlComentarios.Controls.Add(this.pnlUnderlineComment);
             this.pnlComentarios.Controls.Add(this.lblComentario);
-            this.pnlComentarios.Location = new System.Drawing.Point(640, 119);
-            this.pnlComentarios.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlComentarios.Location = new System.Drawing.Point(853, 525);
+            this.pnlComentarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlComentarios.Name = "pnlComentarios";
-            this.pnlComentarios.Size = new System.Drawing.Size(290, 397);
+            this.pnlComentarios.Size = new System.Drawing.Size(386, 488);
             this.pnlComentarios.TabIndex = 30;
             // 
             // pnlComentario01
@@ -259,55 +249,30 @@
             this.pnlComentario01.Controls.Add(this.pctBoxDeletaComentario);
             this.pnlComentario01.Controls.Add(this.lblComentario01);
             this.pnlComentario01.Controls.Add(this.pctBoxFotoLeitor);
-            this.pnlComentario01.Location = new System.Drawing.Point(13, 66);
-            this.pnlComentario01.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlComentario01.Location = new System.Drawing.Point(17, 81);
+            this.pnlComentario01.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlComentario01.Name = "pnlComentario01";
-            this.pnlComentario01.Size = new System.Drawing.Size(264, 63);
+            this.pnlComentario01.Size = new System.Drawing.Size(351, 77);
             this.pnlComentario01.TabIndex = 34;
-            // 
-            // pctBoxDeletaComentario
-            // 
-            this.pctBoxDeletaComentario.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pctBoxDeletaComentario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctBoxDeletaComentario.Image = global::NewsletterBlob.Properties.Resources.Vector__7_;
-            this.pctBoxDeletaComentario.Location = new System.Drawing.Point(232, 23);
-            this.pctBoxDeletaComentario.Margin = new System.Windows.Forms.Padding(2);
-            this.pctBoxDeletaComentario.Name = "pctBoxDeletaComentario";
-            this.pctBoxDeletaComentario.Size = new System.Drawing.Size(18, 20);
-            this.pctBoxDeletaComentario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctBoxDeletaComentario.TabIndex = 32;
-            this.pctBoxDeletaComentario.TabStop = false;
             // 
             // lblComentario01
             // 
             this.lblComentario01.AutoSize = true;
             this.lblComentario01.BackColor = System.Drawing.Color.Transparent;
             this.lblComentario01.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblComentario01.Location = new System.Drawing.Point(49, 12);
-            this.lblComentario01.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblComentario01.Location = new System.Drawing.Point(65, 15);
             this.lblComentario01.Name = "lblComentario01";
-            this.lblComentario01.Size = new System.Drawing.Size(146, 26);
+            this.lblComentario01.Size = new System.Drawing.Size(197, 34);
             this.lblComentario01.TabIndex = 31;
             this.lblComentario01.Text = "Duis laoreet viverra mauris, a \r\nvolutpat lacus congue sed.";
-            // 
-            // pctBoxFotoLeitor
-            // 
-            this.pctBoxFotoLeitor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctBoxFotoLeitor.Location = new System.Drawing.Point(13, 15);
-            this.pctBoxFotoLeitor.Margin = new System.Windows.Forms.Padding(2);
-            this.pctBoxFotoLeitor.Name = "pctBoxFotoLeitor";
-            this.pctBoxFotoLeitor.Size = new System.Drawing.Size(30, 33);
-            this.pctBoxFotoLeitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctBoxFotoLeitor.TabIndex = 0;
-            this.pctBoxFotoLeitor.TabStop = false;
             // 
             // pnlUnderlineComment
             // 
             this.pnlUnderlineComment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.pnlUnderlineComment.Location = new System.Drawing.Point(74, 41);
-            this.pnlUnderlineComment.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUnderlineComment.Location = new System.Drawing.Point(99, 50);
+            this.pnlUnderlineComment.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUnderlineComment.Name = "pnlUnderlineComment";
-            this.pnlUnderlineComment.Size = new System.Drawing.Size(150, 2);
+            this.pnlUnderlineComment.Size = new System.Drawing.Size(200, 2);
             this.pnlUnderlineComment.TabIndex = 32;
             // 
             // lblComentario
@@ -317,10 +282,9 @@
             this.lblComentario.Cursor = System.Windows.Forms.Cursors.Default;
             this.lblComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblComentario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.lblComentario.Location = new System.Drawing.Point(96, 15);
-            this.lblComentario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblComentario.Location = new System.Drawing.Point(128, 18);
             this.lblComentario.Name = "lblComentario";
-            this.lblComentario.Size = new System.Drawing.Size(105, 18);
+            this.lblComentario.Size = new System.Drawing.Size(127, 24);
             this.lblComentario.TabIndex = 31;
             this.lblComentario.Text = "Comentários";
             this.lblComentario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -330,20 +294,19 @@
             this.lblEscreverComentario.AutoSize = true;
             this.lblEscreverComentario.BackColor = System.Drawing.Color.Transparent;
             this.lblEscreverComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEscreverComentario.Location = new System.Drawing.Point(650, 528);
-            this.lblEscreverComentario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEscreverComentario.Location = new System.Drawing.Point(867, 1029);
             this.lblEscreverComentario.Name = "lblEscreverComentario";
-            this.lblEscreverComentario.Size = new System.Drawing.Size(139, 15);
+            this.lblEscreverComentario.Size = new System.Drawing.Size(170, 18);
             this.lblEscreverComentario.TabIndex = 35;
             this.lblEscreverComentario.Text = "Escreva um comentário:";
             // 
             // txtBoxComentario
             // 
-            this.txtBoxComentario.Location = new System.Drawing.Point(653, 552);
-            this.txtBoxComentario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBoxComentario.Location = new System.Drawing.Point(871, 1058);
+            this.txtBoxComentario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxComentario.Multiline = true;
             this.txtBoxComentario.Name = "txtBoxComentario";
-            this.txtBoxComentario.Size = new System.Drawing.Size(265, 52);
+            this.txtBoxComentario.Size = new System.Drawing.Size(352, 63);
             this.txtBoxComentario.TabIndex = 36;
             // 
             // btnPostarComentario
@@ -353,10 +316,10 @@
             this.btnPostarComentario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostarComentario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostarComentario.ForeColor = System.Drawing.Color.White;
-            this.btnPostarComentario.Location = new System.Drawing.Point(653, 608);
-            this.btnPostarComentario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPostarComentario.Location = new System.Drawing.Point(871, 1127);
+            this.btnPostarComentario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPostarComentario.Name = "btnPostarComentario";
-            this.btnPostarComentario.Size = new System.Drawing.Size(264, 31);
+            this.btnPostarComentario.Size = new System.Drawing.Size(352, 38);
             this.btnPostarComentario.TabIndex = 73;
             this.btnPostarComentario.Text = "Postar";
             this.btnPostarComentario.UseVisualStyleBackColor = false;
@@ -368,34 +331,69 @@
             this.lblLike.BackColor = System.Drawing.Color.Transparent;
             this.lblLike.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLike.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(75)))), ((int)(((byte)(128)))));
-            this.lblLike.Location = new System.Drawing.Point(682, 653);
-            this.lblLike.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLike.Location = new System.Drawing.Point(909, 1183);
             this.lblLike.Name = "lblLike";
-            this.lblLike.Size = new System.Drawing.Size(16, 17);
+            this.lblLike.Size = new System.Drawing.Size(18, 20);
             this.lblLike.TabIndex = 75;
             this.lblLike.Text = "0";
+            // 
+            // pctBoxLikeCheio
+            // 
+            this.pctBoxLikeCheio.BackColor = System.Drawing.Color.Transparent;
+            this.pctBoxLikeCheio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctBoxLikeCheio.Image = global::NewsletterBlob.Properties.Resources.Vector__8_;
+            this.pctBoxLikeCheio.Location = new System.Drawing.Point(875, 1216);
+            this.pctBoxLikeCheio.Name = "pctBoxLikeCheio";
+            this.pctBoxLikeCheio.Size = new System.Drawing.Size(29, 30);
+            this.pctBoxLikeCheio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxLikeCheio.TabIndex = 76;
+            this.pctBoxLikeCheio.TabStop = false;
             // 
             // pctBoxLike
             // 
             this.pctBoxLike.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLike.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxLike.Image = global::NewsletterBlob.Properties.Resources.Vector__4_;
-            this.pctBoxLike.Location = new System.Drawing.Point(656, 652);
-            this.pctBoxLike.Margin = new System.Windows.Forms.Padding(2);
+            this.pctBoxLike.Location = new System.Drawing.Point(875, 1181);
+            this.pctBoxLike.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pctBoxLike.Name = "pctBoxLike";
-            this.pctBoxLike.Size = new System.Drawing.Size(22, 24);
+            this.pctBoxLike.Size = new System.Drawing.Size(29, 30);
             this.pctBoxLike.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLike.TabIndex = 74;
             this.pctBoxLike.TabStop = false;
             this.pctBoxLike.Click += new System.EventHandler(this.pctBoxLike_Click);
             // 
+            // pctBoxDeletaComentario
+            // 
+            this.pctBoxDeletaComentario.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pctBoxDeletaComentario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctBoxDeletaComentario.Image = global::NewsletterBlob.Properties.Resources.Vector__7_;
+            this.pctBoxDeletaComentario.Location = new System.Drawing.Point(309, 28);
+            this.pctBoxDeletaComentario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pctBoxDeletaComentario.Name = "pctBoxDeletaComentario";
+            this.pctBoxDeletaComentario.Size = new System.Drawing.Size(24, 25);
+            this.pctBoxDeletaComentario.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBoxDeletaComentario.TabIndex = 32;
+            this.pctBoxDeletaComentario.TabStop = false;
+            // 
+            // pctBoxFotoLeitor
+            // 
+            this.pctBoxFotoLeitor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctBoxFotoLeitor.Location = new System.Drawing.Point(17, 18);
+            this.pctBoxFotoLeitor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pctBoxFotoLeitor.Name = "pctBoxFotoLeitor";
+            this.pctBoxFotoLeitor.Size = new System.Drawing.Size(39, 40);
+            this.pctBoxFotoLeitor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctBoxFotoLeitor.TabIndex = 0;
+            this.pctBoxFotoLeitor.TabStop = false;
+            // 
             // pctBoxNoticia
             // 
             this.pctBoxNoticia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctBoxNoticia.Location = new System.Drawing.Point(116, 260);
-            this.pctBoxNoticia.Margin = new System.Windows.Forms.Padding(2);
+            this.pctBoxNoticia.Location = new System.Drawing.Point(155, 699);
+            this.pctBoxNoticia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pctBoxNoticia.Name = "pctBoxNoticia";
-            this.pctBoxNoticia.Size = new System.Drawing.Size(484, 256);
+            this.pctBoxNoticia.Size = new System.Drawing.Size(645, 315);
             this.pctBoxNoticia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxNoticia.TabIndex = 28;
             this.pctBoxNoticia.TabStop = false;
@@ -404,10 +402,10 @@
             // 
             this.pctBoxClima.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxClima.Image = global::NewsletterBlob.Properties.Resources.Vector__1_;
-            this.pctBoxClima.Location = new System.Drawing.Point(789, 24);
-            this.pctBoxClima.Margin = new System.Windows.Forms.Padding(2);
+            this.pctBoxClima.Location = new System.Drawing.Point(1052, 409);
+            this.pctBoxClima.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pctBoxClima.Name = "pctBoxClima";
-            this.pctBoxClima.Size = new System.Drawing.Size(22, 26);
+            this.pctBoxClima.Size = new System.Drawing.Size(29, 32);
             this.pctBoxClima.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxClima.TabIndex = 16;
             this.pctBoxClima.TabStop = false;
@@ -416,10 +414,10 @@
             // 
             this.pctBoxLocalizacao.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLocalizacao.Image = global::NewsletterBlob.Properties.Resources.Vector;
-            this.pctBoxLocalizacao.Location = new System.Drawing.Point(696, 24);
-            this.pctBoxLocalizacao.Margin = new System.Windows.Forms.Padding(2);
+            this.pctBoxLocalizacao.Location = new System.Drawing.Point(928, 409);
+            this.pctBoxLocalizacao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pctBoxLocalizacao.Name = "pctBoxLocalizacao";
-            this.pctBoxLocalizacao.Size = new System.Drawing.Size(20, 26);
+            this.pctBoxLocalizacao.Size = new System.Drawing.Size(27, 32);
             this.pctBoxLocalizacao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLocalizacao.TabIndex = 15;
             this.pctBoxLocalizacao.TabStop = false;
@@ -429,10 +427,10 @@
             this.pctBoxPerfil.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxPerfil.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxPerfil.Image = global::NewsletterBlob.Properties.Resources.Component_4;
-            this.pctBoxPerfil.Location = new System.Drawing.Point(892, 16);
-            this.pctBoxPerfil.Margin = new System.Windows.Forms.Padding(2);
+            this.pctBoxPerfil.Location = new System.Drawing.Point(1189, 399);
+            this.pctBoxPerfil.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pctBoxPerfil.Name = "pctBoxPerfil";
-            this.pctBoxPerfil.Size = new System.Drawing.Size(38, 41);
+            this.pctBoxPerfil.Size = new System.Drawing.Size(51, 50);
             this.pctBoxPerfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxPerfil.TabIndex = 14;
             this.pctBoxPerfil.TabStop = false;
@@ -443,10 +441,10 @@
             this.pctBoxLogo.BackColor = System.Drawing.Color.Transparent;
             this.pctBoxLogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctBoxLogo.Image = global::NewsletterBlob.Properties.Resources.Component_3;
-            this.pctBoxLogo.Location = new System.Drawing.Point(17, 9);
-            this.pctBoxLogo.Margin = new System.Windows.Forms.Padding(0, 2, 2, 0);
+            this.pctBoxLogo.Location = new System.Drawing.Point(23, 390);
+            this.pctBoxLogo.Margin = new System.Windows.Forms.Padding(0, 2, 3, 0);
             this.pctBoxLogo.Name = "pctBoxLogo";
-            this.pctBoxLogo.Size = new System.Drawing.Size(68, 58);
+            this.pctBoxLogo.Size = new System.Drawing.Size(91, 71);
             this.pctBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctBoxLogo.TabIndex = 12;
             this.pctBoxLogo.TabStop = false;
@@ -454,11 +452,12 @@
             // 
             // JanelaNoticiaExpandida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(978, 653);
+            this.ClientSize = new System.Drawing.Size(1304, 804);
+            this.Controls.Add(this.pctBoxLikeCheio);
             this.Controls.Add(this.lblLike);
             this.Controls.Add(this.pctBoxLike);
             this.Controls.Add(this.btnPostarComentario);
@@ -486,7 +485,7 @@
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "JanelaNoticiaExpandida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -495,9 +494,10 @@
             this.pnlComentarios.PerformLayout();
             this.pnlComentario01.ResumeLayout(false);
             this.pnlComentario01.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLikeCheio)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxDeletaComentario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxFotoLeitor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBoxLike)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxNoticia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxClima)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBoxLocalizacao)).EndInit();
@@ -540,5 +540,6 @@
         private System.Windows.Forms.PictureBox pctBoxLike;
         private System.Windows.Forms.Label lblLike;
         private System.Windows.Forms.PictureBox pctBoxDeletaComentario;
+        private System.Windows.Forms.PictureBox pctBoxLikeCheio;
     }
 }

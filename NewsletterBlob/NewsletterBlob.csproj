@@ -263,5 +263,8 @@
   <ItemGroup>
     <None Include="Resources\icon-no-profile-photo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector %288%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
