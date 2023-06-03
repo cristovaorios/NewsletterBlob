@@ -231,7 +231,6 @@ namespace NewsletterBlob.View
                 bool jaCurtiu = new ControllerCurtida().verificarNoticiaCurtida(idNoticia, identificador);
                 if (jaCurtiu)
                 {
-                    MessageBox.Show("Entrei em descurtir");
                     int resp = new ControllerCurtida().descurtirNoticia(idNoticia, identificador);
                     if (resp == 0)
                     {
@@ -247,7 +246,6 @@ namespace NewsletterBlob.View
                 }
                 else
                 {
-                    MessageBox.Show("Entrei em cadastrar curtida");
                     new ControllerCurtida().cadastrarCurtida(idNoticia, identificador, true);
                     int likes = Convert.ToInt32(lblLike.Text);
                     int qtdLikes = likes + 1;

@@ -50,8 +50,9 @@ namespace NewsletterBlob.View
             if (noticiasBanner != null && noticiasBanner.Count > 0)
             {
                 // Defina a primeira imagem do banner como o InitialImage do pctBoxNoticiaBanner
-                byte[] primeiraImagem = noticiasBanner[numImg].Imagem;
-                pctBoxNoticiaBanner.InitialImage = ByteToImage.ByteArrayToImage(primeiraImagem);
+                byte[] primeiraImagem = noticiasBanner[0].Imagem;
+                pctBoxNoticiaBanner.Image = ByteToImage.ByteArrayToImage(primeiraImagem);
+                lblNoticiaBanner.Text = noticiasBanner[0].Titulo;
             }
 
 
