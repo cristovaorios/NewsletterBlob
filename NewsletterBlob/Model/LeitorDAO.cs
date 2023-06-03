@@ -10,214 +10,235 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using NewsletterBlob.Util;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace NewsletterBlob.Model
 {
-    internal class LeitorDAO
+    public class LeitorDAO
     {
-        private const string conect = "server=localhost;userid=root;password=;database=db_blobnews";
+        private MySqlConnection con;
+        private MySqlCommand command;
+        private MySqlDataReader reader;
+        private string sql;
 
-        public void adicionarLeitor(Leitor leitor)
+        public LeitorDAO()
         {
+            con = ConnectionFactory.Conexao();
+        }
 
+        public int adicionarLeitor(Leitor leitor)
+        {
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"INSERT INTO tb_usuario_leitor(nome, email, cpf, endereco, telefone, senha, data_de_nascimento)" +
-                    $"VALUES ('{leitor.Nome}', '{leitor.Email}', '{leitor.Cpf}', '{leitor.Endereco}', '{leitor.Telefone}', '{leitor.Senha}', '{leitor.DataDeNascimento.ToString("yyyy-MM-dd HH:mm:ss")}')";
-                command.ExecuteNonQuery();
-
-                //Fechando a conexão
-                conexao.Close();
+                command = con.CreateCommand();
+                sql = $"INSERT INTO tb_usuario_leitor(nome, email, cpf, endereco, telefone, senha, data_de_nascimento)" +
+                    $"VALUES (@nome, @email, @cpf, @endereco, @telefone, @senha, @data_nascimento)";
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@nome", leitor.Nome);
+                command.Parameters.AddWithValue("@email", leitor.Email);
+                command.Parameters.AddWithValue("@cpf", leitor.Cpf);
+                command.Parameters.AddWithValue("@endereco", leitor.Endereco);
+                command.Parameters.AddWithValue("@telefone", leitor.Telefone);
+                command.Parameters.AddWithValue("@senha", leitor.Senha);
+                command.Parameters.AddWithValue("@data_nascimento", leitor.DataDeNascimento.ToString("yyyy-MM-dd HH:mm:ss"));
+                command.Prepare();
+                result = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         public List<string> comparaUsuarioSenha(string email, string senha)
         {
+            List<string> usuario = new List<string>();
             try
             {
-                List<string> usuario = new List<string>();
-
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"select email, senha from tb_usuario_leitor " +
-                    $"where email = verifica_usuario_senha('{email}', '{senha}');";
-                MySqlDataReader reader = command.ExecuteReader();
+                command = con.CreateCommand();
+                sql = $"select email, senha from tb_usuario_leitor " +
+                    $"where email = verifica_usuario_senha(@email, @senha);";
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@email", email);
+                command.Parameters.AddWithValue("@senha", senha);
+                command.Prepare();
+                reader = command.ExecuteReader();
                 
                 //Retornando o resultado
                 while(reader.Read())
                 {
+                    if (reader.IsDBNull(0))
+                        return null;
                     usuario.Add(reader.GetString(0));   //Email
                     usuario.Add(reader.GetString(1));   //Senha
                 }
-
-                //Fechando a conexão
-                conexao.Close();
-                if(usuario.Contains(""))
-                {
-                    return null;
-                }
-                else
-                {
-                    return usuario;
-                }
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return usuario;
         }
 
         public int validaEmail(string email)
         {
+            int result = 0;
             try
             {
-
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"select verifica_email('{email}');";
-                MySqlDataReader reader = command.ExecuteReader();
-                int result = 0;
+                command = con.CreateCommand();
+                sql = $"select verifica_email(@email);";
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@email", email);
+                command.Prepare();
+                reader = command.ExecuteReader();
                 //Retornando o resultado
                 while (reader.Read())
                 {
                     result = reader.GetInt32(0);
                 }
-                conexao.Close();
-                return result;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         public int validaCpf(string cpf)
         {
+            int result = 0;
             try
             {
-
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"select verifica_cpf('{cpf}');";
-                MySqlDataReader reader = command.ExecuteReader();
-                int result = 0;
+                command = con.CreateCommand();
+                sql = $"select verifica_cpf(@cpf);";
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@cpf", cpf);
+                command.Prepare();
+                reader = command.ExecuteReader();
                 //Retornando o resultado
                 while (reader.Read())
                 {
                     result = reader.GetInt32(0);
                 }
-                conexao.Close();
-                return result;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
-        public void adicionarFotoPerfil(string email, byte[] imagem)
+        public int adicionarFotoPerfil(string email, byte[] imagem)
         {
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
                 //Criação do Objeto de Conexão
-                using (MySqlConnection conexao = new MySqlConnection(strconexao))
+                using (con)
                 {
                     //Abertura da Conexao
-                    conexao.Open();
+                    con.Open();
                     //Adicionando Imagem
-                    using (MySqlCommand command = conexao.CreateCommand())
+                    using (command = con.CreateCommand())
                     {
                         // utiliza parâmetros para evitar problemas com caracteres especiais e ataques de injeção de SQL
-                        command.CommandText = "UPDATE tb_usuario_leitor SET imagem_de_perfil = @imagem WHERE email = @email";
+                        sql = "UPDATE tb_usuario_leitor SET imagem_de_perfil = @imagem WHERE email = @email";
+                        command = new MySqlCommand(sql, con);
                         command.Parameters.AddWithValue("@imagem", imagem);
                         command.Parameters.AddWithValue("@email", email);
-                        command.ExecuteNonQuery();
+                        result = command.ExecuteNonQuery();
                     }
-                    //Fechando a conexão
-                    conexao.Close();
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
-        public void deletarFotoPerfil(string email)
+        public int deletarFotoPerfil(string email)
         {
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"UPDATE tb_usuario_leitor SET imagem_de_perfil = '{null}' WHERE email = '{email}'";
-                command.ExecuteNonQuery();
-
-                //Fechando a conexão
-                conexao.Close();
+                command = con.CreateCommand();
+                sql = $"UPDATE tb_usuario_leitor SET imagem_de_perfil = @imagem WHERE email = @email";
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@imagem", null);
+                command.Parameters.AddWithValue("@email", email);
+                result = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         public Leitor listarLeitor(string email)
         {
+            Leitor leitor = new Leitor();
             try
             {
-                Leitor leitor = new Leitor();
-
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"SELECT nome, email, cpf, endereco, telefone, senha, data_de_nascimento, imagem_de_perfil FROM tb_usuario_leitor WHERE email = '{email}';";
-                MySqlDataReader reader = command.ExecuteReader();
+                command = con.CreateCommand();
+                sql = $"SELECT nome, email, cpf, endereco, telefone, senha, data_de_nascimento, imagem_de_perfil " +
+                    $"FROM tb_usuario_leitor WHERE email = @email;";
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@email", email);
+                command.Prepare();
+                reader = command.ExecuteReader();
 
                 //Retornando o resultado
                 while (reader.Read())
@@ -233,81 +254,92 @@ namespace NewsletterBlob.Model
                         reader.GetString(3), reader.GetString(4), reader.GetString(5), reader.GetDateTime(6), null);
                     }
                 }
-                //Retornando o leitor
-                return leitor;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return leitor;
         }
 
-        public void atualizarLeitor(Leitor leitor, string old_email)
+        public int atualizarLeitor(Leitor leitor, string old_email)
         {
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 //Capturando o id do usuário
                 int id = getIdByEmail(old_email);
-                MessageBox.Show("Id: "+id);
-                if(id != 0)
+                if (id != 0)
                 {
-                    command.CommandText = $"call editar_usuario({id}, '{leitor.Nome}', '{leitor.Email}'," +
-                    $" '{leitor.Cpf}', '{leitor.Endereco}', '{leitor.Telefone}'," +
-                    $" '{leitor.Senha}', '{leitor.DataDeNascimento.ToString("yyyy-MM-dd HH:mm:ss")}');";
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Dados Editados com Sucesso!", "Mensagem de Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    sql = $"call editar_usuario(@id, @nome, @email," +
+                    $" @cpf, @endereco, @telefone," +
+                    $" @senha, @data_nascimento);";
+                    command = new MySqlCommand(sql, con);
+                    command.Parameters.AddWithValue("@id", id);
+                    command.Parameters.AddWithValue("@nome", leitor.Nome);
+                    command.Parameters.AddWithValue("@email", leitor.Email);
+                    command.Parameters.AddWithValue("@cpf", leitor.Cpf);
+                    command.Parameters.AddWithValue("@endereco", leitor.Endereco);
+                    command.Parameters.AddWithValue("@telefone", leitor.Telefone);
+                    command.Parameters.AddWithValue("@senha", leitor.Senha);
+                    command.Parameters.AddWithValue("@data_nascimento", leitor.DataDeNascimento.ToString("yyyy-MM-dd HH:mm:ss"));
+                    command.Prepare();
+                    result = command.ExecuteNonQuery();
                 }
-                else
-                {
-                    MessageBox.Show("Não foi possível editar os dados!", "Mensagem de Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                //Fechando a conexão
-                conexao.Close();
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         public int getIdByEmail(string email)
         {
+            int id = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 //Capturando o id do usuário
-                command.CommandText = $"SELECT id_leitor FROM tb_usuario_leitor WHERE id_leitor = capturar_id_usuario('{email}');";
+                sql = $"SELECT id_leitor FROM tb_usuario_leitor WHERE id_leitor = capturar_id_usuario(@email);";
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@email", email);
+                command.Prepare();
                 MySqlDataReader reader = command.ExecuteReader();
                 //Atribuindo o id encontrado
-                int id=0;
                 while (reader.Read())
                 {
                     id = reader.GetInt32(0);
                 }
-                //Retornando o resultado
-                return id;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            //Retornando o resultado
+            return id;
         }
 
     }

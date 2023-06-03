@@ -8,14 +8,17 @@ using System.Windows.Forms;
 
 namespace NewsletterBlob.Controller
 {
-    internal class ControllerAutor
+    public class ControllerAutor
     {
+        private Autor autor;
+        private AutorDAO autorDAO;
         //Verificar Usuário e Senha
         public string verificaUsuarioSenha(string registroProfissional, string senha)
         {
             try
             {
-                List<string> usuario = new AutorDAO().comparaUsuarioSenha(registroProfissional, senha);
+                autorDAO = new AutorDAO();
+                List<string> usuario = autorDAO.comparaUsuarioSenha(registroProfissional, senha);
 
                 if (usuario.Any() && !(usuario.Equals(null)))
                 {
@@ -39,7 +42,8 @@ namespace NewsletterBlob.Controller
         {
             try
             {
-                Autor autor = new AutorDAO().listarAutor(registroProfissional);
+                autorDAO = new AutorDAO();
+                autor = autorDAO.listarAutor(registroProfissional);
                 return autor;
             }
             catch (Exception ex)
@@ -54,9 +58,12 @@ namespace NewsletterBlob.Controller
         {
             try
             {
+                autorDAO = new AutorDAO();
                 if (imagem != null)
                 {
-                    new AutorDAO().adicionarFotoPerfil(registroProfissional, imagem);
+                    int resp = autorDAO.adicionarFotoPerfil(registroProfissional, imagem);
+                    if(resp == 0)
+                        MessageBox.Show("Não foi possível alterar a foto de perfil!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -70,29 +77,15 @@ namespace NewsletterBlob.Controller
         {
             try
             {
-                new AutorDAO().deletarFotoPerfil(registroProfissional);
-                MessageBox.Show("Foto Removida!", "Mensagem de SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                autorDAO = new AutorDAO();
+                int resp = autorDAO.deletarFotoPerfil(registroProfissional);
+                if(resp == 0)
+                    MessageBox.Show("Não foi possível remover a foto de perfil!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        //Editar Usuário Leitor
-        /*public void editarLeitor(string identificador, string nome, string email, DateTime dataDeNascimento, string cpf, string endereco, string telefone, string senha)
-        {
-            try
-            {
-                Leitor leitor = new Leitor(nome, email, dataDeNascimento, cpf, endereco, telefone, senha);
-                new LeitorDAO().atualizarLeitor(leitor, identificador);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Não foi possível editar os dados!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
-            }
-        }*/
     }
 }

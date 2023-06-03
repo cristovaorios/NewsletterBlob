@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using NewsletterBlob.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,63 +9,69 @@ using System.Windows.Forms;
 
 namespace NewsletterBlob.Model
 {
-    internal class CurtidaDAO
+    public class CurtidaDAO
     {
-        private const string conect = "server=localhost;userid=root;password=;database=db_blobnews";
+        private MySqlConnection con;
+        private MySqlCommand command;
+        private MySqlDataReader reader;
+        private string sql;
+
+        public CurtidaDAO()
+        {
+            con = ConnectionFactory.Conexao();
+        }
 
         //Adicionar Notícia
         public int adicionarCurtida(int idNoticia, int idLeitor, bool estaCurtido)
         {
-
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 // utiliza parâmetros para evitar problemas com caracteres especiais e ataques de injeção de SQL
-                command.CommandText = $"INSERT INTO tb_curtida (id_noticia, id_leitor, esta_curtido)" +
+                sql = $"INSERT INTO tb_curtida (id_noticia, id_leitor, esta_curtido)" +
                     $"VALUES (@id_noticia, @id_autor, @esta_curtido)";
+                command = new MySqlCommand(sql, con);
                 command.Parameters.AddWithValue("@id_noticia", idNoticia);
                 command.Parameters.AddWithValue("@id_autor", idLeitor);
                 command.Parameters.AddWithValue("@esta_curtido", estaCurtido);
                 command.Prepare();
-                command.ExecuteNonQuery();
-                //Fechando a conexão
-                conexao.Close();
-                return 1;
+                result = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         //Verificar curtida de autor em notícia
         public bool verificarCurtidaAutorNoticia(int idNoticia, int idLeitor)
         {
+            bool estaCurtido = false;
             try
             {
-                bool estaCurtido = false;
-                // String de Conexão
-                string strconexao = conect;
                 // Criação do Objeto de Conexão
-                using (MySqlConnection conexao = new MySqlConnection(strconexao))
+                using (con)
                 {
                     // Abertura da Conexão
-                    conexao.Open();
+                    con.Open();
                     // Comando SQL para buscar as notícias do autor
-                    string query = "SELECT esta_curtido FROM tb_curtida WHERE id_noticia = @id_noticia AND id_leitor = @id_autor;";
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    sql = "SELECT esta_curtido FROM tb_curtida WHERE id_noticia = @id_noticia AND id_leitor = @id_autor;";
+                    using (command = new MySqlCommand(sql, con))
                     {
                         command.Parameters.AddWithValue("@id_noticia", idNoticia);
                         command.Parameters.AddWithValue("@id_autor", idLeitor);
                         command.Prepare();
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        using (reader = command.ExecuteReader())
                         {
                             // Itera sobre os resultados da consulta e cria objetos Noticia
                             while (reader.Read())
@@ -77,51 +84,50 @@ namespace NewsletterBlob.Model
                         }
                     }
                 }
-                // Retorna as notícias encontradas
-                return estaCurtido;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return false;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            // Retorna as notícias encontradas
+            return estaCurtido;
         }
 
 
         //Deletar
         public int excluirCurtida(int idNoticia, int idLeitor)
         {
+            int result = 0;
             try
             {
-                //String de Conexão 
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 if (idNoticia > 0)
                 {
                     command.CommandText = $"DELETE FROM tb_curtida WHERE id_noticia = @id_noticia AND id_leitor = @id_autor;";
                     command.Parameters.AddWithValue("@id_noticia", idNoticia);
                     command.Parameters.AddWithValue("@id_autor", idLeitor);
                     command.Prepare();
-                    command.ExecuteNonQuery();
-                    //Fechando a conexão
-                    conexao.Close();
-                    return 1;
-                }
-                else
-                {
-                    //Fechando a conexão
-                    conexao.Close();
-                    return 0;
+                    result = command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         public int getIdLeitorCurtida(string idLeitor)
@@ -129,20 +135,18 @@ namespace NewsletterBlob.Model
             try
             {
                 int id = 0;
-                // String de Conexão
-                string strconexao = conect;
                 // Criação do Objeto de Conexão
-                using (MySqlConnection conexao = new MySqlConnection(strconexao))
+                using (con)
                 {
                     // Abertura da Conexão
-                    conexao.Open();
+                    con.Open();
                     // Comando SQL para buscar as notícias do autor
-                    string query = "SELECT id_leitor FROM tb_usuario_leitor WHERE email = @id_leitor;";
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    sql = "SELECT id_leitor FROM tb_usuario_leitor WHERE email = @id_leitor;";
+                    using (command = new MySqlCommand(sql, con))
                     {
                         command.Parameters.AddWithValue("@id_leitor", idLeitor);
                         command.Prepare();
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        using (reader = command.ExecuteReader())
                         {
                             // Itera sobre os resultados da consulta e cria objetos Noticia
                             while (reader.Read())
@@ -155,9 +159,9 @@ namespace NewsletterBlob.Model
                 // Retorna as notícias encontradas
                 return id;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return 0;
+                throw;
             }
         }
     }

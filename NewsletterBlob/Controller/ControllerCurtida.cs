@@ -8,8 +8,11 @@ using System.Windows.Forms;
 
 namespace NewsletterBlob.Controller
 {
-    internal class ControllerCurtida
+    public class ControllerCurtida
     {
+        private Curtida curtida;
+        private CurtidaDAO curtidaDAO;
+
         //Cadastrar Curtida
         public void cadastrarCurtida(int idNoticia, string identificador, bool estaCurtido)
         {
@@ -23,13 +26,7 @@ namespace NewsletterBlob.Controller
                 {
                     int resp = new CurtidaDAO().adicionarCurtida(idNoticia, id, estaCurtido);
                     if (resp == 0)
-                    {
                         MessageBox.Show("Não foi possível curtir a publicação!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Curtido com sucesso!");
-                    }
                 }
             }
             catch (Exception ex)
@@ -41,56 +38,44 @@ namespace NewsletterBlob.Controller
         //Verificar se já curtiu a notícia
         public bool verificarNoticiaCurtida(int idNoticia, string identificador)
         {
+            bool estaCurtido = false;
             try
             {
                 int id = getId(identificador);
-
-                if (id == 0)
-                {
-                    MessageBox.Show("Usuário não encontrado!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return false;
-                }
-                else
-                {
-                    bool estaCurtido = new CurtidaDAO().verificarCurtidaAutorNoticia(idNoticia, id);
-                    return estaCurtido;
-                }
+                if (id != 0)
+                    estaCurtido = new CurtidaDAO().verificarCurtidaAutorNoticia(idNoticia, id);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
             }
+            return estaCurtido;
         }
 
         //Descurtir Notícia
         public int descurtirNoticia(int idNoticia, string identificador)
         {
+            int result = 0;
             try
             {
                 int id = getId(identificador);
-
-                if (id == 0)
+                if (id != 0)
                 {
-                    MessageBox.Show("Usuário não encontrado!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return 0;
-                }
-                else
-                {
-                    int resp = new CurtidaDAO().excluirCurtida(idNoticia, id);
-                    return resp;
+                    curtidaDAO = new CurtidaDAO();
+                    result = curtidaDAO.excluirCurtida(idNoticia, id);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
             }
+            return result;
         }
 
         private int getId(string identificador)
         {
-            int id = new CurtidaDAO().getIdLeitorCurtida(identificador);
+            curtidaDAO = new CurtidaDAO();
+            int id = curtidaDAO.getIdLeitorCurtida(identificador);
             return id;
         }
     }

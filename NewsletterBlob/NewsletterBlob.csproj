@@ -97,6 +97,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Util\ByteToImage.cs" />
+    <Compile Include="Util\Conexao.cs" />
+    <Compile Include="Util\ConnectionFactory.cs" />
     <Compile Include="View\JanelaEditarNoticias.cs">
       <SubType>Form</SubType>
     </Compile>

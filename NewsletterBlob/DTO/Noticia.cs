@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace NewsletterBlob.Model
 {
-    internal class Noticia
+    public class Noticia
     {
         //Atributtes
         private int id;
@@ -75,61 +75,16 @@ namespace NewsletterBlob.Model
         }
 
         //Getters and Setters
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-        public int IdAutor
-        {
-            get { return idAutor; }
-            set { idAutor = value; }
-        }
-        public string Titulo
-        {
-            get { return titulo; }
-            set { titulo = value; }
-        }
-        public string SubTitulo
-        {
-            get { return subtitulo; }
-            set { subtitulo = value; }
-        }
-        public string Texto
-        {
-            get { return texto; }
-            set { texto =  value; }
-        }
-        public byte[] Imagem
-        {
-            get { return imagem; }
-            set { imagem = value; }
-        }
-        public string Categoria
-        {
-            get { return categoria; }
-            set { categoria = value; }
-        }
-        public string Autores
-        {
-            get { return autores; }
-            set { autores = value; }
-        }
-        public DateTime DataPublicacao
-        {
-            get { return dataPublicacao; }
-            set { dataPublicacao = value; }
-        }
-        public List<Comentario> Comentarios
-        {
-            get { return comentarios; }
-            set { comentarios = value; }
-        }
-        public int QtdCurtidas
-        {
-            get { return qtdCurtidas; }
-            set { qtdCurtidas = value; }
-        }
-
+        public int Id { get => id; set => id = value; }
+        public int IdAutor { get => idAutor; set => idAutor = value; }
+        public string Titulo { get => titulo; set => titulo = value; }
+        public string Subtitulo { get => subtitulo; set => subtitulo = value; }
+        public string Texto { get => texto; set => texto = value; }
+        public byte[] Imagem { get => imagem; set => imagem = value; }
+        public string Categoria { get => categoria; set => categoria = value; }
+        public string Autores { get => autores; set => autores = value; }
+        public DateTime DataPublicacao { get => dataPublicacao; set => dataPublicacao = value; }
+        public List<Comentario> Comentarios { get => comentarios; set => comentarios = value; }
+        public int QtdCurtidas { get => qtdCurtidas; set => qtdCurtidas = value; }
     }
 }

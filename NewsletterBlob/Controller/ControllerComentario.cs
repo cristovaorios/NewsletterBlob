@@ -9,9 +9,10 @@ using System.Windows.Forms;
 
 namespace NewsletterBlob.Controller
 {
-    internal class ControllerComentario
+    public class ControllerComentario
     {
-
+        private Comentario comentario;
+        private ComentarioDAO comentarioDAO;
 
         //Cadastrar Notícia
         public void cadastrarComentario(int idNoticia, string identificador, string texto)
@@ -19,9 +20,13 @@ namespace NewsletterBlob.Controller
             try
             {
                 Leitor leitor = getLeitor(identificador);
-                Comentario comentario = new Comentario(idNoticia, leitor.Id, leitor.ImagemPerfil, texto);
-
-                new ComentarioDAO().adicionarComentario(comentario);
+                comentario = new Comentario(idNoticia, leitor.Id, leitor.ImagemPerfil, texto);
+                comentarioDAO = new ComentarioDAO();
+                int result = comentarioDAO.adicionarComentario(comentario);
+                if(result == 0)
+                {
+                    MessageBox.Show("Não foi possível adicionar o comentário!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
@@ -32,23 +37,17 @@ namespace NewsletterBlob.Controller
         //Notícias Autor
         public List<Comentario> listarComentariosNoticia(int idNoticia)
         {
+            List<Comentario> lista = new List<Comentario>();
             try
             {
-                List<Comentario> lista = new ComentarioDAO().listarComentarioPorNoticia(idNoticia);
-                if (lista != null && lista.Count > 0)
-                {
-                    return lista;
-                }
-                else
-                {
-                    return new List<Comentario>();
-                }
+                comentarioDAO = new ComentarioDAO();
+                lista = comentarioDAO.listarComentarioPorNoticia(idNoticia);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return new List<Comentario>();
             }
+            return lista;
         }
 
         //Excluir Usuário Leitor
@@ -56,17 +55,15 @@ namespace NewsletterBlob.Controller
         {
             try
             {
-                int resp = new ComentarioDAO().deletarComentario(idComentario);
+                comentarioDAO = new ComentarioDAO();
+                int resp = comentarioDAO.deletarComentario(idComentario);
                 if (resp == 0)
-                {
                     MessageBox.Show("Não foi possível excluir o comentário!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         public int getIdLeitor(string identificador)
@@ -77,7 +74,8 @@ namespace NewsletterBlob.Controller
 
         private Leitor getLeitor(string identificador)
         {
-            Leitor leitor = new ComentarioDAO().getLeitorComentario(identificador);
+            comentarioDAO = new ComentarioDAO();
+            Leitor leitor = comentarioDAO.getLeitorComentario(identificador);
             return leitor;
         }
     }

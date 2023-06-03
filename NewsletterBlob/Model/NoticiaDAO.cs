@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using NewsletterBlob.Util;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,66 +13,71 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace NewsletterBlob.Model
 {
-    internal class NoticiaDAO
+    public class NoticiaDAO
     {
-        private const string conect = "server=localhost;userid=root;password=;database=db_blobnews";
+        private MySqlConnection con;
+        private MySqlCommand command;
+        private MySqlDataReader reader;
+        private string sql;
+
+        public NoticiaDAO()
+        {
+            con = ConnectionFactory.Conexao();
+        }
 
         //Adicionar Notícia
-        public void adicionarNoticia(int idAutor, Noticia noticia)
+        public int adicionarNoticia(int idAutor, Noticia noticia)
         {
-
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 // utiliza parâmetros para evitar problemas com caracteres especiais e ataques de injeção de SQL
-                command.CommandText = $"INSERT INTO tb_noticia (id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_comentarios, qtd_curtidas)" +
+                sql = $"INSERT INTO tb_noticia (id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_comentarios, qtd_curtidas)" +
                     $"VALUES (@id_autor, @titulo, @subtitulo, @texto, @imagem, @categoria, @autores, @data_publicacao, 0, 0)";
+                command = new MySqlCommand(sql, con);
                 command.Parameters.AddWithValue("@id_autor", idAutor);
                 command.Parameters.AddWithValue("@titulo", noticia.Titulo);
-                command.Parameters.AddWithValue("@subtitulo", noticia.SubTitulo);
+                command.Parameters.AddWithValue("@subtitulo", noticia.Subtitulo);
                 command.Parameters.AddWithValue("@texto", noticia.Texto);
                 command.Parameters.AddWithValue("@imagem", noticia.Imagem);
                 command.Parameters.AddWithValue("@categoria", noticia.Categoria);
                 command.Parameters.AddWithValue("@autores", noticia.Autores);
                 command.Parameters.AddWithValue("@data_publicacao", noticia.DataPublicacao.ToString("yyyy-MM-dd HH:mm:ss"));
                 command.Prepare();
-                command.ExecuteNonQuery();
-                //Fechando a conexão
-                conexao.Close();
+                result = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
 
         //Ler Notícia
         public Noticia listarNoticia(int id)
         {
+            Noticia noticia = new Noticia();
             try
             {
-                Noticia noticia = new Noticia();
-
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"SELECT id_noticia, id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_curtidas FROM tb_noticia WHERE id_noticia = @id;";
+                command = con.CreateCommand();
+                sql = $"SELECT id_noticia, id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_curtidas FROM tb_noticia WHERE id_noticia = @id;";
+                command = new MySqlCommand(sql, con);
                 command.Parameters.AddWithValue("@id", id);
                 command.Prepare();
-                MySqlDataReader reader = command.ExecuteReader();
+                reader = command.ExecuteReader();
 
                 //Retornando o resultado
                 while (reader.Read())
@@ -92,39 +98,40 @@ namespace NewsletterBlob.Model
                     }
                     noticia = new Noticia(idNoticia, idAutor, titulo, subtitulo, texto, imagem, categoria, autores, dataPublicacao, qtdCurtidas);
                 }
-                //Retornando o leitor
-                return noticia;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            //Retornando o leitor
+            return noticia;
         }
 
         //Listar noticias por Autor
         public List<Noticia> listarNoticiaPorAutor(string identificador)
         {
+            List<Noticia> noticias = new List<Noticia>();
             try
             {
-                List<Noticia> noticias = new List<Noticia>();
-
                 int id = getIdAutorByIdentificador(identificador);
 
-                // String de Conexão
-                string strconexao = conect;
                 // Criação do Objeto de Conexão
-                using (MySqlConnection conexao = new MySqlConnection(strconexao))
+                using (con)
                 {
                     // Abertura da Conexão
-                    conexao.Open();
+                    con.Open();
                     // Comando SQL para buscar as notícias do autor
-                    string query = "SELECT id_noticia, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao FROM tb_noticia WHERE id_autor = @id;";
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    sql = "SELECT id_noticia, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao FROM tb_noticia WHERE id_autor = @id;";
+                    using (command = new MySqlCommand(sql, con))
                     {
                         command.Parameters.AddWithValue("@id", id);
                         command.Prepare();
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        using (reader = command.ExecuteReader())
                         {
                             // Itera sobre os resultados da consulta e cria objetos Noticia
                             while (reader.Read())
@@ -144,147 +151,139 @@ namespace NewsletterBlob.Model
                         }
                     }
                 }
-                // Retorna as notícias encontradas
-                return noticias;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return noticias;
         }
 
         public int getIdAutorByIdentificador(string identificador)
         {
+            int id = 0;
             try
             {
-                int id=0;
-
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"SELECT id_autor FROM tb_usuario_autor WHERE registro_profissional = @identificador;";
+                command = con.CreateCommand();
+                sql = $"SELECT id_autor FROM tb_usuario_autor WHERE registro_profissional = @identificador;";
+                command = new MySqlCommand(sql, con);
                 command.Parameters.AddWithValue("@identificador", identificador);
                 command.Prepare();
-                MySqlDataReader reader = command.ExecuteReader();
+                reader = command.ExecuteReader();
 
                 //Retornando o resultado
                 while (reader.Read())
                 {
                     id = reader.GetInt32(0);
                 }
-                //Retornando id do autor
-                return id;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            //Retornando id do autor
+            return id;
         }
 
         //Editar
-        public void atualizarNoticia(Noticia noticia)
+        public int atualizarNoticia(Noticia noticia)
         {
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 if (noticia.Id > 0)
                 {
-                    command.CommandText = $"call editar_noticia(@id_noticia, @titulo, @subtitulo, @texto, @imagem, @categoria, @autores, @dataPublicacao);";
+                    sql = $"call editar_noticia(@id_noticia, @titulo, @subtitulo, @texto, @imagem, @categoria, @autores, @dataPublicacao);";
+                    command = new MySqlCommand(sql, con);
                     command.Parameters.AddWithValue("@id_noticia", noticia.Id);
                     command.Parameters.AddWithValue("@titulo", noticia.Titulo);
-                    command.Parameters.AddWithValue("@subtitulo", noticia.SubTitulo);
+                    command.Parameters.AddWithValue("@subtitulo", noticia.Subtitulo);
                     command.Parameters.AddWithValue("@texto", noticia.Texto);
                     command.Parameters.AddWithValue("@imagem", noticia.Imagem);
                     command.Parameters.AddWithValue("@categoria", noticia.Categoria);
                     command.Parameters.AddWithValue("@autores", noticia.Autores);
                     command.Parameters.AddWithValue("@dataPublicacao", noticia.DataPublicacao);
                     command.Prepare();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Dados Editados com Sucesso!", "Mensagem de Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    result = command.ExecuteNonQuery();
                 }
-                else
-                {
-                    MessageBox.Show("Não foi possível editar os dados!", "Mensagem de Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                //Fechando a conexão
-                conexao.Close();
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         //Deletar
         public int deletarNoticia(string identificador, int idNoticia)
         {
+            int result = 0;
             try
             {
                 int id = getIdAutorByIdentificador(identificador);
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 if (idNoticia > 0)
                 {
                     command.CommandText = $"delete from tb_noticia where id_noticia = @id_noticia";
                     command.Parameters.AddWithValue("@id_noticia", idNoticia);
                     command.Prepare();
-                    command.ExecuteNonQuery();
-                    //Fechando a conexão
-                    conexao.Close();
-                    return 1;
-                }
-                else
-                {
-                    //Fechando a conexão
-                    conexao.Close();
-                    return 0;
+                    result = command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         //Pegar Notícias por Raking de Melhor para Pior
         public List<Noticia> listarPrincipaisNoticias()
         {
+            List<Noticia> noticias = new List<Noticia>();
             try
             {
-                List<Noticia> noticias = new List<Noticia>();
-
-                // String de Conexão
-                string strconexao = conect;
                 // Criação do Objeto de Conexão
-                using (MySqlConnection conexao = new MySqlConnection(strconexao))
+                using (con)
                 {
                     // Abertura da Conexão
-                    conexao.Open();
+                    con.Open();
                     // Comando SQL para buscar as notícias do autor
-                    string query = "SELECT id_noticia, id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_curtidas " +
+                    sql = "SELECT id_noticia, id_autor, titulo, subtitulo, texto, imagem, categoria, autores, data_publicacao, qtd_curtidas " +
                         "FROM tb_noticia ORDER BY qtd_curtidas DESC, qtd_comentarios DESC LIMIT 3;";
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    using (command = new MySqlCommand(sql, con))
                     {
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        using (reader = command.ExecuteReader())
                         {
                             // Itera sobre os resultados da consulta e cria objetos Noticia
                             while (reader.Read())
@@ -309,36 +308,38 @@ namespace NewsletterBlob.Model
                         }
                     }
                 }
-                // Retorna as notícias encontradas
-                return noticias;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            // Retorna as notícias encontradas
+            return noticias;
         }
 
 
         //Listar Noticias do Banner
         public List<Noticia> listarNoticiasBanner()
         {
+            List<Noticia> noticias = new List<Noticia>();
             try
             {
-                List<Noticia> noticias = new List<Noticia>();
-
-                // String de Conexão
-                string strconexao = conect;
                 // Criação do Objeto de Conexão
-                using (MySqlConnection conexao = new MySqlConnection(strconexao))
+                using (con)
                 {
                     // Abertura da Conexão
-                    conexao.Open();
+                    con.Open();
                     // Comando SQL para buscar as notícias do autor
-                    string query = "SELECT * FROM tb_noticia ORDER BY RAND() LIMIT 5;";
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    sql = "SELECT * FROM tb_noticia ORDER BY RAND() LIMIT 5;";
+                    using (command = new MySqlCommand(sql, con))
                     {
                         command.Prepare();
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        using (reader = command.ExecuteReader())
                         {
                             // Itera sobre os resultados da consulta e cria objetos Noticia
                             while (reader.Read())
@@ -363,13 +364,18 @@ namespace NewsletterBlob.Model
                         }
                     }
                 }
-                // Retorna as notícias encontradas
-                return noticias;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            // Retorna as notícias encontradas
+            return noticias;
         }
        
     }

@@ -27,18 +27,6 @@ namespace NewsletterBlob.View
         int numImg = 0;
         int indiceNoticiaAtual;
 
-
-
-        public JanelaPrincipal()
-        {
-            InitializeComponent();
-            //Carregando confiracoes nos lbls
-            config_label_noticia_banner(lblNoticiaBanner);
-            config_label_noticias_princi(lblNoticiaComum01);
-            config_label_noticias_princi(lblNoticiaComum02);
-            config_label_noticias_princi(lblNoticiaComum03);
-
-        }
         public JanelaPrincipal(string identificador, bool ehAutor)
         {
             InitializeComponent();
@@ -54,8 +42,6 @@ namespace NewsletterBlob.View
                 pctBoxNoticiaBanner.Image = ByteToImage.ByteArrayToImage(primeiraImagem);
                 lblNoticiaBanner.Text = noticiasBanner[0].Titulo;
             }
-
-
 
             /* Recurso Cidade Temperatura de API
             try
@@ -113,12 +99,12 @@ namespace NewsletterBlob.View
             else
             {
                 numImg++;
-            } 
+            }
         }
 
         public void Carrossel_Invertido()
         {
-            indiceNoticiaAtual = numImg -1 ;
+            indiceNoticiaAtual = numImg - 1;
             if (numImg == 0)
             {
                 numImg = noticiasBanner.Count - 1;
@@ -210,19 +196,21 @@ namespace NewsletterBlob.View
             {
                 if (noticiasBanner != null && numImg >= 0 && numImg < noticiasBanner.Count)
                 {
+                    pb.Image = ByteToImage.ByteArrayToImage(noticiasBanner[numImg].Imagem);
+                    lb.Text = noticiasBanner[numImg].Titulo;
+                    config_size_label(lb);
+                    /*
                     // Recupera a imagem da lista usando o índice numImg
                     byte[] fotoBytes = noticiasBanner[numImg].Imagem;
-
                     // Converte o objeto byte[] em um objeto Image
                     using (MemoryStream ms = new MemoryStream(fotoBytes))
                     {
                         System.Drawing.Image foto = System.Drawing.Image.FromStream(ms);
-
                         // Define a propriedade Image do PictureBox com a imagem convertida
                         pb.Image = foto;
                         lb.Text = noticiasBanner[numImg].Titulo;
-                        config_size_label(lb);
-                    }
+                        
+                    }*/
                 }
                 else
                 {

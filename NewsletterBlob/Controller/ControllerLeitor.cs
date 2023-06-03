@@ -10,8 +10,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace NewsletterBlob.Controller
 {
-    internal class ControllerLeitor
+    public class ControllerLeitor
     {
+        private Leitor leitor;
+        private LeitorDAO leitorDAO;
+
         //Cadastrar Usuário Leitor
         public void cadastrarLeitor(string nome, string email,DateTime dataDeNascimento, string cpf, string endereco, string telefone, string senha)
         {
@@ -58,7 +61,7 @@ namespace NewsletterBlob.Controller
             try
             {
                 int result = new LeitorDAO().validaEmail(email);
-
+                
                 if (result == 1)
                 {
                     return true;
@@ -119,12 +122,15 @@ namespace NewsletterBlob.Controller
         {
             try
             {
+                leitorDAO = new LeitorDAO();
                 Leitor leitor = new Leitor(nome, email, dataDeNascimento, cpf, endereco, telefone, senha);
-                new LeitorDAO().atualizarLeitor(leitor, old_email);
+                int resp = leitorDAO.atualizarLeitor(leitor, old_email);
+                if(resp == 0)
+                    MessageBox.Show("Não foi possível editar os dados!", "Mensagem de ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Não foi possível editar os dados!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Mensagem de ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -136,7 +142,10 @@ namespace NewsletterBlob.Controller
             {
                 if (imagem != null)
                 {
-                    new LeitorDAO().adicionarFotoPerfil(email, imagem);
+                    leitorDAO = new LeitorDAO();
+                    int result = leitorDAO.adicionarFotoPerfil(email, imagem);
+                    if(result == 0)
+                        MessageBox.Show("Não foi possível alterar sua foto de perfil!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -151,18 +160,18 @@ namespace NewsletterBlob.Controller
         {
             try
             {
-                new LeitorDAO().deletarFotoPerfil(email);
-                MessageBox.Show("Foto Removida!", "Mensagem de SUCESSO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                leitorDAO = new LeitorDAO();
+                int result = leitorDAO.deletarFotoPerfil(email);
+                if (result == 0)
+                {
+                    MessageBox.Show("Não foi possível excluir a foto de perfil!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
-        //Excluir Usuário Leitor
-
 
     }
 }

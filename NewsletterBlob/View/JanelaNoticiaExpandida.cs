@@ -111,6 +111,7 @@ namespace NewsletterBlob.View
                     pctBoxDeletaComentario.Size = new Size(18, 20);
                     pctBoxDeletaComentario.SizeMode = PictureBoxSizeMode.Zoom;
                     pctBoxDeletaComentario.Image = Resources.Vector__7_;
+                    pctBoxDeletaComentario.Cursor = Cursors.Hand;
 
                     // Evento de clique para deletar o comentário
                     pctBoxDeletaComentario.Click += (sender, e) =>
@@ -163,7 +164,7 @@ namespace NewsletterBlob.View
                     lblTitulo.Text = noticia.Titulo;
 
                     lblSubTitulo.MaximumSize = new Size(517, 0);
-                    lblSubTitulo.Text = noticia.SubTitulo;
+                    lblSubTitulo.Text = noticia.Subtitulo;
                     lblSubTitulo.Top = lblTitulo.Top + lblTitulo.Height + 5; // Ajuste a posição vertical do lblSubTitulo
 
                     lblAutores.Text = noticia.Autores;
@@ -191,7 +192,7 @@ namespace NewsletterBlob.View
 
                     // Calcular a altura do texto e ajustar a altura do label
                     int tituloHeight = TextRenderer.MeasureText(noticia.Titulo, lblTitulo.Font, lblTitulo.MaximumSize, TextFormatFlags.WordBreak).Height;
-                    int subtituloHeight = TextRenderer.MeasureText(noticia.SubTitulo, lblSubTitulo.Font, lblSubTitulo.MaximumSize, TextFormatFlags.WordBreak).Height;
+                    int subtituloHeight = TextRenderer.MeasureText(noticia.Subtitulo, lblSubTitulo.Font, lblSubTitulo.MaximumSize, TextFormatFlags.WordBreak).Height;
                     int autoresHeight = TextRenderer.MeasureText(noticia.Autores, lblAutores.Font, lblAutores.Size, TextFormatFlags.WordBreak).Height;
                     int conteudoHeight = TextRenderer.MeasureText(noticia.Texto, lblConteudoNoticia.Font, lblConteudoNoticia.Size, TextFormatFlags.WordBreak).Height;
 

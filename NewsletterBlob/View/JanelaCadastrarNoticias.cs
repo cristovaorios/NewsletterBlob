@@ -62,24 +62,21 @@ namespace NewsletterBlob.View
             }
             else
             {
-                try
-                {
-                    new ControllerNoticias().cadastrarNoticia(registroProfissional, txtBoxTitulo.Text.Trim(), txtBoxSubTitulo.Text.Trim(), txtBoxConteudo.Text.Trim(),
-                        imagem, cmbBoxCategoria.SelectedItem.ToString(), txtBoxAutor.Text.Trim(), Convert.ToDateTime(dtTmPckrData.Value));
-                    MessageBox.Show("Notícia publicada com sucesso!", "Mensagem de Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txtBoxTitulo.Clear();
-                    txtBoxSubTitulo.Clear();
-                    txtBoxAutor.Clear();
-                    txtBoxConteudo.Clear();
-                    dtTmPckrData.Value = DateTime.Now;
-                    cmbBoxCategoria.SelectedIndex = -1;
-                    imagem = null;
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Não foi possível publicar a notícia!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                new ControllerNoticias().cadastrarNoticia(registroProfissional, txtBoxTitulo.Text.Trim(), txtBoxSubTitulo.Text.Trim(), txtBoxConteudo.Text.Trim(),
+                    imagem, cmbBoxCategoria.SelectedItem.ToString(), txtBoxAutor.Text.Trim(), Convert.ToDateTime(dtTmPckrData.Value));
+                limparCampos();
             }
+        }
+
+        private void limparCampos()
+        {
+            txtBoxTitulo.Clear();
+            txtBoxSubTitulo.Clear();
+            txtBoxAutor.Clear();
+            txtBoxConteudo.Clear();
+            dtTmPckrData.Value = DateTime.Now;
+            cmbBoxCategoria.SelectedIndex = -1;
+            imagem = null;
         }
 
         private bool carregarFoto()

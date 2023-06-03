@@ -29,25 +29,22 @@ namespace NewsletterBlob.View
 
         private void carregarDados(int id_noticia)
         {
-            try
+            
+            Noticia noticia = new ControllerNoticias().exibirNoticia(id_noticia);
+            if (!noticia.Equals(null))
             {
-                Noticia noticia = new ControllerNoticias().exibirNoticia(id_noticia);
                 txtBoxTitulo.Text = noticia.Titulo;
-                txtBoxSubTitulo.Text = noticia.SubTitulo;
+                txtBoxSubTitulo.Text = noticia.Subtitulo;
                 txtBoxAutor.Text = noticia.Autores;
                 txtBoxConteudo.Text = noticia.Texto;
                 imagem = noticia.Imagem;
                 int i;
-                for(i=0; i<4; i++)
+                for (i = 0; i < 4; i++)
                 {
                     if (cmbBoxCategoria.Items[i].Equals(noticia.Categoria))
                         break;
                 }
                 cmbBoxCategoria.SelectedIndex = i;
-            }
-            catch (Exception ex) 
-            {
-                MessageBox.Show("ERRO ao carregar os dados da notícia!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,16 +88,8 @@ namespace NewsletterBlob.View
             }
             else
             {
-                try
-                {
-                    new ControllerNoticias().editarNoticia(id_noticia, txtBoxTitulo.Text.Trim(), txtBoxSubTitulo.Text.Trim(), txtBoxConteudo.Text.Trim(),
-                        imagem, cmbBoxCategoria.SelectedItem.ToString(), txtBoxAutor.Text.Trim(), Convert.ToDateTime(dtTmPckrData.Value));
-                    MessageBox.Show("Notícia Editada com sucesso!", "Mensagem de Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Não foi possível editar a notícia!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                new ControllerNoticias().editarNoticia(id_noticia, txtBoxTitulo.Text.Trim(), txtBoxSubTitulo.Text.Trim(), txtBoxConteudo.Text.Trim(),
+                    imagem, cmbBoxCategoria.SelectedItem.ToString(), txtBoxAutor.Text.Trim(), Convert.ToDateTime(dtTmPckrData.Value));
             }
         }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewsletterBlob.Model
 {
-    internal class Comentario
+    public class Comentario
     {
         //Atributtes
         private int idComentario;
@@ -15,25 +15,10 @@ namespace NewsletterBlob.Model
         private byte[] imagemAutor;
         private string texto;
 
-        public Comentario(int idAutor, byte[] imagemAutor, string texto)
-        {
-            this.idAutor = idAutor;
-            this.imagemAutor = imagemAutor;
-            this.texto = texto;
-        }
-
         //Constructor
+
         public Comentario(int idNoticia, int idAutor, byte[] imagemAutor, string texto)
         {
-            this.idNoticia = idNoticia;
-            this.idAutor = idAutor;
-            this.imagemAutor = imagemAutor;
-            this.texto = texto;
-        }
-
-        public Comentario(int idComentario, int idNoticia, int idAutor, byte[] imagemAutor, string texto)
-        {
-            this.IdComentario = idComentario;
             this.idNoticia = idNoticia;
             this.idAutor = idAutor;
             this.imagemAutor = imagemAutor;

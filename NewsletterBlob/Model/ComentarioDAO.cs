@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using NewsletterBlob.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,63 +11,69 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace NewsletterBlob.Model
 {
-    internal class ComentarioDAO
+    public class ComentarioDAO
     {
-        private const string conect = "server=localhost;userid=root;password=;database=db_blobnews";
+        private MySqlConnection con;
+        private MySqlCommand command;
+        private MySqlDataReader reader;
+        private string sql;
+
+        public ComentarioDAO()
+        {
+            con = ConnectionFactory.Conexao();
+        }
 
         //Adicionar Notícia
-        public void adicionarComentario(Comentario comentario)
+        public int adicionarComentario(Comentario comentario)
         {
-
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 // utiliza parâmetros para evitar problemas com caracteres especiais e ataques de injeção de SQL
-                command.CommandText = $"INSERT INTO tb_comentario (id_leitor, id_noticia, imagem, texto)" +
+                sql = $"INSERT INTO tb_comentario (id_leitor, id_noticia, imagem, texto)" +
                     $"VALUES (@id_leitor, @id_noticia, @imagem, @texto)";
+                command = new MySqlCommand(sql, con);
                 command.Parameters.AddWithValue("@id_leitor", comentario.IdAutor);
                 command.Parameters.AddWithValue("@id_noticia", comentario.IdNoticia);
                 command.Parameters.AddWithValue("@imagem", comentario.ImagemAutor);
                 command.Parameters.AddWithValue("@texto", comentario.Texto);
                 command.Prepare();
-                command.ExecuteNonQuery();
-                //Fechando a conexão
-                conexao.Close();
+                result = command.ExecuteNonQuery();
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         //Listar comentários de notícia
         public List<Comentario> listarComentarioPorNoticia(int idNoticia)
         {
+            List<Comentario> comentarios = new List<Comentario>();
             try
             {
-                List<Comentario> comentarios = new List<Comentario>();
-
-                // String de Conexão
-                string strconexao = conect;
                 // Criação do Objeto de Conexão
-                using (MySqlConnection conexao = new MySqlConnection(strconexao))
+                using (con)
                 {
                     // Abertura da Conexão
-                    conexao.Open();
+                    con.Open();
                     // Comando SQL para buscar os comentários da notícia
-                    string query = "SELECT id_comentario, id_leitor, imagem, texto FROM tb_comentario WHERE id_noticia = @id;";
-                    using (MySqlCommand command = new MySqlCommand(query, conexao))
+                    sql = "SELECT id_comentario, id_leitor, imagem, texto FROM tb_comentario WHERE id_noticia = @id;";
+                    using (command = new MySqlCommand(sql, con))
                     {
                         command.Parameters.AddWithValue("@id", idNoticia);
                         command.Prepare();
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        using (reader = command.ExecuteReader())
                         {
                             // Itera sobre os resultados da consulta e cria objetos Comentario
                             while (reader.Read())
@@ -91,73 +98,67 @@ namespace NewsletterBlob.Model
                         }
                     }
                 }
-                // Retorna os comentários encontrados
-                return comentarios;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            // Retorna os comentários encontrados
+            return comentarios;
         }
 
 
         //Deletar
         public int deletarComentario(int idComentario)
         {
+            int result = 0;
             try
             {
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Imagem
-                MySqlCommand command = conexao.CreateCommand();
+                command = con.CreateCommand();
                 if (idComentario > 0)
                 {
-                    command.CommandText = $"DELETE FROM tb_comentario WHERE id_comentario = @id_comentario";
+                    sql = $"DELETE FROM tb_comentario WHERE id_comentario = @id_comentario";
+                    command = new MySqlCommand(sql, con);
                     command.Parameters.AddWithValue("@id_comentario", idComentario);
                     command.Prepare();
-                    command.ExecuteNonQuery();
-                    //Fechando a conexão
-                    conexao.Close();
-                    return 1;
-                }
-                else
-                {
-                    //Fechando a conexão
-                    conexao.Close();
-                    return 0;
+                    result = command.ExecuteNonQuery();
                 }
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            return result;
         }
 
         public Leitor getLeitorComentario(string identificador)
         {
+            Leitor leitor = new Leitor();
             try
             {
-                Leitor leitor = new Leitor();
-
-                //String de Conexão
-                string strconexao = conect;
-                //Criação do Objeto de Conexão
-                MySqlConnection conexao = new MySqlConnection(strconexao);
                 //Abertura da Conexao
-                conexao.Open();
+                con.Open();
                 //Adicionando Registro
-                MySqlCommand command = conexao.CreateCommand();
-                command.CommandText = $"SELECT id_leitor, nome, email, cpf, endereco, telefone, senha, data_de_nascimento, imagem_de_perfil " +
+                command = con.CreateCommand();
+                sql = $"SELECT id_leitor, nome, email, cpf, endereco, telefone, senha, data_de_nascimento, imagem_de_perfil " +
                     $"FROM tb_usuario_leitor WHERE email = @identificador;";
-                command.Parameters.AddWithValue("identificador", identificador);
+                command = new MySqlCommand(sql, con);
+                command.Parameters.AddWithValue("@identificador", identificador);
                 command.Prepare();
-                MySqlDataReader reader = command.ExecuteReader();
+                reader = command.ExecuteReader();
 
                 //Retornando o resultado
                 while (reader.Read())
@@ -173,14 +174,18 @@ namespace NewsletterBlob.Model
                         leitor.ImagemPerfil = null;
                     }
                 }
-                //Retornando o leitor
-                return leitor;
             }
-            catch (Exception ex)
+            catch (MySqlException e)
             {
-                MessageBox.Show(ex.Message, "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return null;
+                throw;
             }
+            finally
+            {
+                //Fechando a conexão
+                con.Close();
+            }
+            //Retornando o leitor
+            return leitor;
         }
 
     }

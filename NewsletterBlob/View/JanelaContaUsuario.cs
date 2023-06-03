@@ -1,5 +1,6 @@
 ﻿using NewsletterBlob.Controller;
 using NewsletterBlob.Model;
+using NewsletterBlob.Util;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,7 +49,8 @@ namespace NewsletterBlob.View
                     txtBoxSenha.Text = autor.Senha;
                     if (autor.ImagemPerfil != null && autor.ImagemPerfil.Length > 0)
                     {
-                        using (MemoryStream ms = new MemoryStream(autor.ImagemPerfil))
+                         pctBoxFotoUsuario.Image = ByteToImage.ByteArrayToImage(autor.ImagemPerfil);
+                        /*using (MemoryStream ms = new MemoryStream(autor.ImagemPerfil))
                         {
                             // converter MemoryStream em Stream
                             Stream stream = new MemoryStream(ms.ToArray());
@@ -67,7 +69,7 @@ namespace NewsletterBlob.View
                             {
                                 MessageBox.Show("Não foi possível carregar a imagem!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }
+                        }*/
                     }
                 }
                 else
@@ -82,7 +84,8 @@ namespace NewsletterBlob.View
                     txtBoxSenha.Text = leitor.Senha;
                     if (leitor.ImagemPerfil != null && leitor.ImagemPerfil.Length > 0)
                     {
-                        using (MemoryStream ms = new MemoryStream(leitor.ImagemPerfil))
+                        pctBoxFotoUsuario.Image = ByteToImage.ByteArrayToImage(leitor.ImagemPerfil);
+                        /*using (MemoryStream ms = new MemoryStream(leitor.ImagemPerfil))
                         {
                             // converter MemoryStream em Stream
                             Stream stream = new MemoryStream(ms.ToArray());
@@ -101,7 +104,7 @@ namespace NewsletterBlob.View
                             {
                                 MessageBox.Show("Não foi possível carregar a imagem!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-                        }
+                        }*/
                     }
                 }
                 

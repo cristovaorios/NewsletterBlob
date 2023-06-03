@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewsletterBlob.Model
 {
-    internal class Autor : Leitor
+    public class Autor : Leitor
     {
         //Atributtes
         private string registroProfissional;
@@ -38,17 +38,8 @@ namespace NewsletterBlob.Model
             //Empty
         }
 
+
         //Getters and Setters
-        public string RegisttroProfissional
-        {
-            get { return registroProfissional; }
-            set { registroProfissional = value; }
-        }
-
-        //Methods
-        public void publicarNoticia()
-        {
-
-        }
+        public string RegistroProfissional { get => registroProfissional; set => registroProfissional = value; }
     }
 }

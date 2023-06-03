@@ -68,7 +68,7 @@ namespace NewsletterBlob.View
                 Label lblSubTitulo = new Label();
                 lblSubTitulo.Location = new Point(130, 50); // Ajuste de posição vertical
                 lblSubTitulo.Size = new Size(430, 51); // Ajuste de tamanho
-                lblSubTitulo.Text = noticia.SubTitulo;
+                lblSubTitulo.Text = noticia.Subtitulo;
                 lblSubTitulo.Font = new Font(FontFamily.GenericSansSerif, 10, FontStyle.Regular);
 
                 pnlNoticia.Controls.Add(pbImagem);
