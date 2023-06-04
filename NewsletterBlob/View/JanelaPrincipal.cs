@@ -35,7 +35,7 @@ namespace NewsletterBlob.View
             this.ehAutor = ehAutor;
             noticiasPrincipais = carregarNoticiasPrincipais();
             noticiasBanner = new ControllerNoticias().exibirNoticiasBanner();
-            if (noticiasBanner != null && noticiasBanner.Count > 0)
+            if (noticiasBanner != null && noticiasBanner.Count == 5)
             {
                 // Defina a primeira imagem do banner como o InitialImage do pctBoxNoticiaBanner
                 byte[] primeiraImagem = noticiasBanner[0].Imagem;

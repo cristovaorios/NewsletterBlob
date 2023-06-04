@@ -29,55 +29,57 @@ namespace NewsletterBlob.View
             pnlNoticiasAutor.Controls.Clear();
 
             List<Noticia> noticias = new ControllerNoticias().listarNoticiasAutor(identificador);
-
-            int y = 0;
-            foreach (Noticia noticia in noticias)
+            if(noticias != null)
             {
-                Panel pnlNoticia = new Panel();
-                pnlNoticia.Location = new Point(0, y);
-                pnlNoticia.Size = new Size(560, 111); // Ajuste de largura para caber no pnlNoticiasAutor
-
-                PictureBox pbImagem = new PictureBox();
-                pbImagem.Location = new Point(0, 0);
-                pbImagem.Size = new Size(112, 111);
-                pbImagem.SizeMode = PictureBoxSizeMode.Zoom;
-                pbImagem.Image = ByteToImage.ByteArrayToImage(noticia.Imagem);
-                pbImagem.SizeMode = PictureBoxSizeMode.Zoom;
-                // Evento de clique no Panel
-                pbImagem.Click += (sender, e) =>
+                int y = 0;
+                foreach (Noticia noticia in noticias)
                 {
-                    idNoticia = noticia.Id; // Armazenar o id da notícia na variável global
+                    Panel pnlNoticia = new Panel();
+                    pnlNoticia.Location = new Point(0, y);
+                    pnlNoticia.Size = new Size(560, 111); // Ajuste de largura para caber no pnlNoticiasAutor
 
-                    // Alterar o BorderStyle do Panel clicado
-                    foreach (Control control in pnlNoticiasAutor.Controls)
+                    PictureBox pbImagem = new PictureBox();
+                    pbImagem.Location = new Point(0, 0);
+                    pbImagem.Size = new Size(112, 111);
+                    pbImagem.SizeMode = PictureBoxSizeMode.Zoom;
+                    pbImagem.Image = ByteToImage.ByteArrayToImage(noticia.Imagem);
+                    pbImagem.SizeMode = PictureBoxSizeMode.Zoom;
+                    // Evento de clique no Panel
+                    pbImagem.Click += (sender, e) =>
                     {
-                        if (control is Panel)
+                        idNoticia = noticia.Id; // Armazenar o id da notícia na variável global
+
+                        // Alterar o BorderStyle do Panel clicado
+                        foreach (Control control in pnlNoticiasAutor.Controls)
                         {
-                            Panel panel = (Panel)control;
-                            panel.BorderStyle = (panel == pnlNoticia) ? BorderStyle.FixedSingle : BorderStyle.None;
+                            if (control is Panel)
+                            {
+                                Panel panel = (Panel)control;
+                                panel.BorderStyle = (panel == pnlNoticia) ? BorderStyle.FixedSingle : BorderStyle.None;
+                            }
                         }
-                    }
-                };
+                    };
 
-                Label lblTitulo = new Label();
-                lblTitulo.Location = new Point(130, 10); // Ajuste de posição vertical
-                lblTitulo.Size = new Size(430, 40); // Ajuste de tamanho
-                lblTitulo.Text = noticia.Titulo;
-                lblTitulo.Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Bold);
+                    Label lblTitulo = new Label();
+                    lblTitulo.Location = new Point(130, 10); // Ajuste de posição vertical
+                    lblTitulo.Size = new Size(430, 40); // Ajuste de tamanho
+                    lblTitulo.Text = noticia.Titulo;
+                    lblTitulo.Font = new Font(FontFamily.GenericSansSerif, 12, FontStyle.Bold);
 
-                Label lblSubTitulo = new Label();
-                lblSubTitulo.Location = new Point(130, 50); // Ajuste de posição vertical
-                lblSubTitulo.Size = new Size(430, 51); // Ajuste de tamanho
-                lblSubTitulo.Text = noticia.Subtitulo;
-                lblSubTitulo.Font = new Font(FontFamily.GenericSansSerif, 10, FontStyle.Regular);
+                    Label lblSubTitulo = new Label();
+                    lblSubTitulo.Location = new Point(130, 50); // Ajuste de posição vertical
+                    lblSubTitulo.Size = new Size(430, 51); // Ajuste de tamanho
+                    lblSubTitulo.Text = noticia.Subtitulo;
+                    lblSubTitulo.Font = new Font(FontFamily.GenericSansSerif, 10, FontStyle.Regular);
 
-                pnlNoticia.Controls.Add(pbImagem);
-                pnlNoticia.Controls.Add(lblTitulo);
-                pnlNoticia.Controls.Add(lblSubTitulo);
+                    pnlNoticia.Controls.Add(pbImagem);
+                    pnlNoticia.Controls.Add(lblTitulo);
+                    pnlNoticia.Controls.Add(lblSubTitulo);
 
-                pnlNoticiasAutor.Controls.Add(pnlNoticia);
+                    pnlNoticiasAutor.Controls.Add(pnlNoticia);
 
-                y += 111;
+                    y += 111;
+                }
             }
         }
 

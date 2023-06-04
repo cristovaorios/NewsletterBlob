@@ -69,7 +69,7 @@ namespace NewsletterBlob.Controller
                 lista = noticiaDAO.listarNoticiaPorAutor(identificador);
                 if (lista.Count == 0)
                 {
-                    MessageBox.Show("Não foi possível carregar a notícia!", "Mensagem de ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Você não possui notícias!", "Mensagem de Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return null;
                 }
                 else
