@@ -42,23 +42,28 @@ namespace NewsletterBlob.View
                 pctBoxNoticiaBanner.Image = ByteToImage.ByteArrayToImage(primeiraImagem);
                 lblNoticiaBanner.Text = noticiasBanner[0].Titulo;
             }
+            //carregarAPI();
+        }
 
-            /* Recurso Cidade Temperatura de API
+        
+        /*private void carregarAPI()
+        {
+            //Recurso Cidade Temperatura de API
             try
             {
                 // Capturando Cidade e Temperatura de API
                 WeatherService service = new WeatherService();
-                WeatherInfo info = service.GetWeatherInfo("São Luís");
-                lblLocalizacao.Text = info.City;
-                lblClima.Text = info.Temperature + "ºC";
+                Task<WeatherInfo> info = service.GetWeatherInfo("sao luis");
+                lblLocalizacao.Text = info.Result.City;
+                lblClima.Text = info.Result.Temperature + " ºC";
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Não foi possível carregar a API!", ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error); ;
-            }*/
-        }
+            }
+        }*/
 
-        
+
         private List<Noticia> carregarNoticiasPrincipais()
         {
             List<Noticia> noticias = new ControllerNoticias().exibirPrincipaisNoticias();

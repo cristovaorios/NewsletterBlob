@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NewsletterBlob.API
 {
-    internal class WeatherInfo
+    public class WeatherInfo
     {
         public string City { get; set; }
         public string Temperature { get; set; }
